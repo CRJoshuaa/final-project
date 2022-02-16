@@ -7,6 +7,12 @@
   margin-top: 46px;
 }
 
+.sidebar-cont > hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #49274b;
+}
+
 .sidebar-header {
   display: flex;
   border-bottom: 1px solid #634763;
@@ -46,5 +52,26 @@
   color: green;
 }
 
-.sidebar-option {
+.sidebar-option-cont {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.sidebar-option-cont:hover {
+  opacity: 0.9;
+  background-color: #340e36;
+}
+
+.sidebar-option-cont > h3 {
+  font-weight: 500;
+}
+
+.sidebar-option-cont > h3 > span {
+  padding: 15px;
+}
+
+.sidebar-option-channel {
 }
