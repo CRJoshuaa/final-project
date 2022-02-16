@@ -1,19 +1,20 @@
 import React from "react";
 import "./Header.css";
-import styled from "styled-components";
 
-import { Avatar } from "@material-ui/core";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 function Header() {
   return (
-    <div>
+    <div className="header">
       {/* Header Left */}
-      <HeaderLeft>
-        <HeaderAvatar
-        //TODO: Add onclick
+      <div className="header-left">
+        <AccountCircleIcon
+          className="header-avatar"
+          //TODO: Add onclick
         />
         <AccessTimeIcon />
-      </HeaderLeft>
+      </div>
+
       {/* Header Search */}
       {/* Header Right */}
     </div>
@@ -21,6 +22,3 @@ function Header() {
 }
 
 export default Header;
-
-const HeaderLeft = styled.div``;
-const HeaderAvatar = styled(Avatar)``;

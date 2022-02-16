@@ -1,3 +1,16 @@
 .header {
-  color: red;
+  display: flex;
+}
+.header-avatar {
+}
+
+.header {
+}
+.header-left {
+  display: flex;
+  flex: 0.3;
+  align-items: center;
+}
+
+.header-right {
 }
