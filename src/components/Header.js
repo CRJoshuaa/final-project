@@ -3,6 +3,9 @@ import "./Header.css";
 
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SearchIcon from "@mui/icons-material/Search";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+
 function Header() {
   return (
     <div className="header">
@@ -16,7 +19,15 @@ function Header() {
       </div>
 
       {/* Header Search */}
+      <div className="header-search">
+        <SearchIcon />
+        <input placeholder="Search!"></input>
+      </div>
+
       {/* Header Right */}
+      <div className="header-right">
+        <HelpOutlineIcon />
+      </div>
     </div>
   );
 }
