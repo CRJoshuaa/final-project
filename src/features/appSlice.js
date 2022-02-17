@@ -10,12 +10,6 @@ export const appSlice = createSlice({
     enterRoom: (state, action) => {
       state.roomId = action.payload.roomId;
     },
-    // decrement: (state) => {
-    //   state.value -= 1;
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
   },
 });
 
