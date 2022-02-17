@@ -16,7 +16,7 @@
 .sidebar-header {
   display: flex;
   border-bottom: 1px solid #634763;
-  /* padding: 13px; */
+  padding: 13px;
 }
 
 .sidebar-header > .MuiSvgIcon-root {
@@ -50,28 +50,4 @@
   margin-top: 1px;
   margin-right: 2px;
   color: green;
-}
-
-.sidebar-option-cont {
-  display: flex;
-  font-size: 12px;
-  align-items: center;
-  padding-left: 2px;
-  cursor: pointer;
-}
-
-.sidebar-option-cont:hover {
-  opacity: 0.9;
-  background-color: #340e36;
-}
-
-.sidebar-option-cont > h3 {
-  font-weight: 500;
-}
-
-.sidebar-option-cont > h3 > span {
-  padding: 15px;
-}
-
-.sidebar-option-channel {
 }

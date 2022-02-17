@@ -1,0 +1,25 @@
+.sidebar-option-cont {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.sidebar-option-cont:hover {
+  opacity: 0.9;
+  background-color: #340e36;
+}
+
+.sidebar-option-cont > h3 {
+  font-weight: 500;
+}
+
+.sidebar-option-cont > h3 > span {
+  padding: 15px;
+}
+
+.sidebar-option-channel {
+  padding: 10px 0px;
+  font-weight: 300;
+}
