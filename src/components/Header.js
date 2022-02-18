@@ -9,7 +9,6 @@ import { auth } from "../firebase";
 
 function Header() {
   const [user] = useAuthState(auth);
-  console.log(user?.photoURL);
 
   return (
     <div className="header">
@@ -20,7 +19,6 @@ function Header() {
           onClick={() => auth.signOut()}
           alt={user?.displayName}
           src={user?.photoURL}
-          //TODO: Add onclick
         />
         <AccessTimeIcon />
       </div>
