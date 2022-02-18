@@ -19,7 +19,6 @@ function Header() {
           onClick={() => auth.signOut()}
           alt={user?.displayName}
           src={user?.photoURL}
-          //TODO: Add onclick
         />
         <AccessTimeIcon />
       </div>
