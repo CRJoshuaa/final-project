@@ -33,8 +33,6 @@ function Chat() {
       behavior: "smooth",
     });
   }, [roomId, loading]);
-  console.log(roomDetails);
-  console.log(roomMessages);
 
   return (
     <div className="chat">
