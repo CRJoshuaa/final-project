@@ -1,4 +1,26 @@
 .app-body {
-    display: flex;
-    height : 100vh;
+  display: flex;
+  height: 100vh;
+}
+
+.app-loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.app-loading-contents {
+  text-align: center;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-loading-contents > img {
+  height: 100px;
+  padding: 20px;
+  margin-bottom: 40px;
 }

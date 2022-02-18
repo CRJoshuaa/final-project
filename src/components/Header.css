@@ -10,6 +10,9 @@
 }
 .header-avatar {
   cursor: pointer;
+  border-radius: 999px;
+  height: 40px;
+  margin-right: 20px;
 }
 
 .header-avatar:hover {

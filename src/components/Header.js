@@ -2,17 +2,24 @@ import React from "react";
 import "./Header.css";
 
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 function Header() {
+  const [user] = useAuthState(auth);
+  console.log(user?.photoURL);
+
   return (
     <div className="header">
       {/* Header Left */}
       <div className="header-left">
-        <AccountCircleIcon
+        <img
           className="header-avatar"
+          onClick={() => auth.signOut()}
+          alt={user?.displayName}
+          src={user?.photoURL}
           //TODO: Add onclick
         />
         <AccessTimeIcon />
