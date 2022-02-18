@@ -4,7 +4,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CreateIcon from "@mui/icons-material/Create";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 import {
   Add,
   Apps,
@@ -17,9 +17,11 @@ import {
   InsertComment,
   PeopleAlt,
 } from "@mui/icons-material";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
-  const [channels, loading, error] = useCollection(db.collection("rooms"));
+  const [channels] = useCollection(db.collection("rooms"));
+  const [user] = useAuthState(auth);
   return (
     <div className="sidebar-cont">
       <div className="sidebar-header">
@@ -27,7 +29,7 @@ function Sidebar() {
           <h2> Slackerz </h2>
           <h3>
             <FiberManualRecordIcon />
-            Nobita
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
@@ -36,7 +38,7 @@ function Sidebar() {
       <SidebarOption Icon={Inbox} title="Mentions & reactions" />
       <SidebarOption Icon={Drafts} title="Saved items" />
       <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
-      <SidebarOption Icon={PeopleAlt} title="Peopl & user groups" />
+      <SidebarOption Icon={PeopleAlt} title="People & user groups" />
       <SidebarOption Icon={Apps} title="Apps" />
       <SidebarOption Icon={FileCopy} title="File browser" />
       <SidebarOption Icon={ExpandLess} title="Show less" />
