@@ -1,14 +1,16 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import "./ChatInput.css";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
+  const [user] = useAuthState(auth);
 
   const sendMessage = (e) => {
     e.preventDefault(); //Prevents refresh
@@ -20,8 +22,11 @@ function ChatInput({ channelName, channelId }) {
     db.collection("rooms").doc(channelId).collection("messages").add({
       message: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: "bruh",
-      userImage: "https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif",
+      user: user.displayName,
+      userImage: user.photoURL,
+    });
+    chatRef?.current?.scrollIntoView({
+      behavior: "smooth",
     });
 
     setInput("");
