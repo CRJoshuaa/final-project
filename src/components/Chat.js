@@ -10,6 +10,7 @@ import { selectRoomId } from "../features/appSlice";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 import Message from "./Message";
+import { IconButton } from "@mui/material";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
@@ -36,22 +37,21 @@ function Chat() {
 
   return (
     <div className="chat">
+      <div className="chat-header">
+        <div className="chat-header-left">
+          <h4>
+            <strong>#{roomDetails?.data().name}</strong>
+          </h4>
+          <IconButton>
+            <StarBorderOutlinedIcon />
+          </IconButton>
+        </div>
+        <div className="chat-header-right">
+          <InfoOutlinedIcon /> Details
+        </div>
+      </div>
       {roomDetails && roomMessages && (
         <>
-          <div className="chat-header">
-            <div className="chat-header-left">
-              <h4>
-                <strong>#{roomDetails?.data().name}</strong>
-              </h4>
-              <StarBorderOutlinedIcon />
-            </div>
-            <div className="chat-header-right">
-              <p>
-                <InfoOutlinedIcon /> Details
-              </p>
-            </div>
-          </div>
-
           <div className="chat-messages">
             {roomMessages?.docs.map((doc) => {
               const { message, timestamp, user, userImage } = doc.data();
@@ -66,13 +66,16 @@ function Chat() {
                 />
               );
             })}
-            <div className="chat-bottom" ref={chatRef}></div>
+            {/* <div className="chat-dummy">component mounting</div> */}
+            <div className="chat-input" ref={chatRef}></div>
           </div>
-          <ChatInput
-            chatRef={chatRef}
-            channelName={roomDetails?.data().name}
-            channelId={roomId}
-          />
+          <div className="chat-footer">
+            <ChatInput
+              chatRef={chatRef}
+              channelName={roomDetails?.data().name}
+              channelId={roomId}
+            />
+          </div>
         </>
       )}
     </div>
