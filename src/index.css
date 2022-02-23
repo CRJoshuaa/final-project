@@ -6,12 +6,13 @@ body {
   --main-color: #3c4552;
   --dark-1: #293241;
   --dark-2: #3d5a80;
-  --light-1: #a3acbd;
-  --light-2: #e0fbfc;
+  --light-1: #e0fbfc;
+  --light-2: #a3acbd;
   --light-3: #98c1d9;
-  --red-1: #e7543f;
-  --green-1: #1fb384;
-  --yellow-1: #f9f871;
+  --accent-1: #001a72; /*for icons*/
+  --red-1: #e7543f; /*for status*/
+  --green-1: #1fb384; /*for status*/
+  --yellow-1: #f9f871; /*for status*/
   overflow: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

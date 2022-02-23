@@ -1,27 +1,32 @@
 .chat-input {
   border-radius: 20px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chat-input > form {
   position: sticky;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .chat-input > form > input {
-  position: fixed;
+  position: sticky;
   bottom: 20px;
-  width: 75%;
-  border: 1px solid gray;
+  width: 90%;
+  border: 1px solid var(--accent-1);
   border-radius: 10px;
   padding: 20px;
   outline: none;
-  background-color: var(--light-2);
+  background-color: var(--light-1);
 }
 
 .chat-input > form > button {
-  display: none !important;
+  left: -50px;
+  color: var(--accent-1);
 }
 
 @media only screen and (max-width: 428px) {
