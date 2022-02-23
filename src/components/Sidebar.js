@@ -5,6 +5,7 @@ import CreateIcon from "@mui/icons-material/Create";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
+import { Link, useHistory } from "react-router-dom";
 import {
   Add,
   Apps,
@@ -16,8 +17,16 @@ import {
   Inbox,
   InsertComment,
   PeopleAlt,
+  ChatBubble,
+  Chat,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
+
+// const history = useHistory();
+// const routeChange = () => {
+//   let path = "DirectMessage";
+//   history.push(path);
+// };
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
@@ -43,11 +52,15 @@ function Sidebar() {
       <SidebarOption Icon={FileCopy} title="File browser" />
       <SidebarOption Icon={ExpandLess} title="Show less" />
       <hr />
+      <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
+      {/* <Link to="/DirectMessage"> Direct Message </Link> */}
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       {channels?.docs.map((doc) => (
-        <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+        <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
+          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+        </Link>
       ))}
     </div>
   );
