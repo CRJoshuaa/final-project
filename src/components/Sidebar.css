@@ -92,3 +92,24 @@
   margin-right: 2px;
   color: green;
 }
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .sidebar-header > .MuiSvgIcon-root {
+    display: none;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .sidebar-header > .MuiSvgIcon-root {
+    display: none;
+  }
+}
+
+/* Laptop screens
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .sidebar-header > .MuiSvgIcon-root {
+    display: none;
+  }
+} */
