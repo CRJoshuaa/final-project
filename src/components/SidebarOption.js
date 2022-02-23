@@ -109,8 +109,3 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 }
 
 export default SidebarOption;
-
-// className="crypto-news"
-// onClick={() => {
-//   history.push("/crypto-news");
-// }}
