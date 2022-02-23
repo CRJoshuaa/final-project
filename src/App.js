@@ -2,29 +2,70 @@ import React from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-
+import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Header from "./components/Header";
+import { auth } from "./firebase";
+import Login from "./components/Login";
+import Spinner from "react-spinkit";
+import CryptoNews from "./components/CryptoNews";
+import CryptoHome from "./components/CryptoHome";
+import Cryptocurrencies from "./components/Cryptocurrencies";
+import CryptoExchange from "./components/CryptoExchange";
+import CryptoDetails from "./components/CryptoDetails";
 
 function App() {
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return (
+      <div className="app-loading">
+        <div className="app-loading-contents">
+          <img
+            src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
+            alt=""
+          />
+          <Spinner name="ball-spin-fade-loader" color="purple" fadeIn="none" />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="App">
       <Router>
-        <>
-          {/* A <Switch> looks through its children <Route>s and
+        {!user ? (
+          <Login />
+        ) : (
+          <>
+            {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-          <Header />
+            <Header />
 
-          <div className="app-body">
-            <Sidebar />
-            <Switch>
-              <Route path="/" exact>
-                <Chat />
-              </Route>
-            </Switch>
-          </div>
-        </>
+            <div className="app-body">
+              <Sidebar />
+              <Switch>
+                <Route path="/" exact>
+                  <Chat />
+                </Route>
+                <Route path="/DirectMessage"></Route>
+                <Route path="/crypto-home">
+                  <CryptoHome />
+                </Route>
+                <Route path="/cryptocurrencies">
+                  <Cryptocurrencies />
+                </Route>
+                <Route path="/crypto-exchange">
+                  <CryptoExchange />
+                </Route>
+                <Route path="/crypto/:coinId">
+                  <CryptoDetails />
+                </Route>
+                <Route path="/crypto-news">
+                  <CryptoNews />
+                </Route>
+              </Switch>
+            </div>
+          </>
+        )}
       </Router>
     </div>
   );
