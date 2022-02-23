@@ -2,6 +2,7 @@ import React from "react";
 import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CreateIcon from "@mui/icons-material/Create";
+// import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
@@ -25,6 +26,15 @@ function Sidebar() {
   return (
     <div className="sidebar-cont">
       <div className="sidebar-header">
+        <div className="sidebar-left">
+          <img
+            className="sidebar-avatar"
+            onClick={() => auth.signOut()}
+            alt={user?.displayName}
+            src={user?.photoURL}
+          />
+          {/* <AccessTimeIcon /> */}
+        </div>
         <div className="sidebar-info">
           <h2> Slackerz </h2>
           <h3>
@@ -46,9 +56,11 @@ function Sidebar() {
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
-      {channels?.docs.map((doc) => (
-        <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
-      ))}
+      <div className="sidebar-channel">
+        {channels?.docs.map((doc) => (
+          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+        ))}
+      </div>
     </div>
   );
 }
