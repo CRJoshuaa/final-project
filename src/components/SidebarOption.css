@@ -8,7 +8,9 @@
 
 .sidebar-option-cont:hover {
   opacity: 0.9;
-  background-color: #340e36;
+  background-color: var(--light-1);
+  color: var(--dark-1);
+  border-radius: 5px;
 }
 
 .sidebar-option-cont > h3 {
