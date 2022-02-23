@@ -1,0 +1,26 @@
+.settings-option-cont {
+  display: flex;
+  float: left;
+  font-size: 12px;
+  align-items: center;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.settings-option-cont:hover {
+  opacity: 0.9;
+  background-color: #340e36;
+}
+
+.settings-option-cont > h3 {
+  font-weight: 500;
+}
+
+.settings-option-cont > h3 > span {
+  padding: 15px;
+}
+
+.settings-option-channel {
+  /* padding: 10px 0px; */
+  font-weight: 300;
+}
