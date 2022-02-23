@@ -3,9 +3,14 @@ import "./SidebarOption.css";
 import { db } from "../firebase";
 import { useDispatch } from "react-redux";
 import { enterRoom } from "../features/appSlice";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import { Link } from "react-router-dom";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const dispatch = useDispatch();
+
+  const history = useHistory();
 
   const addChannel = () => {
     const channelName = prompt("Please enter the channel name");
@@ -26,10 +31,69 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     }
   };
 
+  const routeDirectMessage = () => {
+    let path = "DirectMessage";
+    history.push(path);
+  };
+
+  const DirectMessage = () => {
+    <Link to="/DirectMessage"> Direct Message </Link>;
+  };
+
+  const routeCryptoHome = () => {
+    let path = "crypto-home";
+    history.push(path);
+  };
+
+  const routeCryptocurrencies = () => {
+    let path = "cryptocurrencies";
+    history.push(path);
+  };
+
+  const routeCryptoExchange = () => {
+    let path = "crypto-exchange";
+    history.push(path);
+  };
+
+  const routeCryptoNews = () => {
+    let path = "crypto-news";
+    history.push(path);
+  };
+
+  // const cryptoNews = () => {
+  //   <Link to="/crypto-news"> Crypto News </Link>;
+  // };
+
   return (
     <div
       className="sidebar-option-cont"
-      onClick={addChannelOption ? addChannel : selectChannel}
+      onClick={
+        // addChannelOption ? addChannel : selectChannel
+        (e) => {
+          switch (e.target.innerText) {
+            case "Add Channel":
+              addChannel();
+              break;
+            case "Direct Message":
+              routeDirectMessage();
+              break;
+            case "Crypto Home":
+              routeCryptoHome();
+              break;
+            case "Cryptocurrencies":
+              routeCryptocurrencies();
+              break;
+            case "Crypto Exchange":
+              routeCryptoExchange();
+              break;
+            case "Crypto News":
+              routeCryptoNews();
+              break;
+            default:
+              selectChannel();
+          }
+        }
+      }
     >
       {Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
       {Icon ? (
@@ -45,3 +109,8 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 }
 
 export default SidebarOption;
+
+// className="crypto-news"
+// onClick={() => {
+//   history.push("/crypto-news");
+// }}
