@@ -1,0 +1,24 @@
+.rightbar-cont {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-color);
+  padding-top: 130px;
+}
+
+.icons {
+  padding-left: 20px;
+  justify-content: space-between;
+  display: flex;
+  height: 35%;
+  flex-direction: column;
+  padding-right: 12px;
+}
+
+.icons > button {
+  display: flex;
+  flex-direction: column;
+  color: var(--light-1);
+}
+
+.icons > button:hover {
+}

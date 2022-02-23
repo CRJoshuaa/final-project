@@ -6,6 +6,7 @@ import ChatInput from "./ChatInput";
 import { useSelector } from "react-redux";
 import { useRef, useEffect } from "react";
 import { selectRoomId } from "../features/appSlice";
+import RightBar from "./RightBar";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
@@ -36,50 +37,53 @@ function Chat() {
   }, [roomId, loading]);
 
   return (
-    <div className="chat">
-      <div className="chat-header">
-        <div className="chat-header-left">
-          <h4>
-            <strong>#{roomDetails?.data().name}</strong>
-          </h4>
-          <IconButton>
-            <StarBorderOutlinedIcon />
-          </IconButton>
+    <>
+      <div className="chat">
+        <div className="chat-header">
+          <div className="chat-header-left">
+            <h4>
+              <strong>#{roomDetails?.data().name}</strong>
+            </h4>
+            <IconButton>
+              <StarBorderOutlinedIcon />
+            </IconButton>
+          </div>
+          <div className="chat-header-right">
+            <InfoOutlinedIcon /> Details
+          </div>
         </div>
-        <div className="chat-header-right">
-          <InfoOutlinedIcon /> Details
-        </div>
-      </div>
-      {roomDetails && roomMessages && (
-        <>
-          <div className="chat-messages">
-            {roomMessages?.docs.map((doc) => {
-              const { message, timestamp, user, userImage } = doc.data();
+        {roomDetails && roomMessages && (
+          <>
+            <div className="chat-messages">
+              {roomMessages?.docs.map((doc) => {
+                const { message, timestamp, user, userImage } = doc.data();
 
-              return (
-                <Message
-                  key={doc.id}
-                  message={message}
-                  timestamp={timestamp}
-                  user={user}
-                  userImage={userImage}
-                />
-              );
-            })}
-            {/* <div className="chat-dummy">component mounting</div> */}
-          </div>
-          <div className="chat-footer">
-            <div className="chat-input" ref={chatRef}>
-              <ChatInput
-                chatRef={chatRef}
-                channelName={roomDetails?.data().name}
-                channelId={roomId}
-              />
+                return (
+                  <Message
+                    key={doc.id}
+                    message={message}
+                    timestamp={timestamp}
+                    user={user}
+                    userImage={userImage}
+                  />
+                );
+              })}
+              {/* <div className="chat-dummy">component mounting</div> */}
             </div>
-          </div>
-        </>
-      )}
-    </div>
+            <div className="chat-footer">
+              <div className="chat-input" ref={chatRef}>
+                <ChatInput
+                  chatRef={chatRef}
+                  channelName={roomDetails?.data().name}
+                  channelId={roomId}
+                />
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+      <RightBar />
+    </>
   );
 }
 
