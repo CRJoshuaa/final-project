@@ -68,12 +68,13 @@ function Sidebar() {
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
-
-      {channels?.docs.map((doc) => (
-        <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
-          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
-        </Link>
-      ))}
+      <div className="sidebar-channel">
+        {channels?.docs.map((doc) => (
+          <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
+            <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
