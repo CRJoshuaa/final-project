@@ -67,14 +67,15 @@ function Chat() {
               );
             })}
             {/* <div className="chat-dummy">component mounting</div> */}
-            <div className="chat-input" ref={chatRef}></div>
           </div>
           <div className="chat-footer">
-            <ChatInput
-              chatRef={chatRef}
-              channelName={roomDetails?.data().name}
-              channelId={roomId}
-            />
+            <div className="chat-input" ref={chatRef}>
+              <ChatInput
+                chatRef={chatRef}
+                channelName={roomDetails?.data().name}
+                channelId={roomId}
+              />
+            </div>
           </div>
         </>
       )}

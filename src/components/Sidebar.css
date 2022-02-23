@@ -9,6 +9,14 @@
   max-width: 20%;
 }
 
+.sidebar-channel {
+  overflow-y: scroll;
+}
+
+.sidebar-channel::-webkit-scrollbar {
+  display: none;
+}
+
 .sidebar-cont > hr {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -17,15 +25,21 @@
 
 .sidebar-header {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   border-bottom: 1px solid var(--dark-1);
   padding: 13px;
+  height: 57px;
+  position: sticky;
+  top: 0;
+  background-color: var(--main-color);
 }
 
 .sidebar-header > .MuiSvgIcon-root {
   padding: 8px;
   color: var(--dark-1);
   font-size: 16px;
-  background-color: var(--light-2);
+  background-color: var(--light-1);
   border-radius: 999px;
 }
 

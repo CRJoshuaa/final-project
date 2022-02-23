@@ -59,7 +59,7 @@
 
 .chat-footer {
   display: flex;
-  padding: 45px;
+  padding: 25px;
   position: sticky;
   bottom: 0;
   background-color: var(--main-color);
