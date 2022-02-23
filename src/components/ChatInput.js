@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./ChatInput.css";
 import { auth, db } from "../firebase";
 
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import { IconButton } from "@mui/material";
+
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
@@ -39,9 +42,9 @@ function ChatInput({ channelName, channelId, chatRef }) {
           onChange={(e) => setInput(e.target.value)}
           placeholder={`Message #${channelName}`}
         />
-        <Button hidden type="submit" onClick={sendMessage}>
-          SEND
-        </Button>
+        <IconButton hidden type="submit" onClick={sendMessage}>
+          <SendRoundedIcon />
+        </IconButton>
       </form>
     </div>
   );
