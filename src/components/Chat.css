@@ -62,11 +62,12 @@
   padding: 25px;
   position: sticky;
   bottom: 0;
+  height: 5%;
   background-color: var(--main-color);
 }
 
 .chat-messages {
-  min-height: 81.1%;
+  min-height: 83%;
   bottom: 0;
 }
 
