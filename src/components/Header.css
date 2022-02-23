@@ -44,8 +44,13 @@
   color: white;
 }
 
-@media only screen and (max-width: 428px) {
+/*Mobile screens*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
     display: none;
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }

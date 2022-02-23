@@ -71,7 +71,13 @@
   bottom: 0;
 }
 
-@media only screen and (max-width: 428px) {
+.chat-dummy {
+  visibility: hidden;
+  height: 1px;
+}
+
+/*Mobile screens*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .chat {
     font-size: 15px;
   }
@@ -104,4 +110,8 @@
     bottom: 0;
     background-color: var(--main-color);
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
