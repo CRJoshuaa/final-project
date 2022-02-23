@@ -5,8 +5,6 @@ import { useDispatch } from "react-redux";
 import { enterRoom } from "../features/appSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-import { Link } from "react-router-dom";
-
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
 
@@ -15,8 +13,6 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
   const dispatch = useDispatch();
-
-  const history = useHistory();
 
   const addChannel = () => {
     const channelName = prompt("Please enter the channel name");
@@ -51,9 +47,9 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
-  const DirectMessage = () => {
-    <Link to="/DirectMessage"> Direct Message </Link>;
-  };
+  // const DirectMessage = () => {
+  //   <Link to="/DirectMessage"> Direct Message </Link>;
+  // };
 
   const routeCryptoHome = () => {
     let path = "crypto-home";
