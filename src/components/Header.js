@@ -13,7 +13,7 @@ function Header() {
   return (
     <div className="header">
       {/* Header Left */}
-      <div className="header-left">
+      {/* <div className="header-left">
         <img
           className="header-avatar"
           onClick={() => auth.signOut()}
@@ -21,13 +21,13 @@ function Header() {
           src={user?.photoURL}
         />
         <AccessTimeIcon />
-      </div>
+      </div> */}
 
-      {/* Header Search */}
+      {/* Header Search
       <div className="header-search">
         <SearchIcon />
         <input placeholder="Search!"></input>
-      </div>
+      </div> */}
 
       {/* Header Right */}
       <div className="header-right">

@@ -1,26 +1,109 @@
 .Login-container {
-  background-color: #f8f8f8;
+  background-color: var(--main-color);
   height: 100vh;
   display: grid;
   place-items: center;
 }
 
 .Login-inner-container {
-  padding: 100px;
+  /* display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%; */
+  justify-content: center;
+  padding: 75px;
   text-align: center;
-  background-color: white;
+  background-color: var(--light-1);
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .Login-inner-container > img {
   object-fit: contain;
   height: 100px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .Login-inner-container > button {
-  margin-top: 50px;
   text-transform: inherit !important;
-  background-color: #0a8d48 !important;
+  background-color: var(--green-1) !important;
   color: white;
+}
+
+@media (max-width: 428px) {
+  .Login-inner-container {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    padding: 30px;
+    text-align: center;
+    width: 50%;
+    height: 25%;
+    background-color: var(--light-1);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .Login-inner-container > button {
+    text-transform: inherit !important;
+    background-color: var(--green-1) !important;
+    color: white;
+    margin: 10px;
+  }
+
+  .Login-inner-container > p {
+    /* color: var(--red-1); */
+    display: none;
+  }
+
+  .Login-inner-container > h1 {
+    /* color: var(--red-1); */
+    /* padding-top: 10px; */
+    font-size: 20px;
+  }
+
+  .Login-inner-container > img {
+    object-fit: contain;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 834px) {
+  .Login-inner-container {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    padding: 30px;
+    text-align: center;
+    width: 50%;
+    /* height: 50%; */
+    /* background-color: var(--red-1); */
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .Login-inner-container > button {
+    text-transform: inherit !important;
+    background-color: var(--green-1) !important;
+    color: white;
+    margin: 10px;
+    width: 150px;
+  }
+
+  .Login-inner-container > p {
+    /* color: var(--red-1); */
+    display: none;
+  }
+
+  .Login-inner-container > h1 {
+    /* color: var(--red-1); */
+    /* padding-top: 10px; */
+    font-size: 20px;
+  }
+
+  .Login-inner-container > img {
+    object-fit: contain;
+    height: 100px;
+    margin-top: 20px;
+  }
 }

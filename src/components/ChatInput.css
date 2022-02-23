@@ -1,23 +1,37 @@
 .chat-input {
   border-radius: 20px;
+  width: 100%;
 }
 
 .chat-input > form {
-  position: relative;
+  position: sticky;
   display: flex;
   justify-content: center;
 }
 
 .chat-input > form > input {
   position: fixed;
-  bottom: 30px;
-  width: 60%;
+  bottom: 20px;
+  width: 75%;
   border: 1px solid gray;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px;
   outline: none;
+  background-color: var(--light-2);
 }
 
 .chat-input > form > button {
   display: none !important;
+}
+
+@media only screen and (max-width: 428px) {
+  .chat-input {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .chat-input > form > input {
+    font-size: 15px;
+    padding: 10px;
+  }
 }
