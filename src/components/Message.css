@@ -1,15 +1,16 @@
 .message {
   display: flex;
   align-items: center;
-  padding: 15px;
-}
-
-.current-user {
-  justify-content: right;
+  padding: 15px 25px 15px 15px;
+  width: fit-content;
+  border-radius: 15px;
+  margin: 10px;
+  background-color: var(--light-1);
 }
 
 .message > img {
   height: 50px;
+  width: 50px;
   border-radius: 8px;
 }
 
@@ -17,17 +18,50 @@
   padding-left: 10px;
 }
 
+/*Styling for Messages in general*/
+.message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  margin-left: 0;
+}
+
 .message-info > h4 > span {
+  padding: 5px 0px 5px 0px;
+  margin-left: 0;
   color: gray;
   font-weight: 300;
-  margin-left: 4px;
   font-size: 10px;
+}
+
+/*Styling for Current User*/
+.current-user {
+  margin-left: auto;
+  background-color: var(--dark-2);
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.current-user > .message-info {
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 > span {
+  color: white;
 }
 
 /*Mobile screens*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .message > img {
     height: 30px;
+    width: 30px;
     border-radius: 99px;
   }
 }

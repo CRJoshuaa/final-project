@@ -2,13 +2,13 @@
   display: flex;
   position: fixed;
   right: 0;
-  width: 82%;
-  height: 73px;
+  width: 81.75%;
+  height: fit-content;
   align-items: center;
   justify-content: flex-end;
   background-color: var(--main-color);
   color: white;
-  border: 1px solid var(--dark-1);
+  /* border: 1px solid var(--dark-1); */
 }
 
 .header-right {
@@ -20,9 +20,11 @@
 .header-right > .MuiSvgIcon-root {
   margin-left: auto;
   margin-right: 20px;
+  padding: 2px;
+  height: 20px;
 }
 
-.header-search {
+/* .header-search {
   display: flex;
   flex: 0.4;
   opacity: 1;
@@ -41,7 +43,7 @@
   min-width: 30vw;
   outline: none;
   color: white;
-}
+} */
 
 /*Mobile screens*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {

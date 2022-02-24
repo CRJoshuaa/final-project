@@ -23,6 +23,7 @@ import {
   Settings,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { IconButton } from "@mui/material";
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
@@ -40,33 +41,37 @@ function Sidebar() {
           {/* <AccessTimeIcon /> */}
         </div>
         <div className="sidebar-info">
-          <h2> Slackerz </h2>
+          <h2> Srs Bznz </h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
           </h3>
         </div>
-        <Link
-          to="/settings"
-          style={{ textDecoration: "inherit", color: "inherit" }}
-        >
-          <SettingsIcon />
-        </Link>
+        <IconButton>
+          <Link
+            to="/settings"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
+            <SettingsIcon />
+          </Link>
+        </IconButton>
         {/* <SidebarOption Icon={Settings} title="">
         </SidebarOption> */}
       </div>
       {/* <SidebarOption Icon={Settings} title="Settings" /> */}
-      <SidebarOption Icon={Inbox} title="Mentions & reactions" />
-      <SidebarOption Icon={Drafts} title="Saved items" />
-      <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
-      <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-      <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File browser" />
-      <SidebarOption Icon={ExpandLess} title="Show less" />
-      <hr />
-      <SidebarOption Icon={ExpandMore} title="Channels" />
-      <hr />
-      <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
+      <div className="sidebar-others">
+        <SidebarOption Icon={Inbox} title="Mentions & reactions" />
+        <SidebarOption Icon={Drafts} title="Saved items" />
+        <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
+        <SidebarOption Icon={PeopleAlt} title="People & user groups" />
+        <SidebarOption Icon={Apps} title="Apps" />
+        <SidebarOption Icon={FileCopy} title="File browser" />
+        <SidebarOption Icon={ExpandLess} title="Show less" />
+        <hr />
+        <SidebarOption Icon={ExpandMore} title="Channels" />
+        <hr />
+        <SidebarOption Icon={Add} addChannelOption title="Add Channel" />{" "}
+      </div>
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
           <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
