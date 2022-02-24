@@ -1,4 +1,5 @@
 import React from "react";
+import "./SettingsSideBar.css";
 
 function SettingsSideBar({ Icon, title }) {
   return (
