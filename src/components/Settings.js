@@ -7,6 +7,7 @@ import { EditText, EditTextarea } from "react-edit-text";
 import SettingsSideBar from "./SettingsSideBar";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Modal from "react-modal";
+import "./SettingsSideBar.css";
 
 function Settings() {
   const [user] = useAuthState(auth);
