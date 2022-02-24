@@ -1,9 +1,10 @@
 import React from "react";
 import "./Message.css";
 
-function Message({ message, timestamp, user, userImage }) {
+function Message({ message, timestamp, user, userImage, isCurrentUser }) {
+  console.log(isCurrentUser);
   return (
-    <div className="message">
+    <div className={`message ${isCurrentUser && `current-user`}`}>
       <img src={userImage} alt="" />
       <div className="message-info">
         <h4>
