@@ -7,6 +7,12 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Settings } from "@mui/icons-material";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = "DirectMessage";
+    history.push(path);
+  };
   const dispatch = useDispatch();
 
   const history = useHistory();
@@ -29,6 +35,48 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
       );
     }
   };
+  //setPrivateMessage([...messages, newMessage])
+
+  // const DirectMessage = () => {
+  //   <Link to="/DirectMessage"> Direct Message </Link>;
+  // };
+  // const routeChange = () => {
+  //   let path = "DirectMessage";
+  //   history.push(path);
+  // };
+
+  const routeDirectMessage = () => {
+    let path = "DirectMessage";
+    history.push(path);
+  };
+
+  // const DirectMessage = () => {
+  //   <Link to="/DirectMessage"> Direct Message </Link>;
+  // };
+
+  const routeCryptoHome = () => {
+    let path = "crypto-home";
+    history.push(path);
+  };
+
+  const routeCryptocurrencies = () => {
+    let path = "cryptocurrencies";
+    history.push(path);
+  };
+
+  const routeCryptoExchange = () => {
+    let path = "crypto-exchange";
+    history.push(path);
+  };
+
+  const routeCryptoNews = () => {
+    let path = "crypto-news";
+    history.push(path);
+  };
+
+  // const cryptoNews = () => {
+  //   <Link to="/crypto-news"> Crypto News </Link>;
+  // };
 
   const routeSettings = () => {
     let path = "settings";
