@@ -1,11 +1,14 @@
 import React from "react";
 import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import SettingsIcon from "@mui/icons-material/Settings";
+
 import CreateIcon from "@mui/icons-material/Create";
 
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
+import { Link } from "react-router-dom";
 import {
   Add,
   Apps,
@@ -17,6 +20,7 @@ import {
   Inbox,
   InsertComment,
   PeopleAlt,
+  Settings,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -42,9 +46,16 @@ function Sidebar() {
             {user?.displayName}
           </h3>
         </div>
-        <CreateIcon />
+        <Link
+          to="/settings"
+          style={{ textDecoration: "inherit", color: "inherit" }}
+        >
+          <SettingsIcon />
+        </Link>
+        {/* <SidebarOption Icon={Settings} title="">
+        </SidebarOption> */}
       </div>
-      <SidebarOption Icon={InsertComment} title="Threads" />
+      {/* <SidebarOption Icon={Settings} title="Settings" /> */}
       <SidebarOption Icon={Inbox} title="Mentions & reactions" />
       <SidebarOption Icon={Drafts} title="Saved items" />
       <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
@@ -58,7 +69,9 @@ function Sidebar() {
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
-          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
+            <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          </Link>
         ))}
       </div>
     </div>

@@ -2,11 +2,10 @@
   display: flex;
   position: fixed;
   right: 0;
-  width: 81%;
-  height: 64px;
+  width: 82%;
+  height: 73px;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 0 0 13px;
   background-color: var(--main-color);
   color: white;
   border: 1px solid var(--dark-1);

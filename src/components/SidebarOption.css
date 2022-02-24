@@ -28,6 +28,14 @@
 
 /*Mobile screens*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+  .sidebar-option-cont {
+    display: flex;
+    font-size: 0px;
+    align-items: center;
+    padding-left: 2px;
+    cursor: pointer;
+    color: green;
+  }
 }
 
 /* IPad and Tablets */

@@ -8,9 +8,11 @@ import { useRef, useEffect } from "react";
 import { selectRoomId } from "../features/appSlice";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
+
 import Message from "./Message";
 import { IconButton } from "@mui/material";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
@@ -28,6 +30,8 @@ function Chat() {
         .collection("messages")
         .orderBy("timestamp", "asc")
   );
+
+  const [currentUser] = useAuthState(auth);
 
   useEffect(() => {
     chatRef?.current?.scrollIntoView({
@@ -66,6 +70,7 @@ function Chat() {
                   timestamp={timestamp}
                   user={user}
                   userImage={userImage}
+                  isCurrentUser={user === currentUser.displayName}
                 />
               );
             })}
