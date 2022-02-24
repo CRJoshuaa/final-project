@@ -1,6 +1,5 @@
 .settings-option-cont {
   display: flex;
-  float: left;
   font-size: 12px;
   align-items: center;
   padding-left: 2px;
@@ -9,7 +8,8 @@
 
 .settings-option-cont:hover {
   opacity: 0.9;
-  background-color: #340e36;
+  background-color: var(--light-2);
+  color: var(--accent-1);
 }
 
 .settings-option-cont > h3 {

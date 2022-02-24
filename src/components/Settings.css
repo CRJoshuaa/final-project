@@ -1,12 +1,10 @@
 .settings-cont {
   color: white;
-  background-color: grey;
-  flex: 0.3;
-  border-top: 1px solid #634763;
-  max-width: 260px;
-  margin-top: 100px;
-  margin-left: 50px;
+  background-color: var(--dark-1);
+  border-top: 1px solid var(--accent-1);
+  margin-top: 73px;
   padding: 50px;
+  flex: 0.8;
 }
 
 .header-avatar {
@@ -18,13 +16,13 @@
 
 .settings-header {
   display: flex;
-  border-bottom: 1px solid #634763;
+  border-bottom: 1px solid var(--accent-1);
   padding: 13px;
 }
 
 .settings-header > .MuiSvgIcon-root {
   padding: 8px;
-  color: #634763;
+  color: var(--accent-1);
   font-size: 16px;
   background-color: white;
   border-radius: 999px;
