@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
+import Settings from "./components/Settings";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -40,6 +41,9 @@ function App() {
               <Switch>
                 <Route path="/" exact>
                   <Chat />
+                </Route>
+                <Route path="/settings" exact>
+                  <Settings />
                 </Route>
               </Switch>
             </div>
