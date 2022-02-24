@@ -1,8 +1,9 @@
 import React from "react";
 import "./Message.css";
 
+import ReplyIcon from "@mui/icons-material/Reply";
+
 function Message({ message, timestamp, user, userImage, isCurrentUser }) {
-  console.log(isCurrentUser);
   return (
     <div className={`message ${isCurrentUser && `current-user`}`}>
       <img src={userImage} alt="" />
@@ -14,6 +15,13 @@ function Message({ message, timestamp, user, userImage, isCurrentUser }) {
           </span>
         </h4>
         <p>{message}</p>
+        <div className="message-buttons">
+          <ReplyIcon
+            onClick={() => {
+              console.log(message);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

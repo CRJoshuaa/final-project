@@ -23,6 +23,15 @@
   margin-left: 4px;
   font-size: 10px;
 }
+.message-buttons {
+  display: flex;
+}
+
+.message-buttons > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: 0;
+  font-size: small;
+}
 
 @media only screen and (max-width: 428px) {
   .message > img {
