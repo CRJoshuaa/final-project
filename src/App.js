@@ -8,6 +8,12 @@ import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
+import DirectMessage from "./DirectMessage";
+import CryptoNews from "./components/CryptoNews";
+import CryptoHome from "./components/CryptoHome";
+import Cryptocurrencies from "./components/Cryptocurrencies";
+import CryptoExchange from "./components/CryptoExchange";
+import CryptoDetails from "./components/CryptoDetails";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -40,6 +46,24 @@ function App() {
               <Switch>
                 <Route path="/" exact>
                   <Chat />
+                </Route>
+                {/* <Route path="/DirectMessage" exact>
+                  <DirectMessage /> */}
+                <Route path="/DirectMessage"></Route>
+                <Route path="/crypto-home">
+                  <CryptoHome />
+                </Route>
+                <Route path="/cryptocurrencies">
+                  <Cryptocurrencies />
+                </Route>
+                <Route path="/crypto-exchange">
+                  <CryptoExchange />
+                </Route>
+                <Route path="/crypto/:coinId">
+                  <CryptoDetails />
+                </Route>
+                <Route path="/crypto-news">
+                  <CryptoNews />
                 </Route>
               </Switch>
             </div>
