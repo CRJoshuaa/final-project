@@ -30,7 +30,7 @@ function Settings() {
       .catch((error) => {
         console.log(error);
       });
-    window.location.reload(5);
+    window.location.reload();
   }
 
   function uploadNewNametoFirebase() {
@@ -44,22 +44,22 @@ function Settings() {
       .catch((error) => {
         console.log(error);
       });
-    window.location.reload(5);
+    window.location.reload();
   }
 
   return (
     <div className="settings-cont">
-      <div>
-        <SettingsSideBar Icon={SettingsIcon} title="Account" />
-      </div>
-      <div>
-        <img
-          className="header-avatar"
-          onClick={() => auth.signOut}
-          alt={user?.displayName}
-          src={user?.photoURL}
-        />
-      </div>
+      <SettingsSideBar Icon={SettingsIcon} title="Account" />
+      <SettingsSideBar Icon={SettingsIcon} title="Account" />
+      <SettingsSideBar Icon={SettingsIcon} title="Account" />
+      <SettingsSideBar Icon={SettingsIcon} title="Account" />
+
+      <img
+        className="header-avatar"
+        onClick={() => auth.signOut}
+        alt={user?.displayName}
+        src={user?.photoURL}
+      />
       <button onClick={() => setModalProfilePictureIsOpen(true)}>
         {" "}
         Edit profile picture
@@ -80,7 +80,6 @@ function Settings() {
       </Modal>
       <div>{user?.displayName}</div>
       <button onClick={() => setModalNameIsOpen(true)}>
-        {" "}
         Edit profile name
       </button>
       <Modal isOpen={modalNameIsOpen}>
