@@ -35,8 +35,8 @@ function Chat() {
     });
   }, [roomId, loading]);
 
-  const dummyScroll = document.getElementById("dummy");
-  dummyScroll.scrollTop = dummyScroll.scrollHeight;
+  // const dummyScroll = document.getElementById("dummy");
+  // dummyScroll.scrollTop = dummyScroll.scrollHeight;
 
   return (
     <div className="chat">
