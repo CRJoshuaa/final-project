@@ -13,6 +13,8 @@ function Message({ message, timestamp, user, userImage, isCurrentUser }) {
             {new Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL)}
           </span>
         </h4>
+        {/* <td onClick={() => window.open("someLink", "_blank")}>{message}</td> */}
+        {/* Above is for opening another tab when clicking */}
         <p>{message}</p>
       </div>
     </div>
