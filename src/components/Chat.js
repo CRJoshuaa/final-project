@@ -28,6 +28,7 @@ function Chat() {
         .collection("rooms")
         .doc(roomId)
         .collection("messages")
+
         .orderBy("timestamp", "asc")
   );
 
