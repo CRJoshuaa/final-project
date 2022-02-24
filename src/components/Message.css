@@ -4,6 +4,10 @@
   padding: 15px;
 }
 
+.current-user {
+  justify-content: right;
+}
+
 .message > img {
   height: 50px;
   border-radius: 8px;

@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
+import DirectMessage from "./DirectMessage";
 import CryptoNews from "./components/CryptoNews";
 import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
@@ -46,6 +47,8 @@ function App() {
                 <Route path="/" exact>
                   <Chat />
                 </Route>
+                {/* <Route path="/DirectMessage" exact>
+                  <DirectMessage /> */}
                 <Route path="/DirectMessage"></Route>
                 <Route path="/crypto-home">
                   <CryptoHome />

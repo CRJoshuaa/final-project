@@ -2,10 +2,11 @@ import React from "react";
 import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import CreateIcon from "@mui/icons-material/Create";
-// import AccessTimeIcon from "@mui/icons-material/AccessTime";
+
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
+import { Link, useHistory } from "react-router-dom";
 import {
   Add,
   Apps,
@@ -21,13 +22,13 @@ import {
   Timeline,
   MonetizationOn,
   Home,
+  Chat,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CryptoNews from "./CryptoNews";
 import { useNavigate } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import { color } from "@mui/system";
 
 function Sidebar() {
@@ -65,6 +66,8 @@ function Sidebar() {
       <SidebarOption Icon={FileCopy} title="File browser" /> */}
       <SidebarOption Icon={ExpandLess} title="Show less" />
       <hr />
+      <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
+      {/* <Link to="/DirectMessage"> Direct Message </Link> */}
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
