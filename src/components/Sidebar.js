@@ -21,11 +21,6 @@ import {
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-// import { Link } from "react-router-dom";
-import CryptoNews from "./CryptoNews";
-import { useNavigate } from "react-router-dom";
-import { color } from "@mui/system";
-
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
