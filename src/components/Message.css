@@ -1,5 +1,15 @@
 .message {
   display: flex;
+
+  padding: 15px;
+}
+.reply-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-message {
+  display: flex;
   align-items: center;
   padding: 15px;
 }
@@ -8,7 +18,7 @@
   justify-content: right;
 }
 
-.message > img {
+.current-message > img {
   height: 50px;
   border-radius: 8px;
 }
@@ -31,6 +41,7 @@
   margin-left: auto;
   margin-right: 0;
   font-size: small;
+  color: gray;
 }
 
 @media only screen and (max-width: 428px) {

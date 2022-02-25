@@ -9,15 +9,8 @@ import { db, auth } from "../firebase";
 import { Link, useHistory } from "react-router-dom";
 import {
   Add,
-  Apps,
-  BookmarkBorderOutlined,
-  Drafts,
   ExpandLess,
   ExpandMore,
-  FileCopy,
-  Inbox,
-  InsertComment,
-  PeopleAlt,
   Newspaper,
   Timeline,
   MonetizationOn,
@@ -60,21 +53,22 @@ function Sidebar() {
       <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
       <SidebarOption Icon={Timeline} title="Crypto Exchange" />
       <SidebarOption Icon={Newspaper} title="Crypto News" />
-      {/* <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
-      <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-      <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File browser" /> */}
+
       <SidebarOption Icon={ExpandLess} title="Show less" />
       <hr />
       <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
-      {/* <Link to="/DirectMessage"> Direct Message </Link> */}
+
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
-          <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
-            <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          <Link
+            key={doc.id}
+            to="/"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
+            <SidebarOption id={doc.id} title={doc.data().name} />
           </Link>
         ))}
       </div>
