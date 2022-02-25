@@ -47,19 +47,19 @@ function App() {
                   <Chat />
                 </Route>
                 <Route path="/DirectMessage"></Route>
-                <Route path="/crypto-home">
+                <Route path="/crypto-home" exact>
                   <CryptoHome />
                 </Route>
-                <Route path="/cryptocurrencies">
+                <Route path="/cryptocurrencies" exact>
                   <Cryptocurrencies />
                 </Route>
-                <Route path="/crypto-exchange">
+                <Route path="/crypto-exchange" exact>
                   <CryptoExchange />
                 </Route>
-                <Route path="/crypto/:coinId">
+                <Route path="/crypto/:coinId" exact>
                   <CryptoDetails />
                 </Route>
-                <Route path="/crypto-news">
+                <Route path="/crypto-news" exact>
                   <CryptoNews />
                 </Route>
               </Switch>

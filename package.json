@@ -17,6 +17,7 @@
     "antd": "^4.18.8",
     "axios": "^0.26.0",
     "chart.js": "^3.7.1",
+    "faker": "5.5.3",
     "firebase": "^9.6.6",
     "firebase-tools": "^10.2.0",
     "html-react-parser": "^1.4.8",
@@ -29,6 +30,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
+    "react-select": "^5.2.2",
     "react-spinkit": "^3.0.0",
     "styled-components": "^5.3.3"
   },

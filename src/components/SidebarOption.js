@@ -36,27 +36,23 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
-  const DirectMessage = () => {
-    <Link to="/DirectMessage"> Direct Message </Link>;
-  };
-
   const routeCryptoHome = () => {
-    let path = "crypto-home";
+    let path = "/crypto-home";
     history.push(path);
   };
 
   const routeCryptocurrencies = () => {
-    let path = "cryptocurrencies";
+    let path = "/cryptocurrencies";
     history.push(path);
   };
 
   const routeCryptoExchange = () => {
-    let path = "crypto-exchange";
+    let path = "/crypto-exchange";
     history.push(path);
   };
 
   const routeCryptoNews = () => {
-    let path = "crypto-news";
+    let path = "/crypto-news";
     history.push(path);
   };
 
