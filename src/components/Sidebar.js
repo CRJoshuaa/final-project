@@ -1,12 +1,14 @@
 import React from "react";
 import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import SettingsIcon from "@mui/icons-material/Settings";
+
 import CreateIcon from "@mui/icons-material/Create";
 
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Add,
   ExpandLess,
@@ -47,7 +49,14 @@ function Sidebar() {
             {user?.displayName}
           </h3>
         </div>
-        <CreateIcon />
+        <Link
+          to="/settings"
+          style={{ textDecoration: "inherit", color: "inherit" }}
+        >
+          <SettingsIcon />
+        </Link>
+        {/* <SidebarOption Icon={Settings} title="">
+        </SidebarOption> */}
       </div>
       <SidebarOption Icon={Home} title="Crypto Home" />
       <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />

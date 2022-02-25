@@ -14,6 +14,7 @@ import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoExchange from "./components/CryptoExchange";
 import CryptoDetails from "./components/CryptoDetails";
+import Settings from "./components/Settings";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -64,6 +65,9 @@ function App() {
                 </Route>
                 <Route path="/crypto-news">
                   <CryptoNews />
+                </Route>
+                <Route path="/settings" exact>
+                  <Settings />
                 </Route>
               </Switch>
             </div>

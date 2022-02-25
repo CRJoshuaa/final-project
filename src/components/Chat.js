@@ -43,6 +43,9 @@ function Chat() {
     });
   }, [roomId, loading]);
 
+  // const dummyScroll = document.getElementById("dummy");
+  // dummyScroll.scrollTop = dummyScroll.scrollHeight;
+
   return (
     <div className="chat">
       <div className="chat-header">
@@ -80,7 +83,9 @@ function Chat() {
                 />
               );
             })}
-            {/* <div className="chat-dummy">component mounting</div> */}
+          </div>
+          <div id="dummy" className="chat-dummy">
+            app not scrolling makes 25 y/o cry
           </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>

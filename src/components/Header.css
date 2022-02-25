@@ -2,11 +2,10 @@
   display: flex;
   position: fixed;
   right: 0;
-  width: 100%;
-  height: 64px;
+  width: 82%;
+  height: 73px;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 0 0 13px;
   background-color: var(--main-color);
   color: white;
   border: 1px solid var(--dark-1);
@@ -44,8 +43,13 @@
   color: white;
 }
 
-@media only screen and (max-width: 428px) {
+/*Mobile screens*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .header {
     display: none;
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
