@@ -9,6 +9,7 @@ import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
 import Settings from "./components/Settings";
+import { ThemeProvider } from "./components/ThemeContext";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -28,27 +29,29 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {!user ? (
-          <Login />
-        ) : (
-          <>
-            {/* A <Switch> looks through its children <Route>s and
+        <ThemeProvider>
+          {!user ? (
+            <Login />
+          ) : (
+            <>
+              {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-            <Header />
+              <Header />
 
-            <div className="app-body">
-              <Sidebar />
-              <Switch>
-                <Route path="/" exact>
-                  <Chat />
-                </Route>
-                <Route path="/settings" exact>
-                  <Settings />
-                </Route>
-              </Switch>
-            </div>
-          </>
-        )}
+              <div className="app-body">
+                <Sidebar />
+                <Switch>
+                  <Route path="/" exact>
+                    <Chat />
+                  </Route>
+                  <Route path="/settings" exact>
+                    <Settings />
+                  </Route>
+                </Switch>
+              </div>
+            </>
+          )}
+        </ThemeProvider>
       </Router>
     </div>
   );
