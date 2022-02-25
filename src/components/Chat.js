@@ -9,9 +9,11 @@ import { selectRoomId } from "../features/appSlice";
 import RightBar from "./RightBar";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
+
 import Message from "./Message";
 import { IconButton } from "@mui/material";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
@@ -29,6 +31,8 @@ function Chat() {
         .collection("messages")
         .orderBy("timestamp", "asc")
   );
+
+  const [currentUser] = useAuthState(auth);
 
   useEffect(() => {
     chatRef?.current?.scrollIntoView({
@@ -58,24 +62,14 @@ function Chat() {
               {roomMessages?.docs.map((doc) => {
                 const { message, timestamp, user, userImage } = doc.data();
 
-                return (
-                  <Message
-                    key={doc.id}
-                    message={message}
-                    timestamp={timestamp}
-                    user={user}
-                    userImage={userImage}
-                  />
-                );
-              })}
-              {/* <div className="chat-dummy">component mounting</div> */}
-            </div>
-            <div className="chat-footer">
-              <div className="chat-input" ref={chatRef}>
-                <ChatInput
-                  chatRef={chatRef}
-                  channelName={roomDetails?.data().name}
-                  channelId={roomId}
+              return (
+                <Message
+                  key={doc.id}
+                  message={message}
+                  timestamp={timestamp}
+                  user={user}
+                  userImage={userImage}
+                  isCurrentUser={user === currentUser.displayName}
                 />
               </div>
             </div>

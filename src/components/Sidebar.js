@@ -6,6 +6,7 @@ import CreateIcon from "@mui/icons-material/Create";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
+import { Link, useHistory } from "react-router-dom";
 import {
   Add,
   Apps,
@@ -17,12 +18,23 @@ import {
   Inbox,
   InsertComment,
   PeopleAlt,
+  Newspaper,
+  Timeline,
+  MonetizationOn,
+  Home,
+  Chat,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
+
+// import { Link } from "react-router-dom";
+import CryptoNews from "./CryptoNews";
+import { useNavigate } from "react-router-dom";
+import { color } from "@mui/system";
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
+
   return (
     <div className="sidebar-cont">
       <div className="sidebar-header">
@@ -44,21 +56,26 @@ function Sidebar() {
         </div>
         <CreateIcon />
       </div>
-      <SidebarOption Icon={InsertComment} title="Threads" />
-      <SidebarOption Icon={Inbox} title="Mentions & reactions" />
-      <SidebarOption Icon={Drafts} title="Saved items" />
-      <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
+      <SidebarOption Icon={Home} title="Crypto Home" />
+      <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
+      <SidebarOption Icon={Timeline} title="Crypto Exchange" />
+      <SidebarOption Icon={Newspaper} title="Crypto News" />
+      {/* <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
       <SidebarOption Icon={PeopleAlt} title="People & user groups" />
       <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File browser" />
+      <SidebarOption Icon={FileCopy} title="File browser" /> */}
       <SidebarOption Icon={ExpandLess} title="Show less" />
       <hr />
+      <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
+      {/* <Link to="/DirectMessage"> Direct Message </Link> */}
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
-          <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
+            <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          </Link>
         ))}
       </div>
     </div>

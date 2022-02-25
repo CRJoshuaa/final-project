@@ -4,6 +4,10 @@
   padding: 15px;
 }
 
+.current-user {
+  justify-content: right;
+}
+
 .message > img {
   height: 50px;
   border-radius: 8px;
@@ -16,7 +20,7 @@
 .message-info > h4 > span {
   color: gray;
   font-weight: 300;
-  margin-left: 4px;
+  margin-left: 10px;
   font-size: 10px;
 }
 
