@@ -4,13 +4,16 @@ import { db } from "../firebase";
 import { useDispatch } from "react-redux";
 import { enterRoom } from "../features/appSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
-import { Link } from "react-router-dom";
+import { Settings } from "@mui/icons-material";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
-  const dispatch = useDispatch();
-
   const history = useHistory();
+
+  const routeChange = () => {
+    let path = "DirectMessage";
+    history.push(path);
+  };
+  const dispatch = useDispatch();
 
   const addChannel = () => {
     const channelName = prompt("Please enter the channel name");
@@ -30,11 +33,24 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
       );
     }
   };
+  //setPrivateMessage([...messages, newMessage])
+
+  // const DirectMessage = () => {
+  //   <Link to="/DirectMessage"> Direct Message </Link>;
+  // };
+  // const routeChange = () => {
+  //   let path = "DirectMessage";
+  //   history.push(path);
+  // };
 
   const routeDirectMessage = () => {
     let path = "DirectMessage";
     history.push(path);
   };
+
+  // const DirectMessage = () => {
+  //   <Link to="/DirectMessage"> Direct Message </Link>;
+  // };
 
   const routeCryptoHome = () => {
     let path = "/crypto-home";
@@ -60,13 +76,21 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   //   <Link to="/crypto-news"> Crypto News </Link>;
   // };
 
+  const routeSettings = () => {
+    let path = "/settings";
+    history.push(path);
+  };
+
   return (
     <div
       className="sidebar-option-cont"
       onClick={
-        // addChannelOption ? addChannel : selectChannel
+        // {addChannelOption ? addChannel : selectChannel}
         (e) => {
           switch (e.target.innerText) {
+            case "Settings":
+              routeSettings();
+              break;
             case "Add Channel":
               addChannel();
               break;

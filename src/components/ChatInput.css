@@ -1,42 +1,60 @@
 .chat-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-bar {
   border-radius: 20px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--light-1);
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
-.chat-input > form {
+.chat-bar > form {
   position: sticky;
   display: flex;
   justify-content: center;
   width: 100%;
+  align-items: center;
 }
 
-.chat-input > form > input {
+.chat-bar > form > input {
   position: sticky;
   bottom: 20px;
   width: 90%;
-  border: 1px solid var(--accent-1);
-  border-radius: 10px;
+  border: none;
+  /* border-radius: 10px; */
   padding: 20px;
   outline: none;
   background-color: var(--light-1);
 }
+.chat-bar > form > .MuiSvgIcon-root {
+  padding: 10px;
+}
 
-.chat-input > form > button {
+.chat-bar > form > button {
   left: -50px;
   color: var(--accent-1);
 }
 
 @media only screen and (max-width: 428px) {
-  .chat-input {
+  .chat-bar {
     font-size: 15px;
     padding: 10px;
   }
 
-  .chat-input > form > input {
+  .chat-bar > form > input {
     font-size: 15px;
     padding: 10px;
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
