@@ -6,7 +6,7 @@
   flex: 0.2;
   border-top: 1px solid var(--dark-1);
   border-right: 1px solid var(--dark-1);
-  max-width: 20%;
+  min-width: 20%;
 }
 
 .sidebar-channel {
@@ -109,8 +109,6 @@
   .sidebar-cont {
     display: flex;
     flex-direction: row;
-    color: red;
-    background-color: var(--main-color);
     flex: 1;
     border-top: 1px solid var(--dark-1);
     border-right: 1px solid var(--dark-1);
@@ -126,17 +124,16 @@
   }
 
   .sidebar-channel {
-    overflow-x: scroll;
     display: flex;
     flex-direction: row;
-    overflow-y: hidden;
-    flex: 0.5;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
   }
-  .sidebar-others {
+
+  .sidebar-crypto > .sidebar-option-cont > h3 {
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
-    flex: 0.5;
     font-size: 0px;
   }
 
@@ -169,6 +166,10 @@
     flex: 0.3;
     align-items: center;
     justify-content: center;
+  }
+
+  .sidebar-misc {
+    display: none;
   }
 }
 

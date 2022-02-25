@@ -15,7 +15,7 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   };
   const dispatch = useDispatch();
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const addChannel = () => {
     const channelName = prompt("Please enter the channel name");
@@ -55,22 +55,22 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   // };
 
   const routeCryptoHome = () => {
-    let path = "crypto-home";
+    let path = "/crypto-home";
     history.push(path);
   };
 
   const routeCryptocurrencies = () => {
-    let path = "cryptocurrencies";
+    let path = "/cryptocurrencies";
     history.push(path);
   };
 
   const routeCryptoExchange = () => {
-    let path = "crypto-exchange";
+    let path = "/crypto-exchange";
     history.push(path);
   };
 
   const routeCryptoNews = () => {
-    let path = "crypto-news";
+    let path = "/crypto-news";
     history.push(path);
   };
 
@@ -79,34 +79,34 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   // };
 
   const routeSettings = () => {
-    let path = "settings";
+    let path = "/settings";
     history.push(path);
   };
 
-  const routeDirectMessage = () => {
-    let path = "DirectMessage";
-    history.push(path);
-  };
+  // const routeDirectMessage = () => {
+  //   let path = "DirectMessage";
+  //   history.push(path);
+  // };
 
-  const routeCryptoHome = () => {
-    let path = "crypto-home";
-    history.push(path);
-  };
+  // const routeCryptoHome = () => {
+  //   let path = "crypto-home";
+  //   history.push(path);
+  // };
 
-  const routeCryptocurrencies = () => {
-    let path = "cryptocurrencies";
-    history.push(path);
-  };
+  // const routeCryptocurrencies = () => {
+  //   let path = "cryptocurrencies";
+  //   history.push(path);
+  // };
 
-  const routeCryptoExchange = () => {
-    let path = "crypto-exchange";
-    history.push(path);
-  };
+  // const routeCryptoExchange = () => {
+  //   let path = "crypto-exchange";
+  //   history.push(path);
+  // };
 
-  const routeCryptoNews = () => {
-    let path = "crypto-news";
-    history.push(path);
-  };
+  // const routeCryptoNews = () => {
+  //   let path = "crypto-news";
+  //   history.push(path);
+  // };
 
   return (
     <div

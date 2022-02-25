@@ -1,5 +1,5 @@
 .chat {
-  flex: 0.9;
+  flex: 0.8;
   overflow-y: scroll;
   margin-top: 24px;
   background-color: var(--light-3);
@@ -94,6 +94,7 @@
     background-color: var(--main-color);
     color: white;
     font-size: 15px;
+    height: 65px;
   }
 
   .chat-header-right {

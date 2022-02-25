@@ -70,34 +70,21 @@ function Sidebar() {
         </SidebarOption> */}
       </div>
       {/* <SidebarOption Icon={Settings} title="Settings" /> */}
-      <div className="sidebar-others">
-        <SidebarOption Icon={Inbox} title="Mentions & reactions" />
-        <SidebarOption Icon={Drafts} title="Saved items" />
-        <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
-        <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-        <SidebarOption Icon={Apps} title="Apps" />
-        <SidebarOption Icon={FileCopy} title="File browser" />
+      <div className="sidebar-crypto">
+        <SidebarOption Icon={Home} title="Crypto Home" />
+        <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
+        <SidebarOption Icon={Timeline} title="Crypto Exchange" />
+        <SidebarOption Icon={Newspaper} title="Crypto News" />
+      </div>
+      <div className="sidebar-misc">
         <SidebarOption Icon={ExpandLess} title="Show less" />
         <hr />
+        <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
+        {/* <Link to="/DirectMessage"> Direct Message </Link> */}
         <SidebarOption Icon={ExpandMore} title="Channels" />
         <hr />
-        <SidebarOption Icon={Add} addChannelOption title="Add Channel" />{" "}
+        <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       </div>
-      <SidebarOption Icon={Home} title="Crypto Home" />
-      <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
-      <SidebarOption Icon={Timeline} title="Crypto Exchange" />
-      <SidebarOption Icon={Newspaper} title="Crypto News" />
-      {/* <SidebarOption Icon={BookmarkBorderOutlined} title="Channel browser" />
-      <SidebarOption Icon={PeopleAlt} title="People & user groups" />
-      <SidebarOption Icon={Apps} title="Apps" />
-      <SidebarOption Icon={FileCopy} title="File browser" /> */}
-      <SidebarOption Icon={ExpandLess} title="Show less" />
-      <hr />
-      <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
-      {/* <Link to="/DirectMessage"> Direct Message </Link> */}
-      <SidebarOption Icon={ExpandMore} title="Channels" />
-      <hr />
-      <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
           <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
