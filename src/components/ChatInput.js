@@ -13,7 +13,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import Picker from "emoji-picker-react";
 
-function ChatInput({ channelName, channelId, chatRef, replyDocId }) {
+function ChatInput({
+  channelName,
+  channelId,
+  chatRef,
+  replyDocId,
+  setReplyDocId,
+}) {
   const [input, setInput] = useState("");
   const [user] = useAuthState(auth);
 
@@ -46,6 +52,7 @@ function ChatInput({ channelName, channelId, chatRef, replyDocId }) {
     });
 
     setInput("");
+    setReplyDocId(null);
   };
   return (
     <div className="chat-input">

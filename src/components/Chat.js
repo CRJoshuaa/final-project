@@ -103,6 +103,7 @@ function Chat() {
                 channelName={roomDetails?.data().name}
                 channelId={roomId}
                 replyDocId={replyDocId}
+                setReplyDocId={setReplyDocId}
               />
             </div>
           </div>
