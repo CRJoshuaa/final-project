@@ -20,6 +20,7 @@ import {
   Chat,
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { IconButton } from "@mui/material";
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
@@ -38,33 +39,39 @@ function Sidebar() {
           {/* <AccessTimeIcon /> */}
         </div>
         <div className="sidebar-info">
-          <h2> Slackerz </h2>
+          <h2> Srs Bznz </h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
           </h3>
         </div>
-        <Link
-          to="/settings"
-          style={{ textDecoration: "inherit", color: "inherit" }}
-        >
-          <SettingsIcon />
-        </Link>
+        <IconButton>
+          <Link
+            to="/settings"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
+            <SettingsIcon />
+          </Link>
+        </IconButton>
         {/* <SidebarOption Icon={Settings} title="">
         </SidebarOption> */}
       </div>
-      <SidebarOption Icon={Home} title="Crypto Home" />
-      <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
-      <SidebarOption Icon={Timeline} title="Crypto Exchange" />
-      <SidebarOption Icon={Newspaper} title="Crypto News" />
-
-      <SidebarOption Icon={ExpandLess} title="Show less" />
-      <hr />
-      <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
-
-      <SidebarOption Icon={ExpandMore} title="Channels" />
-      <hr />
-      <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
+      {/* <SidebarOption Icon={Settings} title="Settings" /> */}
+      <div className="sidebar-crypto">
+        <SidebarOption Icon={Home} title="Crypto Home" />
+        <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
+        <SidebarOption Icon={Timeline} title="Crypto Exchange" />
+        <SidebarOption Icon={Newspaper} title="Crypto News" />
+      </div>
+      <div className="sidebar-misc">
+        <SidebarOption Icon={ExpandLess} title="Show less" />
+        <hr />
+        <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
+        {/* <Link to="/DirectMessage"> Direct Message </Link> */}
+        <SidebarOption Icon={ExpandMore} title="Channels" />
+        <hr />
+        <SidebarOption Icon={Add} addChannelOption title="Add Channel" />
+      </div>
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
           <Link
