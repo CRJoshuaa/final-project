@@ -131,9 +131,12 @@
     font-size: 100px;
   }
 
-  .sidebar-crypto > .sidebar-option-cont > h3 {
+  .sidebar-crypto {
     display: flex;
     flex-direction: row;
+    font-size: 0px;
+  }
+  .sidebar-crypto > .sidebar-option-cont > h3 {
     font-size: 0px;
   }
 
