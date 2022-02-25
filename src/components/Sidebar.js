@@ -8,19 +8,11 @@ import CreateIcon from "@mui/icons-material/Create";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
-
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Add,
-  Apps,
-  BookmarkBorderOutlined,
-  Drafts,
   ExpandLess,
   ExpandMore,
-  FileCopy,
-  Inbox,
-  InsertComment,
-  PeopleAlt,
   Newspaper,
   Timeline,
   MonetizationOn,
@@ -29,11 +21,6 @@ import {
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { IconButton } from "@mui/material";
-
-// import { Link } from "react-router-dom";
-import CryptoNews from "./CryptoNews";
-import { useNavigate } from "react-router-dom";
-import { color } from "@mui/system";
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
@@ -87,8 +74,12 @@ function Sidebar() {
       </div>
       <div className="sidebar-channel">
         {channels?.docs.map((doc) => (
-          <Link to="/" style={{ textDecoration: "inherit", color: "inherit" }}>
-            <SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+          <Link
+            key={doc.id}
+            to="/"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
+            <SidebarOption id={doc.id} title={doc.data().name} />
           </Link>
         ))}
       </div>

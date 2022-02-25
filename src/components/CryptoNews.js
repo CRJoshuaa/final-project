@@ -1,6 +1,6 @@
 import React from "react";
 import "./CryptoNews.css";
-import { Typography, Select, Row, Col, Card, Avatar } from "antd";
+import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 

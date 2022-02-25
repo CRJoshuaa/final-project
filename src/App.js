@@ -69,6 +69,9 @@ function App() {
                 <Route path="/crypto-news">
                   <CryptoNews />
                 </Route>
+                <Route path="/settings" exact>
+                  <Settings />
+                </Route>
               </Switch>
             </div>
           </>

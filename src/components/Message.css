@@ -1,14 +1,59 @@
-.message {
+.message-outer {
   display: flex;
-  align-items: center;
-  padding: 15px 25px 15px 15px;
-  width: fit-content;
-  border-radius: 15px;
+
   margin: 10px;
-  background-color: var(--light-1);
 }
 
-.message > img {
+.message.current-user {
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--light-1);
+}
+.reply-message {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 15px;
+  margin: 5px 5px 0px 0px;
+  background-color: var(--light-1);
+  color: black;
+  border-radius: 15px;
+}
+
+.current-message {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.current-user {
+  margin-left: auto;
+  background-color: var(--dark-2);
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.current-user > .message-info {
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 > span {
+  color: white;
+}
+
+.current-message > img {
   height: 50px;
   width: 50px;
   border-radius: 8px;
@@ -18,7 +63,6 @@
   padding-left: 10px;
 }
 
-/*Styling for Messages in general*/
 .message-info > h4 {
   display: flex;
   flex-direction: column;
@@ -32,6 +76,16 @@
   color: gray;
   font-weight: 300;
   font-size: 10px;
+}
+.message-buttons {
+  display: flex;
+}
+
+.message-buttons > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: 0;
+  font-size: small;
+  color: gray;
 }
 
 /*Styling for Current User*/
