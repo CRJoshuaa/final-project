@@ -39,7 +39,7 @@ function Sidebar() {
           {/* <AccessTimeIcon /> */}
         </div>
         <div className="sidebar-info">
-          <h2> Srs Bznz </h2>
+          <h2> Coingram </h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
