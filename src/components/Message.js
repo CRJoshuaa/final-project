@@ -54,6 +54,7 @@ function Message({
               <ReplyIcon
                 onClick={() => {
                   setReplyDocId(messageId);
+                  document.querySelector("#message-input")?.focus();
                 }}
               />
             </div>

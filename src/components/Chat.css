@@ -66,6 +66,8 @@
 }
 
 .chat-messages {
+  display: flex;
+  flex-direction: column;
   min-height: 83%;
   bottom: 0;
 }
