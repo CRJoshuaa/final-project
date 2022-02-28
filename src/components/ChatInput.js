@@ -78,6 +78,7 @@ function ChatInput({
             }}
           />
           <input
+            id="message-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Message #${channelName}`}
