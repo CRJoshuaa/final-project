@@ -8,12 +8,14 @@ import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
-import DirectMessage from "./DirectMessage";
 import CryptoNews from "./components/CryptoNews";
 import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [user, loading] = useAuthState(auth);

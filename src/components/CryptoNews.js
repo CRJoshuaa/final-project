@@ -23,7 +23,13 @@ const CryptoNews = ({ simplified }) => {
       </div>
       <div className="cryptoNews-card">
         {cryptoNews.value.map((news, i) => (
-          <a href={news.url} target="_blank" rel="noreferrer" className="top">
+          <a
+            key={i}
+            href={news.url}
+            target="_blank"
+            rel="noreferrer"
+            className="top"
+          >
             <div className="news-headline">
               <div className="news-img">
                 <img
