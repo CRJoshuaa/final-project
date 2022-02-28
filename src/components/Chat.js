@@ -81,7 +81,7 @@ function Chat() {
                 />
               );
             })}
-            <div id="dummy" className="chat-messages"></div>
+            <div id="dummy"></div>
           </div>
 
           <div className="chat-footer">
