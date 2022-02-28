@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { useDocument } from "react-firebase-hooks/firestore";
 
 import ReplyIcon from "@mui/icons-material/Reply";
+import Linkify from "react-linkify";
 
 function Message({
   messageId,
@@ -28,7 +29,9 @@ function Message({
         {replyDocId && (
           <div className="reply-message">
             <h5>{replyDetails?.data().user}</h5>
-            <p>{replyDetails?.data().message}</p>
+            <Linkify>
+              <p>{replyDetails?.data().message}</p>
+            </Linkify>
           </div>
         )}
 
@@ -43,7 +46,10 @@ function Message({
             </h4>
             {/* <td onClick={() => window.open("someLink", "_blank")}>{message}</td> */}
             {/* Above is for opening another tab when clicking */}
-            <p>{message}</p>
+            <Linkify style={{ textDecoration: "inherit", color: "inherit" }}>
+              <p>{message}</p>
+            </Linkify>
+
             <div className="message-buttons">
               <ReplyIcon
                 onClick={() => {
