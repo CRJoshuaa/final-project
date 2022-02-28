@@ -13,7 +13,7 @@ const demoImage =
 const CryptoNews = ({ simplified }) => {
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: "Cryptocurrency",
-    count: simplified ? 5 : 10,
+    count: simplified ? 3 : 10,
   });
   if (!cryptoNews?.value) return "Loading...";
   return (

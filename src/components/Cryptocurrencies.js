@@ -5,9 +5,6 @@ import "./Cryptocurrencies.css";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Input } from "@material-ui/core";
-// import CryptoCard from "./CryptoCard";
-
-// import "antd/dist/antd.css";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -48,7 +45,6 @@ const Cryptocurrencies = ({ simplified }) => {
               <p>Market Cap: {millify(currency.marketCap)}</p>
               <p>Daily Change: {millify(currency.change)}%</p>
             </div>
-            {/* <CryptoCard /> */}
           </Link>
         </div>
       ))}

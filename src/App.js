@@ -12,7 +12,6 @@ import DirectMessage from "./DirectMessage";
 import CryptoNews from "./components/CryptoNews";
 import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
-import CryptoExchange from "./components/CryptoExchange";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
 
@@ -59,9 +58,6 @@ function App() {
                 </Route>
                 <Route path="/cryptocurrencies" exact>
                   <Cryptocurrencies />
-                </Route>
-                <Route path="/crypto-exchange" exact>
-                  <CryptoExchange />
                 </Route>
                 <Route path="/crypto/:coinId" exact>
                   <CryptoDetails />

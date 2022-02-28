@@ -37,7 +37,7 @@ const CryptoHome = () => {
           <Link to="/crypto-news">Show More</Link>
         </h3>
       </div>
-      {/* <CryptoNews simplified /> */}
+      <CryptoNews simplified />
     </div>
   );
 };

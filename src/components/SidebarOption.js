@@ -48,10 +48,6 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
-  // const DirectMessage = () => {
-  //   <Link to="/DirectMessage"> Direct Message </Link>;
-  // };
-
   const routeCryptoHome = () => {
     let path = "/crypto-home";
     history.push(path);
@@ -62,19 +58,10 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
-  const routeCryptoExchange = () => {
-    let path = "/crypto-exchange";
-    history.push(path);
-  };
-
   const routeCryptoNews = () => {
     let path = "/crypto-news";
     history.push(path);
   };
-
-  // const cryptoNews = () => {
-  //   <Link to="/crypto-news"> Crypto News </Link>;
-  // };
 
   const routeSettings = () => {
     let path = "/settings";
@@ -102,9 +89,6 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
               break;
             case "Cryptocurrencies":
               routeCryptocurrencies();
-              break;
-            case "Crypto Exchange":
-              routeCryptoExchange();
               break;
             case "Crypto News":
               routeCryptoNews();
