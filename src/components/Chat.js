@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chat.css";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -12,10 +12,13 @@ import { db, auth } from "../firebase";
 
 import Message from "./Message";
 import { IconButton } from "@mui/material";
+
 import { useAuthState } from "react-firebase-hooks/auth";
+import Replybox from "./ReplyBox";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
+  const [replyDocId, setReplyDocId] = useState(null);
   const chatRef = useRef(null);
   const roomId = useSelector(selectRoomId);
   const [roomDetails] = useDocument(
@@ -28,6 +31,7 @@ function Chat() {
         .collection("rooms")
         .doc(roomId)
         .collection("messages")
+
         .orderBy("timestamp", "asc")
   );
 
@@ -38,6 +42,9 @@ function Chat() {
       behavior: "smooth",
     });
   }, [roomId, loading]);
+
+  // const dummyScroll = document.getElementById("dummy");
+  // dummyScroll.scrollTop = dummyScroll.scrollHeight;
 
   return (
     <div className="chat">
@@ -58,27 +65,45 @@ function Chat() {
         <>
           <div className="chat-messages">
             {roomMessages?.docs.map((doc) => {
-              const { message, timestamp, user, userImage } = doc.data();
+              const { message, replyDocId, timestamp, user, userImage } =
+                doc.data();
 
               return (
                 <Message
                   key={doc.id}
+                  messageId={doc.id}
                   message={message}
+                  replyDocId={replyDocId}
+                  roomId={roomId}
                   timestamp={timestamp}
                   user={user}
                   userImage={userImage}
                   isCurrentUser={user === currentUser.displayName}
+                  setReplyDocId={setReplyDocId}
                 />
               );
             })}
-            {/* <div className="chat-dummy">component mounting</div> */}
+          </div>
+          <div id="dummy" className="chat-dummy">
+            app not scrolling makes 25 y/o cry
           </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>
+              {replyDocId && (
+                <div>
+                  <Replybox
+                    replyDocId={replyDocId}
+                    setReplyDocId={setReplyDocId}
+                    roomId={roomId}
+                  />
+                </div>
+              )}
               <ChatInput
                 chatRef={chatRef}
                 channelName={roomDetails?.data().name}
                 channelId={roomId}
+                replyDocId={replyDocId}
+                setReplyDocId={setReplyDocId}
               />
             </div>
           </div>

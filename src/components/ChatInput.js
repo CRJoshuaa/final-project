@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
 import "./ChatInput.css";
 import { auth, db } from "../firebase";
@@ -14,7 +13,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import Picker from "emoji-picker-react";
 
-function ChatInput({ channelName, channelId, chatRef }) {
+function ChatInput({
+  channelName,
+  channelId,
+  chatRef,
+  replyDocId,
+  setReplyDocId,
+}) {
   const [input, setInput] = useState("");
   const [user] = useAuthState(auth);
 
@@ -32,17 +37,22 @@ function ChatInput({ channelName, channelId, chatRef }) {
       return false;
     }
 
-    db.collection("rooms").doc(channelId).collection("messages").add({
-      message: input,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: user.displayName,
-      userImage: user.photoURL,
-    });
+    db.collection("rooms")
+      .doc(channelId)
+      .collection("messages")
+      .add({
+        message: input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        user: user.displayName,
+        userImage: user.photoURL,
+        replyDocId: replyDocId ? replyDocId : null,
+      });
     chatRef?.current?.scrollIntoView({
       behavior: "smooth",
     });
 
     setInput("");
+    setReplyDocId(null);
   };
   return (
     <div className="chat-input">

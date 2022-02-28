@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { useDispatch } from "react-redux";
 import { enterRoom } from "../features/appSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Settings } from "@mui/icons-material";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
@@ -47,41 +48,36 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
-  // const DirectMessage = () => {
-  //   <Link to="/DirectMessage"> Direct Message </Link>;
-  // };
-
   const routeCryptoHome = () => {
-    let path = "crypto-home";
+    let path = "/crypto-home";
     history.push(path);
   };
 
   const routeCryptocurrencies = () => {
-    let path = "cryptocurrencies";
-    history.push(path);
-  };
-
-  const routeCryptoExchange = () => {
-    let path = "crypto-exchange";
+    let path = "/cryptocurrencies";
     history.push(path);
   };
 
   const routeCryptoNews = () => {
-    let path = "crypto-news";
+    let path = "/crypto-news";
     history.push(path);
   };
 
-  // const cryptoNews = () => {
-  //   <Link to="/crypto-news"> Crypto News </Link>;
-  // };
+  const routeSettings = () => {
+    let path = "/settings";
+    history.push(path);
+  };
 
   return (
     <div
       className="sidebar-option-cont"
       onClick={
-        // addChannelOption ? addChannel : selectChannel
+        // {addChannelOption ? addChannel : selectChannel}
         (e) => {
           switch (e.target.innerText) {
+            case "Settings":
+              routeSettings();
+              break;
             case "Add Channel":
               addChannel();
               break;
@@ -93,9 +89,6 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
               break;
             case "Cryptocurrencies":
               routeCryptocurrencies();
-              break;
-            case "Crypto Exchange":
-              routeCryptoExchange();
               break;
             case "Crypto News":
               routeCryptoNews();
