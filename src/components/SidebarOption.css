@@ -4,6 +4,7 @@
   align-items: center;
   padding-left: 2px;
   cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 .sidebar-option-cont:hover {
