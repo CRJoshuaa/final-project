@@ -1,14 +1,13 @@
 import React from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Typography, Row, Col, Statistic } from "antd";
 import "./CryptoHome.css";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-
-const { Title } = Typography;
+import Cryptocurrencies from "./Cryptocurrencies";
+import CryptoNews from "./CryptoNews";
 
 const CryptoHome = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   console.log(data);
@@ -16,28 +15,6 @@ const CryptoHome = () => {
   if (isFetching) return "Loading...";
 
   return (
-    // <>
-    //   <Title level={2} className="heading">
-    //     Global Crypto Stats
-    //   </Title>
-    //   <Row>
-    //     <Col span={12}>
-    //       <Statistic title="Total Cryptocurrencies" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Exchanges" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Market Cap" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total 24h Volume" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Markets" value="5" />
-    //     </Col>
-    //   </Row>
-    // </>
     <div className="crypto-home">
       <h1>Crypto Homepage</h1>
       <h3>Total Cryptocurrencies : {globalStats.total}</h3>
@@ -45,6 +22,22 @@ const CryptoHome = () => {
       <h3>Total Market Cap : {millify(globalStats.totalMarketCap)}</h3>
       <h3>Total 24h Volume : {millify(globalStats.total24hVolume)}</h3>
       <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
+
+      <div className="home-heading-container">
+        <h2 className="home-title">Top 10 Cryptocurrencies in the World</h2>
+        <h3 className="show-more">
+          <Link to="/cryptocurrencies">Show More</Link>
+        </h3>
+      </div>
+      <Cryptocurrencies simplified />
+
+      <div className="home-heading-container">
+        <h2 className="home-title">Lastest Crypto News</h2>
+        <h3 className="show-more">
+          <Link to="/crypto-news">Show More</Link>
+        </h3>
+      </div>
+      <CryptoNews simplified />
     </div>
   );
 };
