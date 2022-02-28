@@ -12,6 +12,7 @@ import { db, auth } from "../firebase";
 
 import Message from "./Message";
 import { IconButton } from "@mui/material";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import Replybox from "./ReplyBox";
@@ -37,8 +38,12 @@ function Chat() {
 
   const [currentUser] = useAuthState(auth);
 
-  useEffect(() => {
+  const scrollIntoView = () => {
     document.querySelector("#dummy")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollIntoView();
   }, [roomId, loading, roomMessages]);
 
   // const dummyScroll = document.getElementById("dummy");
@@ -62,6 +67,25 @@ function Chat() {
       {roomDetails && roomMessages && (
         <>
           <div className="chat-messages">
+            <div id="scroll-down">
+              <IconButton
+                style={{ position: "absolute" }}
+                onClick={scrollIntoView}
+              >
+                <KeyboardDoubleArrowDownIcon
+                  style={{
+                    fontSize: "25px",
+                    backgroundColor: "white",
+                    borderRadius: "999px",
+                    marginRight: "0px",
+                    marginLeft: "auto",
+                    position: "relative",
+                    right: "0px",
+                  }}
+                />
+              </IconButton>
+            </div>
+
             {roomMessages?.docs.map((doc) => {
               const { message, replyDocId, timestamp, user, userImage } =
                 doc.data();
