@@ -61,9 +61,7 @@ function ChatInput({
           userImage: user.photoURL,
           replyDocId: replyDocId ? replyDocId : null,
         });
-      chatRef?.current?.scrollIntoView({
-        behavior: "smooth",
-      });
+
       toast.success("Message sent!");
     }
 
@@ -90,7 +88,7 @@ function ChatInput({
               hidden
               type="submit"
               onClick={sendMessage}
-              disabled={!validateMessage()}
+              disabled={input === ""}
             >
               <SendRoundedIcon />
             </IconButton>

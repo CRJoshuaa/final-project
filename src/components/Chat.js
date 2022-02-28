@@ -19,7 +19,7 @@ import Replybox from "./ReplyBox";
 function Chat() {
   // const roomId = useSelector(selectRoomId);
   const [replyDocId, setReplyDocId] = useState(null);
-  const chatRef = useRef(null);
+  const chatRef = useRef();
   const roomId = useSelector(selectRoomId);
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
@@ -38,10 +38,8 @@ function Chat() {
   const [currentUser] = useAuthState(auth);
 
   useEffect(() => {
-    chatRef?.current?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }, [roomId, loading]);
+    document.querySelector("#dummy")?.scrollIntoView({ behavior: "smooth" });
+  }, [roomId, loading, roomMessages]);
 
   // const dummyScroll = document.getElementById("dummy");
   // dummyScroll.scrollTop = dummyScroll.scrollHeight;
@@ -83,10 +81,9 @@ function Chat() {
                 />
               );
             })}
+            <div id="dummy" className="chat-messages"></div>
           </div>
-          <div id="dummy" className="chat-dummy">
-            app not scrolling makes 25 y/o cry
-          </div>
+
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>
               {replyDocId && (
