@@ -124,17 +124,3 @@
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 }
-/* 
-Laptop screens */
-@media only screen and (min-width: 769px) and (max-width: 1094px) {
-  .chat-body {
-    height: 100%;
-  }
-}
-
-/* chonker screen */
-@media only screen and (min-width: 1095px) and (max-width: 1920px) {
-  .chat-body {
-    height: 100%;
-  }
-}
