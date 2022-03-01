@@ -42,12 +42,35 @@ function Chat() {
     document.querySelector("#dummy")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // const isInViewport = (elem) => {
+  //   if (elem) {
+  //     var bounding = elem?.getBoundingClientRect();
+  //     return (
+  //       bounding.top >= 0 &&
+  //       bounding.left >= 0 &&
+  //       bounding.bottom <=
+  //         (window.innerHeight || document.documentElement.clientHeight) &&
+  //       bounding.right <=
+  //         (window.innerWidth || document.documentElement.clientWidth)
+  //     );
+  //   }
+  // };
+
+  // if (isInViewport(document.querySelector("#dummy"))) {
+  //   document.querySelector("#scroll-down").style.visibility = "hidden";
+  // } else {
+  //   document.querySelector("#scroll-down").style.visibility = "visible";
+  // }
+
   useEffect(() => {
     scrollIntoView();
+    // if (isInViewport(document.querySelector("#dummy"))) {
+    //   console.log("visible");
+    //   document.querySelector("#scroll-down").style.visibility = "hidden";
+    // } else {
+    //   console.log("hidden");
+    // }
   }, [roomId, loading, roomMessages]);
-
-  // const dummyScroll = document.getElementById("dummy");
-  // dummyScroll.scrollTop = dummyScroll.scrollHeight;
 
   return (
     <div className="chat">
