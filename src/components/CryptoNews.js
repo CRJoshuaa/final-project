@@ -19,7 +19,7 @@ const CryptoNews = ({ simplified }) => {
   return (
     <div className="cryptoNews-container">
       <div className="news-header">
-        <h1>Crypto News Feed</h1>
+        <h1>Crypto News </h1>
       </div>
       <div className="cryptoNews-card">
         {cryptoNews.value.map((news, i) => (
