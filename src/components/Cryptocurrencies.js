@@ -34,7 +34,7 @@ const Cryptocurrencies = ({ simplified }) => {
         ></Input>
       )}
       {cryptos?.map((currency) => (
-        <div className="crypto-card" key={currency.id}>
+        <div className="crypto-card" key={currency.uuid}>
           <Link to={`/crypto/${currency.uuid}`}>
             <div>
               <h4>

@@ -15,7 +15,7 @@ import {
   NumberOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
-import Select from "react-select";
+// import Select from "react-select";
 
 import {
   useGetCryptoDetailsQuery,
@@ -38,18 +38,18 @@ const CryptoDetails = () => {
 
   if (isFetching) return "Loading...";
 
-  const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
+  // const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
-  // const time = [
-  //   { value: "3h", label: "3 Hours" },
-  //   { value: "24h", label: "24 Hours" },
-  //   { value: "7d", label: "7 Days" },
-  //   { value: "30d", label: "30 Days" },
-  //   { value: "3m", label: "3 Months" },
-  //   { value: "1y", label: "1 Year" },
-  //   { value: "3y", label: "3 Years" },
-  //   { value: "5y", label: "5 Years" },
-  // ];
+  const time = [
+    { value: "3h", label: "3 Hours" },
+    { value: "24h", label: "24 Hours" },
+    { value: "7d", label: "7 Days" },
+    { value: "30d", label: "30 Days" },
+    { value: "3m", label: "3 Months" },
+    { value: "1y", label: "1 Year" },
+    { value: "3y", label: "3 Years" },
+    { value: "5y", label: "5 Years" },
+  ];
 
   const stats = [
     {
@@ -133,16 +133,19 @@ const CryptoDetails = () => {
           statistics, market cap, and supply.
         </p>
       </div>
-      <Select
-        defaultValue="7d"
-        className="select-timeperiod"
-        placeholder="Select Timeperiod"
-        onChange={(value) => setTimeperiod(value)}
-      >
-        {time.map((date) => (
-          <option key={date}>{date}</option>
-        ))}
-      </Select>
+      {/* {
+        <Select
+          defaultValue="7d"
+          className="select-timeperiod"
+          placeholder="Select Timeperiod"
+          onChange={(value) => setTimeperiod(value)}
+          options={time}
+        >
+          {time.map((date) => (
+            <option key={date}>{date}</option>
+          ))}
+        </Select>
+      } */}
       <LineChart
         coinHistory={coinHistory}
         currentPrice={millify(cryptoDetails.price)}
@@ -150,15 +153,18 @@ const CryptoDetails = () => {
       />
       <div className="stats-container">
         <div className="coin-value-statistics">
-          <div className="coin-value-statistics-heading">
+          <div
+            className="coin-value-statistics-heading"
+            key={cryptoDetails.name}
+          >
             <h3 className="coin-details-headings">
               {cryptoDetails.name} Value Statistics
             </h3>
             <p>An overview showing the stats of {cryptoDetails.name}</p>
           </div>
           {stats.map(({ icon, title, value }) => (
-            <div className="coin-stats">
-              <div className="coin-stats-name">
+            <div className="coin-stats" key={title}>
+              <div className="coin-stats-name" key={value}>
                 <p>{icon} </p>
                 <p>{title}</p>
               </div>
@@ -172,8 +178,8 @@ const CryptoDetails = () => {
             <p>An overview showing the stats of all cryptocurrencies</p>
           </div>
           {genericStats.map(({ icon, title, value }) => (
-            <div className="coin-stats">
-              <div className="coin-stats-name">
+            <div className="coin-stats" key={title}>
+              <div className="coin-stats-name" key={value}>
                 <p>{icon}</p>
                 <p>{title}</p>
               </div>
@@ -183,16 +189,16 @@ const CryptoDetails = () => {
         </div>
       </div>
       <div className="coin-desc-link">
-        <div className="coin-desc">
+        <div className="coin-desc" key={cryptoDetails.name}>
           <h3 className="coin-details-heading">
             What is {cryptoDetails.name}?
-            {HTMLReactParser(cryptoDetails.description)}
           </h3>
+          {HTMLReactParser(cryptoDetails.description)}
         </div>
         <div className="coin-links">
           <h3 className="coin-details-heading">{cryptoDetails.name} Link</h3>
           {cryptoDetails.links.map((link) => (
-            <div className="coin-link" key={link.name}>
+            <div className="coin-link" key={link.url}>
               <h5 className="link-name">{link.type}</h5>
               <a href={link.url} target="_blank" rel="noreferrer">
                 {link.name}
