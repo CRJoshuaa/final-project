@@ -1,6 +1,5 @@
 .chat {
   flex: 0.8;
-  overflow-y: scroll;
   /* margin-top: 24px; */
   background-color: var(--light-3);
   width: 100%;

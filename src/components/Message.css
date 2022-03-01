@@ -24,7 +24,7 @@
   transition-duration: 0.5s;
 }
 
-.message:hover {
+.message-details:hover {
   background-color: var(--accent-1);
   color: white;
 }
@@ -53,6 +53,10 @@
 
 .current-user > .message-details {
   background-color: var(--dark-2);
+}
+
+.current-user > .message-details:hover {
+  background-color: var(--accent-1);
 }
 
 .current-user > .message-details > .current-message > .message-info > h4 {
