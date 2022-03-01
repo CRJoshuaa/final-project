@@ -3,11 +3,19 @@
   margin: 10px;
 }
 
-.message.current-user {
-  flex-direction: column;
+.message {
+  display: flex;
+  flex-direction: row;
 }
 
-.message {
+.message-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 999px;
+  margin: 5px;
+}
+
+.message-details {
   display: flex;
   flex-direction: column;
   padding: 5px 15px 5px 5px;
@@ -36,10 +44,30 @@
   padding: 15px;
 }
 
-.current-message > img {
-  height: 50px;
-  width: 50px;
-  border-radius: 8px;
+.current-user {
+  margin-left: auto;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.current-user > .message-details {
+  background-color: var(--dark-2);
+}
+
+.current-user > .message-details > .current-message > .message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.current-user
+  > .message-details
+  > .current-message
+  > .message-info
+  > h4
+  > span {
+  color: white;
 }
 
 .message-info {
@@ -75,15 +103,6 @@
   margin-right: 0;
   font-size: small;
   color: gray;
-}
-
-/*Styling for Current User*/
-.current-user {
-  margin-left: auto;
-  background-color: var(--dark-2);
-  color: white;
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 .current-user > .message-info {
