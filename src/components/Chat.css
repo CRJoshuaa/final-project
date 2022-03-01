@@ -1,12 +1,16 @@
 .chat {
-  flex: 0.8;
-  overflow-y: scroll;
-
-  background-color: var(--light-3);
+  width: 100%;
 }
 
-.chat::-webkit-scrollbar {
+.chat-body::-webkit-scrollbar {
   display: none;
+}
+
+.chat-body {
+  flex: 0.8;
+  overflow-y: scroll;
+  height: 78.9%;
+  background-color: var(--light-3);
 }
 
 .chat-header {
@@ -119,4 +123,18 @@
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+}
+/* 
+Laptop screens */
+@media only screen and (min-width: 769px) and (max-width: 1094px) {
+  .chat-body {
+    height: 100%;
+  }
+}
+
+/* chonker screen */
+@media only screen and (min-width: 1095px) and (max-width: 1920px) {
+  .chat-body {
+    height: 100%;
+  }
 }
