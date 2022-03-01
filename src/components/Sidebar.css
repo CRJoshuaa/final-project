@@ -159,10 +159,6 @@
     align-items: center;
   }
 
-  .sidebar-header > button {
-    /* display: none; */
-  }
-
   .sidebar-left {
     display: flex;
     flex: 0.3;
@@ -177,9 +173,9 @@
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .sidebar-header > button {
-    /* display: none; */
-  }
+  /* .sidebar-header > button {
+    display: none;
+  } */
 
   .sidebar-avatar {
     cursor: pointer;
@@ -199,6 +195,10 @@
     font-size: 13px;
     font-weight: 400;
     align-items: center;
+  }
+
+  .sidebar-header {
+    /* display: none; */
   }
 }
 

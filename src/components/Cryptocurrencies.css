@@ -1,8 +1,71 @@
+.cryptocurrency-page {
+  background-color: var(--light-1);
+  width: 100%;
+  /* padding-top: 25px; */
+  overflow-y: scroll;
+}
+
+.cryptocurrency-page::-webkit-scrollbar {
+  display: none;
+}
+
+.cryptocurrency-header {
+  padding: 14px;
+  background-color: var(--main-color);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.crypto-search > input {
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
 .crypto-card-container {
   flex: 0.7;
   flex-grow: 1;
-  overflow-y: scroll;
-  margin-top: 100px;
+  margin-top: 10px;
+  display: flex;
+  padding: 0 20px 0 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  margin-left: 50px;
+.ranking {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.crypto-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--light-3);
+  border-radius: 15px;
+  border: 1px solid rgb(0 26 114);
+  flex-basis: 250px;
+}
+
+.crypto-card .crypto-image {
+  width: 30px;
+}
+
+.crypto-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+}
+
+.crypto-info {
+  padding: 10px;
 }

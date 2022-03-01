@@ -386,12 +386,12 @@ a:hover {
 .crypto-card-container {
   min-height: 65vh !important;
 }
-.crypto-card {
+/* .crypto-card {
   min-width: 250px;
 }
 .crypto-card .crypto-image {
   width: 35px;
-}
+} */
 .select-timeperiod {
   width: 200px !important;
   margin-top: 20px !important;
