@@ -16,6 +16,7 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import Replybox from "./ReplyBox";
+import LandingPage from "./LandingPage";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
@@ -74,63 +75,70 @@ function Chat() {
 
   return (
     <div className="chat">
-      <div className="chat-header">
-        <div className="chat-header-left">
-          <h4>
-            <strong>#{roomDetails?.data().name}</strong>
-          </h4>
-          <IconButton>
-            <StarBorderOutlinedIcon />
-          </IconButton>
-        </div>
-        <div className="chat-header-right">
-          <InfoOutlinedIcon /> Details
-        </div>
-      </div>
-      {roomDetails && roomMessages && (
+      {!roomId && <LandingPage user={currentUser} />}
+      {roomId && (
         <>
-          <div className="chat-messages">
-            <div id="scroll-down">
-              <IconButton
-                style={{ position: "absolute" }}
-                onClick={scrollIntoView}
-              >
-                <KeyboardDoubleArrowDownIcon
-                  style={{
-                    fontSize: "25px",
-                    backgroundColor: "white",
-                    borderRadius: "999px",
-                    marginRight: "0px",
-                    marginLeft: "auto",
-                    position: "relative",
-                    right: "0px",
-                  }}
-                />
+          <div className="chat-header">
+            <div className="chat-header-left">
+              <h4>
+                <strong>#{roomDetails?.data().name}</strong>
+              </h4>
+              <IconButton>
+                <StarBorderOutlinedIcon />
               </IconButton>
             </div>
-
-            {roomMessages?.docs.map((doc) => {
-              const { message, replyDocId, timestamp, user, userImage } =
-                doc.data();
-
-              return (
-                <Message
-                  key={doc.id}
-                  messageId={doc.id}
-                  message={message}
-                  replyDocId={replyDocId}
-                  roomId={roomId}
-                  timestamp={timestamp}
-                  user={user}
-                  userImage={userImage}
-                  isCurrentUser={user === currentUser.displayName}
-                  setReplyDocId={setReplyDocId}
-                />
-              );
-            })}
-            <div id="dummy" className="chat-messages"></div>
+            <div className="chat-header-right">
+              <InfoOutlinedIcon /> Details
+            </div>
           </div>
 
+          <div className="chat-body">
+            {roomDetails && roomMessages && (
+              <>
+                <div className="chat-messages">
+                  <div id="scroll-down">
+                    <IconButton
+                      style={{ position: "absolute" }}
+                      onClick={scrollIntoView}
+                    >
+                      <KeyboardDoubleArrowDownIcon
+                        style={{
+                          fontSize: "25px",
+                          backgroundColor: "white",
+                          borderRadius: "999px",
+                          marginRight: "0px",
+                          marginLeft: "auto",
+                          position: "relative",
+                          right: "0px",
+                        }}
+                      />
+                    </IconButton>
+                  </div>
+
+                  {roomMessages?.docs.map((doc) => {
+                    const { message, replyDocId, timestamp, user, userImage } =
+                      doc.data();
+
+                    return (
+                      <Message
+                        key={doc.id}
+                        messageId={doc.id}
+                        message={message}
+                        replyDocId={replyDocId}
+                        roomId={roomId}
+                        timestamp={timestamp}
+                        user={user}
+                        userImage={userImage}
+                        isCurrentUser={user === currentUser.displayName}
+                        setReplyDocId={setReplyDocId}
+                      />
+                    );
+                  })}
+                  <div id="dummy" className="chat-messages"></div>
+                </div>
+              </>
+            )}
+          </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>
               {replyDocId && (
