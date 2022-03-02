@@ -4,10 +4,21 @@
   overflow-y: scroll;
   /* margin-top: 25px; */
   background-color: var(--light-1);
+  animation: 0.5s loadEaseIn;
+  transition-duration: 0.5s;
 }
 
 .crypto-home::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes loadEaseIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .cryptohome-header {
@@ -16,6 +27,7 @@
   padding: 14px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .crypto-stats {
@@ -31,11 +43,16 @@
   border-radius: 15px;
   transition-duration: 0.5s;
   margin-top: 10px;
-  border: 1px solid var(--accent-1);
+  /* border: 1px solid var(--accent-1); */
 }
 
 .crypto-stats:hover {
   box-shadow: 0 8px 16px 0 rgb(152 193 217);
+}
+
+.total-table {
+  display: flex;
+  flex-direction: row;
 }
 
 .top-ten-container {
@@ -71,4 +88,9 @@
 
 a {
   text-decoration: none;
+}
+
+.crypto-news-cont {
+  display: flex;
+  flex-direction: column;
 }

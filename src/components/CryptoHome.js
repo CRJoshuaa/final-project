@@ -21,31 +21,33 @@ const CryptoHome = () => {
       </div>
       <div className="crypto-stats">
         <h2>Cryptocurrency Statistics</h2>
-        <h3>Total Cryptocurrencies : {globalStats.total}</h3>
-        <h3>Total Exchanges : {millify(globalStats.totalExchanges)}</h3>
-        <h3>Total Market Cap : {millify(globalStats.totalMarketCap)}</h3>
-        <h3>Total 24h Volume : {millify(globalStats.total24hVolume)}</h3>
-        <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
+        <div className="total-table">
+          <div className="total-column">
+            <p>Total Cryptocurrencies </p>
+            <p>Total Exchanges </p>
+            <p>Total Market Cap </p>
+            <p>Total 24h Volume </p>
+            <p>Total Markets </p>
+          </div>
+          <div className="numbers-column">
+            <p>: {globalStats.total}</p>
+            <p>: {millify(globalStats.totalExchanges)}</p>
+            <p>: {millify(globalStats.totalMarketCap)}</p>
+            <p>: {millify(globalStats.total24hVolume)}</p>
+            <p>: {millify(globalStats.totalMarkets)}</p>
+          </div>
+        </div>
       </div>
       <div className="top-ten-container">
-        {/* <div className="top-ten-title">
-          <h2>Top 10 Cryptocurrencies in the World</h2>
-        </div> */}
-        <h3 className="show-more"></h3>
-        <div className="top-ten-list">
-          {" "}
-          <Cryptocurrencies simplified />
-        </div>
+        <h3 className="show-more"></h3> <Cryptocurrencies simplified />
         <Link to="/cryptocurrencies">Show More</Link>
       </div>
 
-      <div className="home-heading-container">
-        {/* <h2 className="home-title">Lastest Crypto News</h2> */}
-      </div>
-      <CryptoNews simplified />
-      <h3 className="show-more">
+      <div className="crypto-news-cont">
+        <h3 className="show-more"></h3>
+        <CryptoNews simplified />
         <Link to="/crypto-news">Show More</Link>
-      </h3>
+      </div>
     </div>
   );
 };
