@@ -3,6 +3,7 @@
   /* margin-top: 24px; */
   background-color: var(--light-3);
   width: 100%;
+  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
 }
 
 .chat-body::-webkit-scrollbar {
@@ -13,7 +14,7 @@
   flex: 0.8;
   overflow-y: scroll;
   height: 78.9%;
-  background-color: var(--light-3);
+  background-color: transparent;
 }
 
 .chat-header {
@@ -69,7 +70,7 @@
   padding: 25px;
   position: sticky;
   bottom: 0;
-  background-color: var(--light-3);
+  background-color: transparent;
 }
 
 .chat-messages {
@@ -116,11 +117,10 @@
 
   .chat-footer {
     display: flex;
-    padding: 25px;
-    border-top: 1px solid lightgray;
+
     position: sticky;
     bottom: 0;
-    background-color: var(--main-color);
+    background-color: transparent;
   }
 }
 
