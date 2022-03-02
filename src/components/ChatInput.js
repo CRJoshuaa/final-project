@@ -51,6 +51,7 @@ function ChatInput({
     }
 
     if (validateMessage()) {
+      setShowEmojiPick(false);
       db.collection("rooms")
         .doc(channelId)
         .collection("messages")
