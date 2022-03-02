@@ -29,6 +29,7 @@ function Chat() {
         .collection("rooms")
         .doc(roomId)
         .collection("messages")
+
         .orderBy("timestamp", "asc")
   );
 
@@ -59,17 +60,29 @@ function Chat() {
         {roomDetails && roomMessages && (
           <>
             <div className="chat-messages">
-              {roomMessages?.docs.map((doc) => {
-                const { message, timestamp, user, userImage } = doc.data();
+              <div>
+                {roomMessages?.docs.map((doc) => {
+                  const { message, timestamp, user, userImage } = doc.data();
 
-              return (
-                <Message
-                  key={doc.id}
-                  message={message}
-                  timestamp={timestamp}
-                  user={user}
-                  userImage={userImage}
-                  isCurrentUser={user === currentUser.displayName}
+                  return (
+                    <Message
+                      key={doc.id}
+                      message={message}
+                      timestamp={timestamp}
+                      user={user}
+                      userImage={userImage}
+                      isCurrentUser={user === currentUser.displayName}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+            <div className="chat-footer">
+              <div className="chat-input" ref={chatRef}>
+                <ChatInput
+                  chatRef={chatRef}
+                  channelName={roomDetails?.data().name}
+                  channelId={roomId}
                 />
               </div>
             </div>

@@ -68,6 +68,12 @@
 .chat-messages {
   min-height: 82%;
   bottom: 0;
+  overflow-y: scroll;
+}
+
+
+.chat-messages::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 428px) {

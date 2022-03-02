@@ -1,8 +1,8 @@
 .rightbar-cont {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--main-color);
-  padding-top: 130px;
+  float: right;
+  background-color: #3c4552;
+  align-items: flex-end;
+ 
 }
 
 .icons {
@@ -10,15 +10,13 @@
   justify-content: space-between;
   display: flex;
   height: 35%;
+
   flex-direction: column;
   padding-right: 12px;
 }
 
 .icons > button {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: var(--light-1);
-}
-
-.icons > button:hover {
 }

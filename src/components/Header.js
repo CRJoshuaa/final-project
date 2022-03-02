@@ -30,9 +30,7 @@ function Header() {
       </div> */}
 
       {/* Header Right */}
-      <div className="header-right">
-        <HelpOutlineIcon />
-      </div>
+      <div className="header-right">{/* <HelpOutlineIcon /> */}</div>
     </div>
   );
 }
