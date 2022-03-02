@@ -28,9 +28,9 @@ const CryptoHome = () => {
         <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
       </div>
       <div className="top-ten-container">
-        <div className="top-ten-title">
+        {/* <div className="top-ten-title">
           <h2>Top 10 Cryptocurrencies in the World</h2>
-        </div>
+        </div> */}
         <h3 className="show-more"></h3>
         <div className="top-ten-list">
           {" "}

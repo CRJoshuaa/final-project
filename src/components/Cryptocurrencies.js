@@ -17,9 +17,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const top3 = cryptos.slice(0, 3);
   const theRest = cryptos.slice(3, 101);
 
-  const swapPositions = (top3, a, b, c) => {
-    [top3[a], top3[b], top3[c]] = [top3[b], top3[a], top3[c]];
-  };
+  console.log(top3);
 
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
@@ -50,20 +48,20 @@ const Cryptocurrencies = ({ simplified }) => {
         <div className="leaderboard">
           {top3.map((currency) => (
             <div className="crypto-lead" key={currency.id}>
-              <div className="crypto-rank">
-                <h2>{`${currency.rank}`}</h2>
+              <div className="crypto-deets">
+                <div className="leader-rank">
+                  <h2>{`${currency.rank}`}</h2>
+                </div>
+                <img className="lead-image" src={currency.iconUrl} />
+                <Link to={`/crypto/${currency.uuid}`}>
+                  <div className="crypto-name">{`${currency.name}`} </div>
+                  <div className="crypto-leader-info">
+                    <p>Price: {millify(currency.price)}</p>
+                    <p>Market Cap: {millify(currency.marketCap)}</p>
+                    <p>Daily Change: {millify(currency.change)}%</p>
+                  </div>
+                </Link>
               </div>
-              <Link to={`/crypto/${currency.uuid}`}>
-                <div className="crypto-name">
-                  <img className="lead-image" src={currency.iconUrl} />
-                  {`${currency.name}`}{" "}
-                </div>
-                <div className="crypto-leader-info">
-                  <p>Price: {millify(currency.price)}</p>
-                  <p>Market Cap: {millify(currency.marketCap)}</p>
-                  <p>Daily Change: {millify(currency.change)}%</p>
-                </div>
-              </Link>
             </div>
           ))}
         </div>
