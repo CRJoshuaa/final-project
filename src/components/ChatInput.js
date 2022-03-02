@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
 import "./ChatInput.css";
 import { auth, db } from "../firebase";
@@ -14,7 +13,18 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import Picker from "emoji-picker-react";
 
-function ChatInput({ channelName, channelId, chatRef }) {
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
+
+function ChatInput({
+  channelName,
+  channelId,
+  chatRef,
+  replyDocId,
+  setReplyDocId,
+}) {
   const [input, setInput] = useState("");
   const [user] = useAuthState(auth);
 
@@ -25,6 +35,14 @@ function ChatInput({ channelName, channelId, chatRef }) {
     console.log(emojiObject.emoji);
   };
 
+  const validateMessage = () => {
+    if (input === "") {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   const sendMessage = (e) => {
     e.preventDefault(); //Prevents refresh
 
@@ -32,17 +50,24 @@ function ChatInput({ channelName, channelId, chatRef }) {
       return false;
     }
 
-    db.collection("rooms").doc(channelId).collection("messages").add({
-      message: input,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: user.displayName,
-      userImage: user.photoURL,
-    });
-    chatRef?.current?.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (validateMessage()) {
+      setShowEmojiPick(false);
+      db.collection("rooms")
+        .doc(channelId)
+        .collection("messages")
+        .add({
+          message: input,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          user: user.displayName,
+          userImage: user.photoURL,
+          replyDocId: replyDocId ? replyDocId : null,
+        });
+
+      toast.success("Message sent!");
+    }
 
     setInput("");
+    setReplyDocId(null);
   };
   return (
     <div className="chat-input">
@@ -54,13 +79,19 @@ function ChatInput({ channelName, channelId, chatRef }) {
             }}
           />
           <input
+            id="message-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Message #${channelName}`}
           />
 
           <div className="chat-input-options">
-            <IconButton hidden type="submit" onClick={sendMessage}>
+            <IconButton
+              hidden
+              type="submit"
+              onClick={sendMessage}
+              disabled={input === ""}
+            >
               <SendRoundedIcon />
             </IconButton>
           </div>
@@ -71,6 +102,8 @@ function ChatInput({ channelName, channelId, chatRef }) {
         <Picker
           onEmojiClick={onEmojiPick}
           pickerStyle={{ width: "100%", height: "200px" }}
+          disableSearchBar
+          native={true}
         />
       )}
     </div>
@@ -78,3 +111,6 @@ function ChatInput({ channelName, channelId, chatRef }) {
 }
 
 export default ChatInput;
+
+//website regex
+//(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})
