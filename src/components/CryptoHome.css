@@ -6,6 +6,10 @@
   background-color: var(--light-1);
 }
 
+.crypto-home::-webkit-scrollbar {
+  display: none;
+}
+
 .cryptohome-header {
   background-color: var(--main-color);
   color: white;

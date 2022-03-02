@@ -14,8 +14,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
   console.log(cryptos);
 
-  const top3 = cryptos.slice(0, 3);
-  const theRest = cryptos.slice(3, 101);
+  const top3 = cryptos?.slice(0, 3);
+  const theRest = cryptos?.slice(3, 101);
 
   console.log(top3);
 
@@ -44,9 +44,9 @@ const Cryptocurrencies = ({ simplified }) => {
           ></Input>
         )}
       </div>
-      <div className="top3">
-        <div className="leaderboard">
-          {top3.map((currency) => (
+      <div className="leaderboard">
+        {top3 &&
+          top3.map((currency) => (
             <div className="crypto-lead" key={currency.id}>
               <div className="crypto-deets">
                 <div className="leader-rank">
@@ -64,27 +64,27 @@ const Cryptocurrencies = ({ simplified }) => {
               </div>
             </div>
           ))}
-        </div>
       </div>
       <div className="crypto-card-container">
-        {theRest?.map((currency) => (
-          <div className="crypto-card" key={currency.id}>
-            <div className="crypto-rank">
-              <h2>{`${currency.rank}`}</h2>
+        {cryptos &&
+          theRest?.map((currency) => (
+            <div className="crypto-card" key={currency.id}>
+              <div className="crypto-rank">
+                <h2>{`${currency.rank}`}</h2>
+              </div>
+              <Link to={`/crypto/${currency.uuid}`}>
+                <div className="crypto-name">
+                  <img className="crypto-image" src={currency.iconUrl} />
+                  {`${currency.name}`}{" "}
+                </div>
+                <div className="crypto-info">
+                  <p>Price: {millify(currency.price)}</p>
+                  <p>Market Cap: {millify(currency.marketCap)}</p>
+                  <p>Daily Change: {millify(currency.change)}%</p>
+                </div>
+              </Link>
             </div>
-            <Link to={`/crypto/${currency.uuid}`}>
-              <div className="crypto-name">
-                <img className="crypto-image" src={currency.iconUrl} />
-                {`${currency.name}`}{" "}
-              </div>
-              <div className="crypto-info">
-                <p>Price: {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}%</p>
-              </div>
-            </Link>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );
