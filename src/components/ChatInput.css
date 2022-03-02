@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .chat-bar {
   border-radius: 20px;
   width: 100%;
@@ -46,10 +47,15 @@
   .chat-bar {
     font-size: 15px;
     padding: 10px;
+    margin-bottom: 100px;
   }
 
   .chat-bar > form > input {
     font-size: 15px;
     padding: 10px;
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }

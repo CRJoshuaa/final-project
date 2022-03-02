@@ -1,32 +1,122 @@
+.message-outer {
+  display: flex;
+  margin: 10px;
+}
+
 .message {
+  display: flex;
+  flex-direction: row;
+}
+
+.message-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 999px;
+  margin: 5px;
+}
+
+.message-details {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--light-1);
+}
+.reply-message {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 15px;
+  margin: 5px 5px 0px 0px;
+  background-color: var(--light-1);
+  color: black;
+  border-radius: 15px;
+}
+
+.current-message {
   display: flex;
   align-items: center;
   padding: 15px;
 }
 
 .current-user {
-  justify-content: right;
+  margin-left: auto;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.message > img {
-  height: 50px;
-  border-radius: 8px;
+.current-user > .message-details {
+  background-color: var(--dark-2);
+}
+
+.current-user > .message-details > .current-message > .message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.current-user
+  > .message-details
+  > .current-message
+  > .message-info
+  > h4
+  > span {
+  color: white;
 }
 
 .message-info {
   padding-left: 10px;
 }
 
-.message-info > h4 > span {
-  color: gray;
-  font-weight: 300;
-  margin-left: 10px;
-  font-size: 10px;
+.message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  margin-left: 0;
 }
 
-@media only screen and (max-width: 428px) {
+.message-info > h4 > span {
+  padding: 5px 0px 5px 0px;
+  margin-left: 0;
+  color: gray;
+  font-weight: 300;
+  font-size: 10px;
+}
+.message-buttons {
+  display: flex;
+}
+
+.message-buttons > .MuiSvgIcon-root {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: small;
+  color: gray;
+}
+
+.current-user > .message-info {
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.current-user > .message-info > h4 > span {
+  color: white;
+}
+
+/*Mobile screens*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .message > img {
     height: 30px;
+    width: 30px;
     border-radius: 99px;
   }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
