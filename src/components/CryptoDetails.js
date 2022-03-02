@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./CryptoDetails.css";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import millify from "millify";
@@ -124,16 +123,22 @@ const CryptoDetails = () => {
 
   return (
     <div className="coin-detail-container">
-      <div className="coin-heading-container">
-        <h2 className="coin-name">
-          {cryptoDetails.name} ({cryptoDetails.symbol}) Price
-        </h2>
-        <p>
-          {cryptoDetails.name} live price in US dollars (USD). View value
-          statistics, market cap, and supply.
-        </p>
+      <div className="coin-detail-heading">
+        <h1>
+          All About {cryptoDetails.name} ({cryptoDetails.symbol})
+        </h1>
       </div>
-      {/* {
+      <div className="coin-detail-body">
+        <div className="coin-heading-container">
+          <h2 className="coin-name">
+            {cryptoDetails.name} ({cryptoDetails.symbol}) Price
+          </h2>
+          <p>
+            {cryptoDetails.name} live price in US dollars (USD). View value
+            statistics, market cap, and supply.
+          </p>
+        </div>
+        {/* {
         <Select
           defaultValue="7d"
           className="select-timeperiod"
@@ -142,69 +147,72 @@ const CryptoDetails = () => {
           options={time}
         >
           {time.map((date) => (
-            <option key={date}>{date}</option>
+            <option key={date}>
+              {date}
+            </option>
           ))}
         </Select>
-      } */}
-      <LineChart
-        coinHistory={coinHistory}
-        currentPrice={millify(cryptoDetails.price)}
-        coinName={cryptoDetails.name}
-      />
-      <div className="stats-container">
-        <div className="coin-value-statistics">
-          <div
-            className="coin-value-statistics-heading"
-            key={cryptoDetails.name}
-          >
-            <h3 className="coin-details-headings">
-              {cryptoDetails.name} Value Statistics
+        } */}
+        <LineChart
+          coinHistory={coinHistory}
+          currentPrice={millify(cryptoDetails.price)}
+          coinName={cryptoDetails.name}
+        />
+        <div className="stats-container">
+          <div className="coin-value-statistics">
+            <div
+              className="coin-value-statistics-heading"
+              key={cryptoDetails.name}
+            >
+              <h3 className="coin-details-headings">
+                {cryptoDetails.name} Value Statistics
+              </h3>
+              <p>An overview showing the stats of {cryptoDetails.name}</p>
+            </div>
+            {stats.map(({ icon, title, value }) => (
+              <div className="coin-stats" key={title}>
+                <div className="coin-stats-name" key={value}>
+                  <p>{icon} </p>
+                  <p>{title}</p>
+                </div>
+                <p className="stats">{value}</p>
+              </div>
+            ))}
+          </div>
+          <div className="other-stats-info">
+            <div className="coin-value-statistics-heading">
+              <h3 className="coin-details-headings">Other Statistics</h3>
+              <p>An overview showing the stats of all cryptocurrencies</p>
+            </div>
+            {genericStats.map(({ icon, title, value }) => (
+              <div className="coin-stats" key={title}>
+                <div className="coin-stats-name" key={value}>
+                  <p>{icon}</p>
+                  <p>{title}</p>
+                </div>
+                <p className="stats">{value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="coin-desc-link">
+          <div className="coin-desc">
+            <h3 className="coin-details-heading">
+              What is {cryptoDetails.name}?
             </h3>
-            <p>An overview showing the stats of {cryptoDetails.name}</p>
+            {HTMLReactParser(cryptoDetails.description)}
           </div>
-          {stats.map(({ icon, title, value }) => (
-            <div className="coin-stats" key={title}>
-              <div className="coin-stats-name" key={value}>
-                <p>{icon} </p>
-                <p>{title}</p>
+          <div className="coin-links">
+            <h3 className="coin-details-heading">{cryptoDetails.name} Link</h3>
+            {cryptoDetails.links.map((link) => (
+              <div className="coin-link" key={link.url}>
+                <h5 className="link-name">{link.type}</h5>
+                <a href={link.url} target="_blank" rel="noreferrer">
+                  {link.name}
+                </a>
               </div>
-              <p className="stats">{value}</p>
-            </div>
-          ))}
-        </div>
-        <div className="other-stats-info">
-          <div className="coin-value-statistics-heading">
-            <h3 className="coin-details-headings">Other Statistics</h3>
-            <p>An overview showing the stats of all cryptocurrencies</p>
+            ))}
           </div>
-          {genericStats.map(({ icon, title, value }) => (
-            <div className="coin-stats" key={title}>
-              <div className="coin-stats-name" key={value}>
-                <p>{icon}</p>
-                <p>{title}</p>
-              </div>
-              <p className="stats">{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="coin-desc-link">
-        <div className="coin-desc" key={cryptoDetails.name}>
-          <h3 className="coin-details-heading">
-            What is {cryptoDetails.name}?
-          </h3>
-          {HTMLReactParser(cryptoDetails.description)}
-        </div>
-        <div className="coin-links">
-          <h3 className="coin-details-heading">{cryptoDetails.name} Link</h3>
-          {cryptoDetails.links.map((link) => (
-            <div className="coin-link" key={link.url}>
-              <h5 className="link-name">{link.type}</h5>
-              <a href={link.url} target="_blank" rel="noreferrer">
-                {link.name}
-              </a>
-            </div>
-          ))}
         </div>
       </div>
     </div>

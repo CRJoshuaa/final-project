@@ -75,7 +75,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </h5>
         </div>
       </div>
-      <Line data={data} options={options} />
+      <Line data={data} options={options} className="crypto-chart" />
     </>
   );
 };

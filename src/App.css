@@ -25,7 +25,7 @@
   margin-bottom: 40px;
 }
 
-/* All Crypto Css below */
+/* All Crypto CSS below */
 
 :root {
   --text-primary: #000;
@@ -162,7 +162,18 @@ a:hover {
 }
 
 .coin-detail-container {
-  margin: 30px;
+  flex: 0.7;
+  flex-grow: 1;
+  overflow-y: scroll;
+  margin-top: 0px;
+
+  padding: 1%;
+}
+
+.coin-detail-heading {
+  padding: 2%;
+  background-color: var(--main-color);
+  color: white;
 }
 
 .coin-heading-container {
@@ -189,9 +200,10 @@ a:hover {
 
 .stats-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 40px;
+  margin: 30px;
 }
 
 .stats-container h2 {
@@ -258,6 +270,14 @@ a:hover {
 
 .coin-desc {
   flex: 0.5;
+  margin-left: 1%;
+}
+
+.coin-desc > p {
+  flex: 0.5;
+  padding-bottom: 4%;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 .coin-links {
@@ -350,6 +370,8 @@ a:hover {
   justify-content: space-between;
   gap: 50px;
   color: #0071bd;
+  margin-top: 30px;
+  padding-left: 30px;
 }
 .chart-title {
   color: #0071bd !important;
