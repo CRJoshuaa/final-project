@@ -25,5 +25,4 @@ serviceWorker.unregister();
 export { default as CryptoNews } from "./components/CryptoNews.js";
 export { default as CryptoHome } from "./components/CryptoHome.js";
 export { default as Cryptocurrencies } from "./components/Cryptocurrencies.js";
-export { default as CryptoExchange } from "./components/CryptoExchange.js";
 export { default as CryptoDetails } from "./components/CryptoDetails.js";

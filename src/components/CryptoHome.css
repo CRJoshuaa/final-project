@@ -1,6 +1,90 @@
+@keyframes loadEaseIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .crypto-home {
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
-  margin-top: 80px;
+  background-color: var(--light-1);
+  animation: 0.5s loadEaseIn;
+  transition-duration: 0.5s;
+}
+
+.crypto-home::-webkit-scrollbar {
+  display: none;
+}
+
+.cryptohome-header {
+  background-color: var(--main-color);
+  color: white;
+  padding: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.crypto-stats {
+  /* background-color: var(--light-3); */
+  color: black;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 75%;
+  border-radius: 15px;
+  transition-duration: 0.5s;
+  margin-top: 10px;
+}
+
+.total-table {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-ten-container {
+  padding-top: 20px;
+}
+
+.top-ten-title {
+  background-color: var(--dark-2);
+  color: white;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 75%;
+  border-radius: 15px;
+  transition-duration: 0.5s;
+  margin-top: 10px;
+  border: 1px solid var(--accent-1);
+}
+
+.top-ten-title:hover {
+  box-shadow: 0 8px 16px 0 var(---light-1);
+}
+
+.top-ten-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.crypto-news-cont {
+  display: flex;
+  flex-direction: column;
 }

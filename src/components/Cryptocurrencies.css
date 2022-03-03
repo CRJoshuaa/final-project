@@ -1,8 +1,141 @@
-.cryptocurrencies {
+.cryptocurrency-page {
+  background-color: var(--light-1);
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.cryptocurrency-page::-webkit-scrollbar {
+  display: none;
+}
+
+.cryptocurrency-header {
+  padding: 14px;
+  background-color: var(--main-color);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+.crypto-search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crypto-search {
+  color: var(--accent-1);
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5;
+}
+
+.crypto-search:hover {
+  color: var(--main-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.crypto-search > ::placeholder {
+  text-align: center;
+}
+
+.leaderboard {
   flex: 0.7;
   flex-grow: 1;
-  overflow-y: scroll;
-  margin-top: 100px;
+  margin-top: 10px;
+  display: flex;
+  padding: 0 20px 0 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-  margin-left: 50px;
+.crypto-lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+
+.leader-rank {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.lead-image {
+  width: 70px;
+}
+
+.crypto-leader-info {
+  padding: 10px;
+}
+
+.crypto-deets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--light-3);
+  border-radius: 15px;
+  transition-duration: 0.15s;
+}
+
+.crypto-deets:hover {
+  box-shadow: 0 8px 16px 0 var(--light-2);
+}
+
+.crypto-card-container {
+  flex: 0.7;
+  flex-grow: 1;
+  margin-top: 10px;
+  display: flex;
+  padding: 0 20px 0 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.crypto-rank {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.crypto-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--light-3);
+  border-radius: 15px;
+  /* border: 1px solid var(--accent-1); */
+  transition-duration: 0.5s;
+}
+
+.crypto-card:hover {
+  box-shadow: 0 8px 16px 0 var(--accent-1);
+}
+
+.crypto-card .crypto-image {
+  width: 30px;
+  margin: 5px;
+}
+
+.crypto-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+}
+
+.crypto-info {
+  padding: 10px;
 }

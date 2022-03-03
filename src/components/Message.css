@@ -1,19 +1,32 @@
 .message-outer {
   display: flex;
-
   margin: 10px;
-}
-
-.message.current-user {
-  flex-direction: column;
 }
 
 .message {
   display: flex;
+  flex-direction: row;
+}
 
+.message-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 999px;
+  margin: 5px;
+}
+
+.message-details {
+  display: flex;
+  flex-direction: column;
   padding: 5px 15px 5px 5px;
   border-radius: 15px;
   background-color: var(--light-1);
+  transition-duration: 0.5s;
+}
+
+.message-details:hover {
+  background-color: var(--accent-1);
+  color: white;
 }
 .reply-message {
   display: flex;
@@ -33,30 +46,32 @@
 
 .current-user {
   margin-left: auto;
-  background-color: var(--dark-2);
   color: white;
   display: flex;
   flex-direction: row-reverse;
 }
 
-.current-user > .message-info {
-  padding-right: 10px;
+.current-user > .message-details {
+  background-color: var(--dark-2);
 }
 
-.current-user > .message-info > h4 {
+.current-user > .message-details:hover {
+  background-color: var(--accent-1);
+}
+
+.current-user > .message-details > .current-message > .message-info > h4 {
   display: flex;
   flex-direction: column;
   padding-right: 10px;
 }
 
-.current-user > .message-info > h4 > span {
+.current-user
+  > .message-details
+  > .current-message
+  > .message-info
+  > h4
+  > span {
   color: white;
-}
-
-.current-message > img {
-  height: 50px;
-  width: 50px;
-  border-radius: 8px;
 }
 
 .message-info {
@@ -79,22 +94,19 @@
 }
 .message-buttons {
   display: flex;
+  transition-duration: 0.5s;
+}
+
+.message-buttons > .MuiSvgIcon-root:hover {
+  color: white;
 }
 
 .message-buttons > .MuiSvgIcon-root {
+  margin-top: 5px;
   margin-left: auto;
   margin-right: 0;
   font-size: small;
   color: gray;
-}
-
-/*Styling for Current User*/
-.current-user {
-  margin-left: auto;
-  background-color: var(--dark-2);
-  color: white;
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 .current-user > .message-info {
@@ -105,9 +117,10 @@
   display: flex;
   flex-direction: column;
   padding-right: 10px;
+  color: white;
 }
 
-.current-user > .message-info > h4 > span {
+.message.current-user > .message-info > h4 > span {
   color: white;
 }
 

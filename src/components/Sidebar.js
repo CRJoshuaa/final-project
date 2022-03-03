@@ -14,7 +14,6 @@ import {
   ExpandLess,
   ExpandMore,
   Newspaper,
-  Timeline,
   MonetizationOn,
   Home,
   Chat,
@@ -39,7 +38,7 @@ function Sidebar() {
           {/* <AccessTimeIcon /> */}
         </div>
         <div className="sidebar-info">
-          <h2> Srs Bznz </h2>
+          <h2> Coingram </h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
@@ -60,7 +59,6 @@ function Sidebar() {
       <div className="sidebar-crypto">
         <SidebarOption Icon={Home} title="Crypto Home" />
         <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
-        <SidebarOption Icon={Timeline} title="Crypto Exchange" />
         <SidebarOption Icon={Newspaper} title="Crypto News" />
       </div>
       <div className="sidebar-misc">

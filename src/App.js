@@ -8,13 +8,14 @@ import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
-import DirectMessage from "./DirectMessage";
 import CryptoNews from "./components/CryptoNews";
 import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
-import CryptoExchange from "./components/CryptoExchange";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -26,7 +27,11 @@ function App() {
             src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
             alt=""
           />
-          <Spinner name="ball-spin-fade-loader" color="purple" fadeIn="none" />
+          <Spinner
+            name="ball-spin-fade-loader"
+            color="var(--accent-1)"
+            fadeIn="none"
+          />
         </div>
       </div>
     );
@@ -40,7 +45,7 @@ function App() {
           <>
             {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-            <Header />
+            {/* <Header /> */}
 
             <div className="app-body">
               <Sidebar />
@@ -54,19 +59,16 @@ function App() {
                 {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
                 <Route path="/DirectMessage"></Route>
-                <Route path="/crypto-home">
+                <Route path="/crypto-home" exact>
                   <CryptoHome />
                 </Route>
-                <Route path="/cryptocurrencies">
+                <Route path="/cryptocurrencies" exact>
                   <Cryptocurrencies />
                 </Route>
-                <Route path="/crypto-exchange">
-                  <CryptoExchange />
-                </Route>
-                <Route path="/crypto/:coinId">
+                <Route path="/crypto/:coinId" exact>
                   <CryptoDetails />
                 </Route>
-                <Route path="/crypto-news">
+                <Route path="/crypto-news" exact>
                   <CryptoNews />
                 </Route>
                 <Route path="/settings" exact>

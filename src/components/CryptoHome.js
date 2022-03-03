@@ -1,14 +1,13 @@
 import React from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Typography, Row, Col, Statistic } from "antd";
 import "./CryptoHome.css";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-
-const { Title } = Typography;
+import Cryptocurrencies from "./Cryptocurrencies";
+import CryptoNews from "./CryptoNews";
 
 const CryptoHome = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   console.log(data);
@@ -16,35 +15,38 @@ const CryptoHome = () => {
   if (isFetching) return "Loading...";
 
   return (
-    // <>
-    //   <Title level={2} className="heading">
-    //     Global Crypto Stats
-    //   </Title>
-    //   <Row>
-    //     <Col span={12}>
-    //       <Statistic title="Total Cryptocurrencies" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Exchanges" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Market Cap" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total 24h Volume" value="5" />
-    //     </Col>
-    //     <Col span={12}>
-    //       <Statistic title="Total Markets" value="5" />
-    //     </Col>
-    //   </Row>
-    // </>
     <div className="crypto-home">
-      <h1>Crypto Homepage</h1>
-      <h3>Total Cryptocurrencies : {globalStats.total}</h3>
-      <h3>Total Exchanges : {millify(globalStats.totalExchanges)}</h3>
-      <h3>Total Market Cap : {millify(globalStats.totalMarketCap)}</h3>
-      <h3>Total 24h Volume : {millify(globalStats.total24hVolume)}</h3>
-      <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
+      <div className="cryptohome-header">
+        <h1>Crypto Homepage</h1>
+      </div>
+      <div className="crypto-stats">
+        <h2>Cryptocurrency Statistics</h2>
+        <div className="total-table">
+          <div className="total-column">
+            <p>Total Cryptocurrencies </p>
+            <p>Total Exchanges </p>
+            <p>Total Market Cap </p>
+            <p>Total 24h Volume </p>
+            <p>Total Markets </p>
+          </div>
+          <div className="numbers-column">
+            <p>: {globalStats.total}</p>
+            <p>: {millify(globalStats.totalExchanges)}</p>
+            <p>: {millify(globalStats.totalMarketCap)}</p>
+            <p>: {millify(globalStats.total24hVolume)}</p>
+            <p>: {millify(globalStats.totalMarkets)}</p>
+          </div>
+        </div>
+      </div>
+      <div className="top-ten-container">
+        <h3 className="show-more"></h3> <Cryptocurrencies simplified />
+        <Link to="/cryptocurrencies">Show More</Link>
+      </div>
+
+      <div className="crypto-news-cont">
+        <CryptoNews simplified /> <h3 className="show-more"></h3>
+        <Link to="/crypto-news">Show More</Link>
+      </div>
     </div>
   );
 };
