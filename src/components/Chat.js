@@ -26,7 +26,7 @@ function Chat() {
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
-
+  const [notificationMessage, setNotificationMessage] = useState("");
   const [roomMessages, loading] = useCollection(
     roomId &&
       db

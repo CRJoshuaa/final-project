@@ -1,0 +1,63 @@
+/* General Styles */
+
+.background {
+  padding: 5px;
+  overflow: hidden;
+}
+
+.head {
+  text-transform: uppercase;
+}
+
+.btn {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.para {
+  width: 70vw;
+}
+
+/* Light Mode Styles */
+
+.background-light {
+  background-color: #fff;
+}
+
+.head-light {
+  color: #222;
+}
+
+.para-light {
+  color: #222;
+}
+
+.btn-light {
+  background-color: #222;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Dark Mode Styles */
+
+.background-dark {
+  background-color: #222;
+}
+
+.head-dark {
+  color: #fff;
+}
+
+.para-dark {
+  color: #fff;
+}
+
+.btn-dark {
+  background-color: #fff;
+  color: #222;
+}
