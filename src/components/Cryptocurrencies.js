@@ -34,7 +34,7 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <div className="cryptocurrency-page">
       <div className="cryptocurrency-header">
-        <h2>Cryptocurrencies</h2>
+        <h1>Cryptocurrencies</h1>
       </div>{" "}
       <div className="crypto-search-bar">
         {" "}

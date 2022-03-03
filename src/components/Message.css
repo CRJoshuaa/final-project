@@ -31,11 +31,11 @@
 .reply-message {
   display: flex;
   flex-direction: column;
-  padding: 5px 15px 5px 15px;
-  margin: 5px 5px 0px 0px;
+  padding: 5px;
+  margin: 5px;
   background-color: var(--light-1);
   color: black;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .current-message {

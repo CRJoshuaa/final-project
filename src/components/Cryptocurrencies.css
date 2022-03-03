@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .crypto-search {
@@ -43,7 +44,7 @@
 .leaderboard {
   flex: 0.7;
   flex-grow: 1;
-  margin-top: 10px;
+  margin: 20px;
   display: flex;
   padding: 0 20px 0 20px;
   flex-wrap: wrap;
@@ -91,6 +92,7 @@
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
   border-radius: 15px;
+  margin: 10px;
 }
 .crypto-deets::after {
   display: block;
@@ -170,4 +172,33 @@
 
 .crypto-info {
   padding: 10px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .crypto-deets {
+    display: flex;
+    width: 165px;
+    height: fit-content;
+    font-size: 14px;
+  }
+
+  .lead-image {
+    width: 40px;
+    margin: 10px;
+  }
+
+  .crypto-name {
+    font-size: 16px;
+  }
+
+  .crypto-card {
+    width: 150px;
+    height: fit-content;
+    font-size: 14px;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
