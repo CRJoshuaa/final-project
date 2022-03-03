@@ -14,6 +14,7 @@
   color: white;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .crypto-search-bar {
@@ -71,23 +72,54 @@
   padding: 10px;
 }
 
+/*hover test*/
 .crypto-deets {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  z-index: 0;
+  top: 0;
+  left: 0;
   width: 250px;
   height: 250px;
-  padding: 10px;
-  margin: 10px;
+  overflow: hidden;
   background-color: var(--light-3);
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  will-change: transform;
+  transform: skewX(0.001deg);
+  transition: transform 0.35s ease-in-out;
   border-radius: 15px;
-  transition-duration: 0.15s;
+}
+.crypto-deets::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(
+    226deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.4) 35%,
+    rgba(255, 255, 255, 0.2) 42%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translateY(-20%);
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+.crypto-deets:hover {
+  transform: rotateX(7deg) translateY(-6px);
+}
+.crypto-deets:hover::after {
+  transform: translateY(0%);
 }
 
-.crypto-deets:hover {
-  box-shadow: 0 8px 16px 0 var(--light-2);
-}
+/*hover test end*/
 
 .crypto-card-container {
   flex: 0.7;
