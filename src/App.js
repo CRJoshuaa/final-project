@@ -51,9 +51,6 @@ function App() {
                   <Route path="/" exact>
                     <Chat />
                   </Route>
-                  <Route path="/settings" exact>
-                    <Settings />
-                  </Route>
                   {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
                   <Route path="/DirectMessage"></Route>

@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import "./Apperance_setting.css";
-import { ThemeProvider } from "./ThemeContext";
+import MessageNotifications from "./Notifications";
 
 function AppearanceSetting() {
   const theme = useContext(ThemeContext);
 
   const darkMode = theme.state.darkMode;
 
-  const onClick = () => {
+  const changeTheme = () => {
     if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
     else theme.dispatch({ type: "DARKMODE" });
   };
@@ -27,7 +27,7 @@ function AppearanceSetting() {
       </p>
       <button
         className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
-        onClick={onClick}
+        onClick={changeTheme}
       >
         {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>

@@ -1,13 +1,14 @@
 import React from "react";
 import "./Settings.css";
-import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
-import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
-import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
-import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
+// import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
+// import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
+// import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
+// import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
 import "./SettingsSideBar.css";
-import SettingsSideBar from "./SettingsSideBar";
+// import SettingsSideBar from "./SettingsSideBar";
 import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
+import MessageNotifications from "./Notifications";
 
 function Settings() {
   return (
@@ -26,6 +27,11 @@ function Settings() {
       </div>
       <div>
         <AppearanceSetting />
+      </div>
+      <br />
+      <hr />
+      <div>
+        <MessageNotifications />
       </div>
     </div>
   );

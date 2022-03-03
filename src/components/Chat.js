@@ -16,6 +16,7 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import Replybox from "./ReplyBox";
+import { checkedCheck } from "./testnoti";
 
 function Chat() {
   // const roomId = useSelector(selectRoomId);
@@ -25,7 +26,7 @@ function Chat() {
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
-
+  const [notificationMessage, setNotificationMessage] = useState("");
   const [roomMessages, loading] = useCollection(
     roomId &&
       db
@@ -114,22 +115,24 @@ function Chat() {
               {roomMessages?.docs.map((doc) => {
                 const { message, replyDocId, timestamp, user, userImage } =
                   doc.data();
-
-                return (
-                  <Message
-                    key={doc.id}
-                    messageId={doc.id}
-                    message={message}
-                    replyDocId={replyDocId}
-                    roomId={roomId}
-                    timestamp={timestamp}
-                    user={user}
-                    userImage={userImage}
-                    isCurrentUser={user === currentUser.displayName}
-                    setReplyDocId={setReplyDocId}
-                  />
-                );
+                if (message)
+                  return (
+                    <Message
+                      key={doc.id}
+                      messageId={doc.id}
+                      message={message}
+                      replyDocId={replyDocId}
+                      roomId={roomId}
+                      timestamp={timestamp}
+                      user={user}
+                      channelName={roomDetails?.data().name}
+                      userImage={userImage}
+                      isCurrentUser={user === currentUser.displayName}
+                      setReplyDocId={setReplyDocId}
+                    />
+                  );
               })}
+
               <div id="dummy" className="chat-messages"></div>
             </div>
           </>

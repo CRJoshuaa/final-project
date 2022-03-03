@@ -3,27 +3,25 @@ import "./Settings.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { updateProfile } from "firebase/auth";
-import SettingsSideBar from "./SettingsSideBar";
+// import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
 import "./Settings.css";
-import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
-import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
-import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
-import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
+// import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
+// import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
+// import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
+// import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
 
 function AccountSetting() {
   const [user] = useAuthState(auth);
-  // function textEdit() {
-  //   return <EditText defaultValue={user?.displayName} />;
-  // }
+
   const [imageURL, setImageURL] = useState("");
   const [modalProfilePictureIsOpen, setModalProfilePictureIsOpen] =
     useState(false);
   const [modalNameIsOpen, setModalNameIsOpen] = useState(false);
   const [name, setName] = useState("");
 
-  function uploadPhotoToFirebase() {
-    updateProfile(user, {
+  async function uploadPhotoToFirebase() {
+    await updateProfile(user, {
       photoURL: imageURL,
     })
       .then(() => {
@@ -33,11 +31,12 @@ function AccountSetting() {
       .catch((error) => {
         console.log(error);
       });
-    window.location.reload();
+
+    setTimeout(window.location.reload(), 10000);
   }
 
-  function uploadNewNametoFirebase() {
-    updateProfile(user, {
+  async function uploadNewNametoFirebase() {
+    await updateProfile(user, {
       displayName: name,
     })
       .then(() => {
@@ -47,7 +46,7 @@ function AccountSetting() {
       .catch((error) => {
         console.log(error);
       });
-    window.location.reload();
+    setTimeout(window.location.reload(), 10000);
   }
 
   return (
@@ -105,13 +104,7 @@ function AccountSetting() {
         <button onClick={uploadNewNametoFirebase}>Upload</button>
         <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
       </Modal>
-      <div>
-        Uid:
-        <br />
-        <div> {user?.uid}</div>
-        Don't ever share this with your friends.
-      </div>
-      <br />
+
       <div>
         Email:
         <br />

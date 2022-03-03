@@ -2,7 +2,7 @@
   color: white;
   background-color: var(--dark-1);
   border-top: 1px solid var(--accent-1);
-  padding: 50px;
+  padding: 25px;
   flex: 0.8;
 }
 .profile-picture,
