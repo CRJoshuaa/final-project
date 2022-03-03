@@ -1,8 +1,24 @@
 .chart-header {
-  flex: 0.7;
-  flex-grow: 1;
-  overflow-y: scroll;
-  margin-top: 100px;
-
-  margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  color: #0071bd;
+  margin-top: 30px;
+  padding-left: 30px;
+}
+.chart-title {
+  color: #0071bd !important;
+}
+.price-container {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+.price-change {
+  font-weight: 900 !important;
+}
+.current-price {
+  margin-top: 0px !important;
+  font-weight: 900 !important;
 }

@@ -16,6 +16,7 @@ import Settings from "./components/Settings";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./components/Loader";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -69,6 +70,9 @@ function App() {
                 </Route>
                 <Route path="/settings" exact>
                   <Settings />
+                </Route>
+                <Route path="/loader">
+                  <Loader />
                 </Route>
               </Switch>
             </div>

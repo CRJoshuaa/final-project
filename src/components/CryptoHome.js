@@ -5,6 +5,7 @@ import "./CryptoHome.css";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
+import Loader from "./Loader";
 
 const CryptoHome = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -12,7 +13,7 @@ const CryptoHome = () => {
 
   console.log(data);
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader />;
 
   return (
     <div className="crypto-home">
@@ -22,6 +23,8 @@ const CryptoHome = () => {
       <h3>Total Market Cap : {millify(globalStats.totalMarketCap)}</h3>
       <h3>Total 24h Volume : {millify(globalStats.total24hVolume)}</h3>
       <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
+
+      <Link to="/loader">Loader Test</Link>
 
       <div className="home-heading-container">
         <h2 className="home-title">Top 10 Cryptocurrencies in the World</h2>
