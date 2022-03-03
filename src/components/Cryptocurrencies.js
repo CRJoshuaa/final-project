@@ -3,11 +3,13 @@ import millify from "millify";
 import { Link } from "react-router-dom";
 import "./Cryptocurrencies.css";
 
+import Loading from "./Loading";
+
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Input } from "@material-ui/core";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 10 : 100;
+  const count = simplified ? 5 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,12 +29,12 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loading />;
 
   return (
     <div className="cryptocurrency-page">
       <div className="cryptocurrency-header">
-        <h2>Cryptocurrency Directory</h2>
+        <h2>Cryptocurrencies</h2>
       </div>{" "}
       <div className="crypto-search-bar">
         {" "}
