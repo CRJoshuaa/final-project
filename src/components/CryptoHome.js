@@ -17,30 +17,37 @@ const CryptoHome = () => {
 
   return (
     <div className="crypto-home">
-      <h1>Crypto Homepage</h1>
-      <h3>Total Cryptocurrencies : {globalStats.total}</h3>
-      <h3>Total Exchanges : {millify(globalStats.totalExchanges)}</h3>
-      <h3>Total Market Cap : {millify(globalStats.totalMarketCap)}</h3>
-      <h3>Total 24h Volume : {millify(globalStats.total24hVolume)}</h3>
-      <h3>Total Markets : {millify(globalStats.totalMarkets)}</h3>
-
-      <Link to="/loader">Loader Test</Link>
-
-      <div className="home-heading-container">
-        <h2 className="home-title">Top 10 Cryptocurrencies in the World</h2>
-        <h3 className="show-more">
-          <Link to="/cryptocurrencies">Show More</Link>
-        </h3>
+      <div className="cryptohome-header">
+        <h1>Crypto Homepage</h1>
       </div>
-      <Cryptocurrencies simplified />
-
-      <div className="home-heading-container">
-        <h2 className="home-title">Lastest Crypto News</h2>
-        <h3 className="show-more">
-          <Link to="/crypto-news">Show More</Link>
-        </h3>
+      <div className="crypto-stats">
+        <h2>Cryptocurrency Statistics</h2>
+        <div className="total-table">
+          <div className="total-column">
+            <p>Total Cryptocurrencies </p>
+            <p>Total Exchanges </p>
+            <p>Total Market Cap </p>
+            <p>Total 24h Volume </p>
+            <p>Total Markets </p>
+          </div>
+          <div className="numbers-column">
+            <p>: {globalStats.total}</p>
+            <p>: {millify(globalStats.totalExchanges)}</p>
+            <p>: {millify(globalStats.totalMarketCap)}</p>
+            <p>: {millify(globalStats.total24hVolume)}</p>
+            <p>: {millify(globalStats.totalMarkets)}</p>
+          </div>
+        </div>
       </div>
-      <CryptoNews simplified />
+      <div className="top-ten-container">
+        <h3 className="show-more"></h3> <Cryptocurrencies simplified />
+        <Link to="/cryptocurrencies">Show More</Link>
+      </div>
+
+      <div className="crypto-news-cont">
+        <CryptoNews simplified /> <h3 className="show-more"></h3>
+        <Link to="/crypto-news">Show More</Link>
+      </div>
     </div>
   );
 };

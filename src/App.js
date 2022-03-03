@@ -28,7 +28,11 @@ function App() {
             src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
             alt=""
           />
-          <Spinner name="ball-spin-fade-loader" color="purple" fadeIn="none" />
+          <Spinner
+            name="ball-spin-fade-loader"
+            color="var(--accent-1)"
+            fadeIn="none"
+          />
         </div>
       </div>
     );
