@@ -44,8 +44,7 @@ const CryptoHome = () => {
       </div>
 
       <div className="crypto-news-cont">
-        <h3 className="show-more"></h3>
-        <CryptoNews simplified />
+        <CryptoNews simplified /> <h3 className="show-more"></h3>
         <Link to="/crypto-news">Show More</Link>
       </div>
     </div>
