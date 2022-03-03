@@ -3,7 +3,7 @@ import millify from "millify";
 import { Link } from "react-router-dom";
 import "./Cryptocurrencies.css";
 
-import Loading from "./Loading";
+import RotateLoading from "./RotateLoading";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Input } from "@material-ui/core";
@@ -29,7 +29,7 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return <Loading />;
+  if (isFetching) return <RotateLoading />;
 
   return (
     <div className="cryptocurrency-page">

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Loading.css";
+import "./RotateLoading.css";
 
-const Loading = () => {
+const RotateLoading = () => {
   return (
     <div class="coin">
       <div class="coin__front"></div>
@@ -18,4 +18,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default RotateLoading;
