@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import "./Apperance_setting.css";
-import MessageNotifications from "./Notifications";
+// import MessageNotifications from "./Notifications";
 
 function AppearanceSetting() {
   const theme = useContext(ThemeContext);

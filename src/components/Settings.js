@@ -8,7 +8,7 @@ import "./SettingsSideBar.css";
 // import SettingsSideBar from "./SettingsSideBar";
 import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
-import MessageNotifications from "./Notifications";
+// import MessageNotifications from "./Notifications";
 
 function Settings() {
   return (
@@ -30,9 +30,9 @@ function Settings() {
       </div>
       <br />
       <hr />
-      <div>
+      {/* <div>
         <MessageNotifications />
-      </div>
+      </div> */}
     </div>
   );
 }
