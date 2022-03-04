@@ -45,6 +45,7 @@
   margin: 50px;
 
   animation: 5s loadEaseIn;
+  animation: wiggle 2.5s infinite;
   transition-duration: 0.5s;
 }
 
@@ -55,7 +56,6 @@
   box-shadow: 0px 6px 5px #ccc;
   -moz-border-radius: 999px;
   -webkit-border-radius: 999px;
-  animation: wiggle 1.5s infinite;
 }
 
 .greeting {
