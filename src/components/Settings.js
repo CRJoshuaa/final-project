@@ -13,6 +13,9 @@ import AppearanceSetting from "./Appearance_setting";
 function Settings() {
   return (
     <div className="settings-cont">
+      <div className="settings-header">
+        <h1>Settings</h1>
+      </div>
       {/* <div>
         <SettingsSideBar Icon={PermIdentitySharpIcon} title="Account" />
         <SettingsSideBar Icon={ColorLensSharpIcon} title="Appearance" />
@@ -22,14 +25,10 @@ function Settings() {
         />
         <SettingsSideBar Icon={HelpOutlineSharpIcon} title="Help" />
       </div> */}
-      <div>
-        <AccountSetting />
-      </div>
-      <div>
-        <AppearanceSetting />
-      </div>
-      <br />
-      <hr />
+      <AccountSetting />
+
+      <AppearanceSetting />
+
       {/* <div>
         <MessageNotifications />
       </div> */}
