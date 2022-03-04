@@ -19,12 +19,12 @@ function AppearanceSetting() {
         darkMode ? "background-dark" : "background-light"
       }`}
     >
-      <h1 className={`head ${darkMode ? "head-dark" : "head-light"}`}>
+      <h2 className={`head ${darkMode ? "head-dark" : "head-light"}`}>
         Appearance
-      </h1>
-      <p className={`para ${darkMode ? "para-dark" : "para-light"}`}>
+      </h2>
+      <div className={`para ${darkMode ? "para-dark" : "para-light"}`}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      </p>
+      </div>
       <button
         className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
         onClick={changeTheme}
