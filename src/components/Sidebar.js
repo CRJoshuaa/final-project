@@ -38,7 +38,7 @@ function Sidebar() {
           {/* <AccessTimeIcon /> */}
         </div>
         <div className="sidebar-info">
-          <h2> Srs Bznz </h2>
+          <h2> Coingram </h2>
           <h3>
             <FiberManualRecordIcon />
             {user?.displayName}
@@ -62,7 +62,7 @@ function Sidebar() {
         <SidebarOption Icon={Newspaper} title="Crypto News" />
       </div>
       <div className="sidebar-misc">
-        <SidebarOption Icon={ExpandLess} title="Show less" />
+        {/* <SidebarOption Icon={ExpandLess} title="Show less" /> */}
         <hr />
         <SidebarOption Icon={Chat} DirectMessage title="Direct Message" />
         {/* <Link to="/DirectMessage"> Direct Message </Link> */}
