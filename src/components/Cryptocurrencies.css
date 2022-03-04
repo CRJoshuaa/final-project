@@ -41,6 +41,8 @@
   text-align: center;
 }
 
+/*styling for top 3 start*/
+
 .leaderboard {
   flex: 0.7;
   flex-grow: 1;
@@ -48,15 +50,8 @@
   display: flex;
   padding: 0 20px 0 20px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.crypto-lead {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  transition-duration: 0.5s;
+  align-items: flex-end;
 }
 
 .leader-rank {
@@ -68,24 +63,23 @@
 .lead-image {
   width: 70px;
   height: 70px;
+  margin: 10px;
 }
 
 .crypto-leader-info {
   padding: 10px;
 }
 
-/*hover test*/
-.crypto-deets {
+.crypto-lead {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   z-index: 0;
   top: 0;
   left: 0;
   width: 250px;
-  height: 250px;
   overflow: hidden;
-  background-color: var(--light-3);
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
   transform-origin: top center;
@@ -93,9 +87,9 @@
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
   border-radius: 15px;
-  margin: 10px;
+  /* margin: 10px; */
 }
-.crypto-deets::after {
+.crypto-lead::after {
   display: block;
   content: "";
   position: absolute;
@@ -115,14 +109,46 @@
   will-change: transform;
   transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
 }
-.crypto-deets:hover {
+.crypto-lead:hover {
   transform: rotateX(7deg) translateY(-6px);
+  /* animation: wiggle 1.5s infinite; */
 }
-.crypto-deets:hover::after {
+.crypto-lead:hover::after {
   transform: translateY(0%);
 }
 
 /*hover test end*/
+
+.crypto-lead:nth-child(1) {
+  background-color: #ffe55c;
+  height: 375px;
+  order: 2;
+}
+
+.crypto-lead:nth-child(2) {
+  background-color: #d3d3d3;
+  height: 315px;
+  order: 1;
+}
+
+.crypto-lead:nth-child(3) {
+  background-color: #c28f63;
+  order: 3;
+  height: 260px;
+}
+
+.crypto-deets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  z-index: 101;
+}
+
+/*styling for top 3 end*/
 
 .crypto-card-container {
   flex: 0.7;
@@ -156,6 +182,10 @@
 
 .crypto-card:hover {
   box-shadow: 0 8px 16px 0 var(--accent-1);
+}
+
+.crypto-card > a {
+  z-index: 0;
 }
 
 .crypto-card .crypto-image {

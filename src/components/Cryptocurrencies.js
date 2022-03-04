@@ -36,7 +36,7 @@ const Cryptocurrencies = ({ simplified }) => {
       <div className="cryptocurrency-header">
         <h1>Cryptocurrencies</h1>
       </div>{" "}
-      <div className="crypto-search-bar">
+      {/* <div className="crypto-search-bar">
         {" "}
         {!simplified && (
           <Input
@@ -45,7 +45,7 @@ const Cryptocurrencies = ({ simplified }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></Input>
         )}
-      </div>
+      </div> */}
       <div className="leaderboard">
         {top3 &&
           top3.map((currency) => (
