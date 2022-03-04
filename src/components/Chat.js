@@ -139,6 +139,7 @@ function Chat() {
                 </div>
               </>
             )}
+            <RightBar />
           </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>
@@ -160,7 +161,6 @@ function Chat() {
               />
             </div>
           </div>
-          <RightBar />
         </>
       )}
     </div>
