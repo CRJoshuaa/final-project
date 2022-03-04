@@ -22,7 +22,17 @@
   }
 }
 
+/* @keyframes textFade2 {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+} */
+
 .coingram-logo > img {
+  display: flex;
   position: absolute;
   top: 50%;
   left: 60%;
@@ -34,3 +44,19 @@
   background-color: transparent;
   margin: 3%;
 }
+
+.coingram-logo > h1 {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+}
+
+/* .coingram-logo > h1:before {
+  content: "";
+  position: absolute;
+  background-color: var(--light-1);
+  width: 100%;
+  animation: textFade2 5s ease infinite;
+  height: 100%;
+  box-shadow: 25px 0px 30px 10px var(--light-1);
+} */

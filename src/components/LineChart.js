@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const LineChart = ({ coinHistory, currentPrice, coinName }) => {
+const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
@@ -31,11 +31,22 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   }
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinTimestamp.push(
-      new Date(
+    let coinDate;
+    if (coinTimeperiod === "3h" || coinTimeperiod === "24h") {
+      coinDate = new Date(
         coinHistory?.data?.history[i].timestamp * 1000
-      ).toLocaleDateString("en-MY")
-    );
+      ).toLocaleString("en-MY");
+    } else {
+      coinDate = new Date(
+        coinHistory?.data?.history[i].timestamp * 1000
+      ).toLocaleDateString("en-MY");
+    }
+    // coinTimestamp.push(
+    //   new Date(
+    //     coinHistory?.data?.history[i].timestamp * 1000
+    //   ).toLocaleDateString("en-MY")
+    // );
+    coinTimestamp.push(coinDate);
   }
 
   console.log(coinHistory);
@@ -76,7 +87,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </h5>
         </div>
       </div>
-      <Line data={data} options={options} className="crypto-chart" />
+      <Line data={data} options={options} />
     </>
   );
 };

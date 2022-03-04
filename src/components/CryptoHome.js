@@ -5,7 +5,7 @@ import "./CryptoHome.css";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
-import Loader from "./Loader";
+import RotateLoading from "./RotateLoading";
 
 const CryptoHome = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
@@ -13,7 +13,7 @@ const CryptoHome = () => {
 
   console.log(data);
 
-  if (isFetching) return <Loader />;
+  if (isFetching) return <RotateLoading />;
 
   return (
     <div className="crypto-home">

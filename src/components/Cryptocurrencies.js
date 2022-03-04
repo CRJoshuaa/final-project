@@ -7,7 +7,6 @@ import RotateLoading from "./RotateLoading";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Input } from "@material-ui/core";
-import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 5 : 100;

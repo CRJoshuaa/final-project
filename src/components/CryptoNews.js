@@ -3,7 +3,7 @@ import "./CryptoNews.css";
 import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
-import Loader from "./Loader.js";
+import RotateLoading from "./RotateLoading";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -16,7 +16,7 @@ const CryptoNews = ({ simplified }) => {
     newsCategory: "Cryptocurrency",
     count: simplified ? 3 : 10,
   });
-  if (!cryptoNews?.value) return <Loader />;
+  if (!cryptoNews?.value) return <RotateLoading />;
   return (
     <div className="cryptoNews-container">
       <div className="news-header">
