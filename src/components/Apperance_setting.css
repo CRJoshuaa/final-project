@@ -9,14 +9,15 @@
   text-transform: uppercase;
 }
 
-.btn {
+/* .modal-setting-1 {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;
-  margin-top: 20px;
   font-size: 15px;
   cursor: pointer;
-}
+  width: fit-content;
+  margin: 10px;
+} */
 
 .para {
   width: 70vw;

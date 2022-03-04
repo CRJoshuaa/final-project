@@ -5,7 +5,6 @@ import { auth } from "../firebase";
 import { updateProfile } from "firebase/auth";
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
-import "./Settings.css";
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
 // import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
@@ -50,68 +49,72 @@ function AccountSetting() {
   }
 
   return (
-    <div className="settings-cont">
-      <h1>Account</h1>
-      <div className="profile-picture">Profile Picture</div>
-
-      <img
-        className="header-avatar"
-        onClick={() => auth.signOut}
-        alt={user?.displayName}
-        src={user?.photoURL}
-      />
-      <button
-        className="modal-setting-1"
-        onClick={() => setModalProfilePictureIsOpen(true)}
-      >
-        {" "}
-        Edit profile picture
-      </button>
-      <Modal isOpen={modalProfilePictureIsOpen}>
-        <div className="input">
-          <input
-            type="url"
-            name="url"
-            placeholder="https://example.com"
-            onChange={(e) => setImageURL(e.target.value)}
-          />
-        </div>
-        <button onClick={uploadPhotoToFirebase}>Upload</button>
-        <button onClick={() => setModalProfilePictureIsOpen(false)}>
-          Cancel
-        </button>
-      </Modal>
-      <div className="general-info">General Info</div>
-
-      <div>
-        Username:
-        <br />
-        {user?.displayName}
-        <button onClick={() => setModalNameIsOpen(true)}>
-          Edit profile name
-        </button>
+    <div className="account-cont">
+      <div className="account-header">
+        <h2>Account</h2>
       </div>
-      <br />
-
-      <Modal isOpen={modalNameIsOpen}>
-        <div className="input">
-          <input
-            type="text"
-            placeholder="Your name..."
-            onChange={(e) => setName(e.target.value)}
+      <div className="account-setting">
+        <div className="profile-picture">
+          <div className="pfp-title">
+            <h3>Profile Picture</h3>
+          </div>
+          <img
+            className="header-avatar"
+            onClick={() => auth.signOut}
+            alt={user?.displayName}
+            src={user?.photoURL}
           />
+          <button
+            className="modal-setting-1"
+            onClick={() => setModalProfilePictureIsOpen(true)}
+          >
+            Edit profile picture
+          </button>
+          <Modal isOpen={modalProfilePictureIsOpen}>
+            <div className="input">
+              <input
+                type="url"
+                name="url"
+                placeholder="https://example.com"
+                onChange={(e) => setImageURL(e.target.value)}
+              />
+            </div>
+            <button onClick={uploadPhotoToFirebase}>Upload</button>
+            <button onClick={() => setModalProfilePictureIsOpen(false)}>
+              Cancel
+            </button>
+          </Modal>
         </div>
-        <button onClick={uploadNewNametoFirebase}>Upload</button>
-        <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
-      </Modal>
 
-      <div>
-        Email:
-        <br />
-        <div> {user?.email}</div>
+        <div className="general-info">
+          <h3>General Info</h3>
+          <div className="username">
+            <div className="un-deets">Username:</div>
+            <div className="current-un">{user?.displayName}</div>
+            <button onClick={() => setModalNameIsOpen(true)}>
+              Edit profile name
+            </button>
+          </div>
+          <br />
+
+          <Modal isOpen={modalNameIsOpen}>
+            <div className="input">
+              <input
+                type="text"
+                placeholder="Your name..."
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <button onClick={uploadNewNametoFirebase}>Upload</button>
+            <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
+          </Modal>
+
+          <div className="email">
+            <div className="email-deets">Email:</div>
+            <div className="current-email"> {user?.email}</div>
+          </div>
+        </div>
       </div>
-      <br />
-      <hr />
     </div>
   );
 }
