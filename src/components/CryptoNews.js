@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CryptoNews.css";
 import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
-import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
+import { io } from "socket.io-client";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -11,10 +11,22 @@ const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const CryptoNews = ({ simplified }) => {
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
-    newsCategory: "Cryptocurrency",
-    count: simplified ? 3 : 10,
+  const socket = io("https://tranquil-dawn-08836.herokuapp.com");
+  // const socket = io("http://localhost:3001");
+
+  useEffect(() => {
+    socket.emit("request-crypto-news", "Cryptocurrency", simplified ? 3 : 10);
+  }, []);
+
+  const [cryptoNews, setCryptoNews] = useState([]);
+
+  // socket.on("connect", () => {
+  //   console.log("connected to websocket");
+  // });
+  socket.on("response-crypto-news", (message) => {
+    setCryptoNews(message);
   });
+
   if (!cryptoNews?.value) return "Loading...";
   return (
     <div className="crypto-news-cont">
