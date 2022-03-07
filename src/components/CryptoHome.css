@@ -25,7 +25,7 @@
   padding: 14px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .crypto-stats {
@@ -85,4 +85,11 @@ a {
 .crypto-news-cont {
   display: flex;
   flex-direction: column;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .crypto-home {
+    height: 88%;
+  }
 }
