@@ -2,17 +2,18 @@
 
 .coin {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   margin: 50px auto;
   transform-style: preserve-3d;
   animation: rotate3d 8s linear infinite;
   transition: all 0.3s;
+  top: 35%;
 }
 .coin__front {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #0d1d2c;
@@ -75,3 +76,11 @@
 }
 
 /*loading animation end*/
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+}

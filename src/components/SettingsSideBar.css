@@ -10,6 +10,7 @@
   opacity: 0.9;
   background-color: var(--light-2);
   color: var(--accent-1);
+  border-radius: 5px;
 }
 
 .settings-option-cont > h3 {

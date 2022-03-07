@@ -9,7 +9,7 @@ import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Input } from "@material-ui/core";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 5 : 100;
+  const count = simplified ? 3 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,9 +34,9 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <div className="cryptocurrency-page">
       <div className="cryptocurrency-header">
-        <h2>Cryptocurrencies</h2>
+        <h1>Cryptocurrencies</h1>
       </div>{" "}
-      <div className="crypto-search-bar">
+      {/* <div className="crypto-search-bar">
         {" "}
         {!simplified && (
           <Input
@@ -45,25 +45,26 @@ const Cryptocurrencies = ({ simplified }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           ></Input>
         )}
-      </div>
+      </div> */}
       <div className="leaderboard">
         {top3 &&
           top3.map((currency) => (
             <div className="crypto-lead" key={currency.id}>
-              <div className="crypto-deets">
-                <div className="leader-rank">
-                  <h2>{`${currency.rank}`}</h2>
-                </div>
-                <img className="lead-image" src={currency.iconUrl} />
-                <Link to={`/crypto/${currency.uuid}`}>
+              {" "}
+              <Link to={`/crypto/${currency.uuid}`}>
+                <div className="crypto-deets">
+                  <div className="leader-rank">
+                    <h2>{`${currency.rank}`}</h2>
+                  </div>
+                  <img className="lead-image" src={currency.iconUrl} />
                   <div className="crypto-name">{`${currency.name}`} </div>
                   <div className="crypto-leader-info">
                     <p>Price: {millify(currency.price)}</p>
                     <p>Market Cap: {millify(currency.marketCap)}</p>
                     <p>Daily Change: {millify(currency.change)}%</p>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           ))}
       </div>
