@@ -3,6 +3,7 @@ import "./CryptoNews.css";
 import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
 import { io } from "socket.io-client";
+import RotateLoading from "./RotateLoading";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -20,14 +21,11 @@ const CryptoNews = ({ simplified }) => {
 
   const [cryptoNews, setCryptoNews] = useState([]);
 
-  // socket.on("connect", () => {
-  //   console.log("connected to websocket");
-  // });
   socket.on("response-crypto-news", (message) => {
     setCryptoNews(message);
   });
 
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <RotateLoading />;
   return (
     <div className="crypto-news-cont">
       <div className="news-header">
