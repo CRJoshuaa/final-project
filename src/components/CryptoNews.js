@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./CryptoNews.css";
 import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
-import { io } from "socket.io-client";
 import RotateLoading from "./RotateLoading";
+import { selectSocket } from "../features/appSlice";
+import { useSelector } from "react-redux";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -12,8 +13,8 @@ const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const CryptoNews = ({ simplified }) => {
-  const socket = io("https://tranquil-dawn-08836.herokuapp.com");
   // const socket = io("http://localhost:3001");
+  const socket = useSelector(selectSocket);
 
   useEffect(() => {
     socket.emit("request-crypto-news", "Cryptocurrency", simplified ? 3 : 10);

@@ -2,18 +2,20 @@ import React, { useState, useEffect } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import "./Cryptocurrencies.css";
-
 import RotateLoading from "./RotateLoading";
+import { selectSocket } from "../features/appSlice";
+import { useSelector } from "react-redux";
 
 import { Input } from "@material-ui/core";
 import { io } from "socket.io-client";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const socket = io("https://tranquil-dawn-08836.herokuapp.com");
   const count = simplified ? 3 : 100;
   const [cryptos, setCryptos] = useState([]);
   const [filteredCryptos, setFilteredCryptos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const socket = useSelector(selectSocket);
 
   useEffect(() => {
     socket.emit("request-crypto", count);
