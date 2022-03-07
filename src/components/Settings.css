@@ -68,6 +68,7 @@
   padding: 10px;
   border-radius: 15px;
   width: 85%;
+  transition-duration: 0.5s;
 }
 
 .acct-dark {
@@ -77,6 +78,7 @@
   border-radius: 15px;
   width: 85%;
   color: white;
+  transition-duration: 0.5s;
 }
 
 .account-setting {
@@ -135,6 +137,7 @@
   padding: 5px;
   text-align: center;
   width: 100%;
+  transition-duration: 0.5s;
 }
 
 .current-un-dark,
@@ -144,6 +147,7 @@
   text-align: center;
   width: 100%;
   color: black;
+  transition-duration: 0.5s;
 }
 
 /* Gen Info Styling end */
@@ -163,11 +167,15 @@ button {
   color: white;
   font-size: 15px;
   cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 .btn-dark {
   background-color: #fff;
   color: #222;
+  font-size: 15px;
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 /* Mobile */
