@@ -3,8 +3,8 @@
   justify-content: space-between;
   gap: 50px;
   color: #0071bd;
-  margin-top: 30px;
-  padding-left: 30px;
+  margin-top: 2%;
+  padding-left: 2%;
 }
 .chart-title {
   color: #0071bd !important;
@@ -19,6 +19,6 @@
   font-weight: 900 !important;
 }
 .current-price {
-  margin-top: 0px !important;
+  margin-top: 0% !important;
   font-weight: 900 !important;
 }

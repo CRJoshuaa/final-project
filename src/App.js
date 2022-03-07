@@ -75,9 +75,9 @@ function App() {
                 <Route path="/settings" exact>
                   <Settings />
                 </Route>
-                <Route path="/loader">
+                {/* <Route path="/loader">
                   <ShakeLoader />
-                </Route>
+                </Route> */}
               </Switch>
             </div>
           </>

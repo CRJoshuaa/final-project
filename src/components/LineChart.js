@@ -1,6 +1,8 @@
 import React from "react";
 import "./LineChart.css";
 import { Line } from "react-chartjs-2";
+import zoomPlugin from "chartjs-plugin-zoom";
+import { Button } from "@mui/material";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,7 +21,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  zoomPlugin
 );
 
 const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
@@ -32,6 +35,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     let coinDate;
+
     if (coinTimeperiod === "3h" || coinTimeperiod === "24h") {
       coinDate = new Date(
         coinHistory?.data?.history[i].timestamp * 1000
@@ -65,6 +69,19 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
   };
 
   const options = {
+    // plugins: {
+    //   zoom: {
+    //     zoom: {
+    //       wheel: {
+    //         enabled: true,
+    //       },
+    //       pinch: {
+    //         enabled: true,
+    //       },
+    //       mode: "xy",
+    //     },
+    //   },
+    // },
     scales: {
       y: {
         ticks: {
@@ -85,11 +102,21 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
           <h5 className="current-price">
             Current {coinName} Price : ${currentPrice}
           </h5>
+          {/* <Button onClick="resetZoomChart()">Reset Zoom</Button> */}
+          {/* <button onClick={resetZoom}>Reset Zoom</button> */}
         </div>
       </div>
       <Line data={data} options={options} />
     </>
   );
 };
+
+// function resetZoomChart() {
+//   LineChart.resetZoom();
+// }
+
+// function resetZoom() {
+//   LineChart.resetZoom();
+// }
 
 export default LineChart;

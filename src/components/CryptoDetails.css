@@ -12,7 +12,7 @@
   color: white;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .coin-detail-body {
@@ -20,7 +20,7 @@
   flex-direction: column;
   margin-top: 0px;
   padding: 1%;
-  z-index: 0;
+  z-index: 1;
 }
 
 .coin-heading-container {
@@ -29,12 +29,13 @@
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid var(--border);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1.5%;
+  padding-bottom: 2%;
   gap: 10px;
 }
 
 .coin-heading-container .coin-name {
+  font-size: 2rem;
   font-weight: 900;
   color: var(--pink);
 }
@@ -208,4 +209,9 @@
   .heading {
     margin-top: 20px;
   }
+}
+
+.select-timeperiod {
+  width: 200px !important;
+  margin-top: 20px !important;
 }
