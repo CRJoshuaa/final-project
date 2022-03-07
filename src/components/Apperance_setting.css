@@ -121,7 +121,7 @@
 
 .msg-dark:hover,
 .user-dark:hover {
-  background-color: var(--light-1);
+  background-color: var(--light-3);
   color: black;
 }
 
