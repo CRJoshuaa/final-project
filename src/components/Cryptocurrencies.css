@@ -225,6 +225,25 @@ a:hover {
     margin: 10px;
   }
 
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
   .crypto-name {
     font-size: 16px;
   }
@@ -238,4 +257,51 @@ a:hover {
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
+  .crypto-name {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
+  .crypto-name {
+    font-size: 16px;
+  }
 }
