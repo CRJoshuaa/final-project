@@ -21,6 +21,12 @@
   padding: 5px 15px 5px 5px;
   border-radius: 15px;
   background-color: var(--light-1);
+  transition-duration: 0.5s;
+}
+
+.message-details:hover {
+  background-color: var(--accent-1);
+  color: white;
 }
 .reply-message {
   display: flex;
@@ -47,6 +53,10 @@
 
 .current-user > .message-details {
   background-color: var(--dark-2);
+}
+
+.current-user > .message-details:hover {
+  background-color: var(--accent-1);
 }
 
 .current-user > .message-details > .current-message > .message-info > h4 {
@@ -84,6 +94,11 @@
 }
 .message-buttons {
   display: flex;
+  transition-duration: 0.5s;
+}
+
+.message-buttons > .MuiSvgIcon-root:hover {
+  color: white;
 }
 
 .message-buttons > .MuiSvgIcon-root {
@@ -102,9 +117,10 @@
   display: flex;
   flex-direction: column;
   padding-right: 10px;
+  color: white;
 }
 
-.current-user > .message-info > h4 > span {
+.message.current-user > .message-info > h4 > span {
   color: white;
 }
 
