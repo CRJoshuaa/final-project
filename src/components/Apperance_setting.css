@@ -4,7 +4,7 @@
   padding: 5px;
   overflow: hidden;
   /* background-color: var(--light-3); */
-  margin: 20px auto auto auto;
+  margin: 20px auto 20px auto;
   padding: 10px;
   border-radius: 15px;
   width: 85%;
@@ -24,9 +24,9 @@
   margin: 10px;
 } */
 
-.para {
+/* .para {
   width: 70vw;
-}
+} */
 
 /* Light Mode Styles */
 
@@ -67,3 +67,132 @@
   background-color: #fff;
   color: #222;
 }
+
+/*preview styling */
+
+.chat-preview {
+  margin: 10px;
+}
+
+.chat-preview > h3 {
+  margin: 15px;
+}
+
+.avatar {
+  border-radius: 999px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.user-avatar {
+  border-radius: 999px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.preview-msg {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.msg-light {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--light-1);
+  transition-duration: 0.5s;
+}
+
+.msg-light:hover {
+  background-color: var(--accent-1);
+  color: white;
+}
+
+.msg-dark {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--dark-2);
+  transition-duration: 0.5s;
+}
+
+.msg-dark:hover,
+.user-dark:hover {
+  background-color: var(--light-1);
+  color: black;
+}
+
+.msg-dark > .current-msg > .MuiSvgIcon-root:hover,
+.user-dark > .current-msg > .MuiSvgIcon-root:hover {
+  color: black;
+}
+
+.preview-user {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px;
+}
+
+.user-light {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--dark-2);
+  transition-duration: 0.5s;
+  color: white;
+}
+
+.user-light:hover {
+  background-color: var(--accent-1);
+  color: white;
+}
+
+.user-dark {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 5px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  transition-duration: 0.5s;
+  color: white;
+}
+
+.current-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.current-msg > .MuiSvgIcon-root {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: small;
+  color: gray;
+}
+
+.current-msg > .MuiSvgIcon-root:hover {
+  color: white;
+}
+
+h4 {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  margin-left: 0;
+}
+
+h4 > span {
+  padding: 5px 0px 5px 0px;
+  margin-left: 0;
+  color: gray;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+/*preview styling end*/

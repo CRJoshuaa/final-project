@@ -3,6 +3,19 @@
   background-color: var(--off-white);
   flex: 0.8;
   width: 100%;
+  overflow-y: scroll;
+}
+
+.settings-dark {
+  color: white;
+  background-color: var(--dark-2);
+  flex: 0.8;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.settings-cont::-webkit-scrollbar {
+  display: none;
 }
 
 .settings-header {
@@ -49,7 +62,7 @@
 
 /* Account Settings Styling */
 
-.account-cont {
+.acct-light {
   background-color: var(--light-3);
   margin: auto;
   padding: 10px;
@@ -57,15 +70,21 @@
   width: 85%;
 }
 
+.acct-dark {
+  background-color: var(--dark-1);
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 85%;
+  color: white;
+}
+
 .account-setting {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-evenly;
-}
-
-.account-header {
-  margin-bottom: 10px;
+  padding: 15px 0;
 }
 
 /* Account Settings Styling end */
@@ -100,17 +119,27 @@
 .username {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .un-deets,
 .email-deets {
   font-size: 18px;
   font-style: italic;
+  margin: 5px;
 }
 
 .current-un,
 .current-email {
   background-color: var(--light-1);
+  padding: 5px;
+  text-align: center;
+  width: 250px;
+}
+
+.current-un-dark,
+.current-email-dark {
+  background-color: var(--light-2);
   padding: 5px;
   text-align: center;
   width: 250px;
@@ -126,4 +155,16 @@ button {
   cursor: pointer;
   width: fit-content;
   margin: 10px;
+}
+
+.btn-light {
+  background-color: var(--dark-2);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background-color: #fff;
+  color: #222;
 }
