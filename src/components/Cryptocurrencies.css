@@ -87,7 +87,7 @@
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
   border-radius: 15px;
-  /* margin: 10px; */
+  margin: 10px;
 }
 .crypto-lead::after {
   display: block;
