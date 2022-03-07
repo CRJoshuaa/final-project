@@ -1,7 +1,7 @@
 .app-body {
   display: flex;
   height: 100vh;
-  background-color: var(--light-1);
+  background-color: var(--off-white);
 }
 
 .app-loading {
@@ -319,25 +319,7 @@ a:hover {
 .select-news {
   width: 180px;
 }
-.news-card {
-  min-height: 300px !important;
-}
-.news-image-container {
-  display: flex !important;
-  justify-content: space-between !important;
-}
-.news-title {
-  width: 70%;
-}
 
-.news-image-container .img {
-  width: 100px;
-  height: 100px;
-}
-.news-card p {
-  color: black;
-  margin: 10px 0px !important;
-}
 .provider-container {
   display: flex;
   justify-content: space-between;

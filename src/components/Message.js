@@ -2,9 +2,10 @@ import React from "react";
 import "./Message.css";
 import { db } from "../firebase";
 import { useDocument } from "react-firebase-hooks/firestore";
-
+// import { checkedCheck } from "./testnoti";
 import ReplyIcon from "@mui/icons-material/Reply";
 import Linkify from "react-linkify";
+import { current } from "@reduxjs/toolkit";
 
 function Message({
   messageId,
@@ -13,16 +14,28 @@ function Message({
   roomId,
   timestamp,
   user,
+  channelName,
   userImage,
   isCurrentUser,
   setReplyDocId,
 }) {
+  // var currentTimestamp = Math.round(new Date().getTime() / 1000);
+  // console.log(Date(currentTimestamp?.toDate()).toLocaleString(Date.DATE_FULL));
+  // console.log("currentTimestamp: " + currentTimestamp);
+  // console.log("timestamp from channel: " + Math.floor(timestamp / 1000));
+  // console.log("Normal timestamp: " + timestamp);
+  // console.log(Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL));
   const [replyDetails] = useDocument(
     roomId &&
       replyDocId &&
       db.collection("rooms").doc(roomId).collection("messages").doc(replyDocId)
   );
-
+  // if (
+  //   Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL) <= currentTimestamp
+  // ) {
+  // checkedCheck(channelName, message[1]);
+  console.log(message[10]);
+  // }
   return (
     <div className="message-outer">
       <div className={`message ${isCurrentUser && `current-user`}`}>

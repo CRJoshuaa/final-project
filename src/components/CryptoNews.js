@@ -29,11 +29,11 @@ const CryptoNews = ({ simplified }) => {
 
   if (!cryptoNews?.value) return "Loading...";
   return (
-    <div className="cryptoNews-container">
+    <div className="crypto-news-cont">
       <div className="news-header">
         <h1>Crypto News </h1>
       </div>
-      <div className="cryptoNews-card">
+      <div className="crypto-news-feed">
         {cryptoNews.value.map((news, i) => (
           <a
             key={i}
@@ -42,23 +42,23 @@ const CryptoNews = ({ simplified }) => {
             rel="noreferrer"
             className="top"
           >
-            <div className="news-headline">
-              <div className="news-img">
+            <div className="crypto-news-card">
+              <div className="crypto-news-img">
                 <img
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt="news"
                 />
               </div>
-              <div className="news-title" level={4}>
+              <div className="crypto-news-title" level={4}>
                 {news.name}
-                <p className="news-desc">
+                <p className="crypto-news-desc">
                   {news.description.length > 100
                     ? `${news.description.substring(0, 100)}...`
                     : news.description}
                 </p>
               </div>
 
-              <div className="provider-container">
+              <div className="crypto-news-source">
                 <img
                   className="source-logo"
                   src={
