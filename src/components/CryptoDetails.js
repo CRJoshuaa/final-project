@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import millify from "millify";
@@ -35,8 +35,6 @@ const CryptoDetails = () => {
   const cryptoDetails = data?.data?.coin;
 
   if (isFetching) return <ShakeLoader />;
-
-  // const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
   const time = [
     { value: "3h", label: "3 Hours" },

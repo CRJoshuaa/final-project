@@ -40,13 +40,17 @@ const CryptoHome = () => {
         </div>
       </div>
       <div className="top-ten-container">
-        <h3 className="show-more"></h3> <Cryptocurrencies simplified />
-        <Link to="/cryptocurrencies">Show More</Link>
+        <Cryptocurrencies simplified />
+        <Link to="/cryptocurrencies">
+          <h4 className="show-more">Show More Cryptocurrencies</h4>
+        </Link>
       </div>
 
       <div className="crypto-news-cont">
-        <CryptoNews simplified /> <h3 className="show-more"></h3>
-        <Link to="/crypto-news">Show More</Link>
+        <CryptoNews simplified />
+        <Link to="/crypto-news">
+          <h4 className="show-more">Show More News</h4>
+        </Link>
       </div>
     </div>
   );
