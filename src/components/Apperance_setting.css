@@ -24,9 +24,15 @@
   margin: 10px;
 } */
 
-/* .para {
-  width: 70vw;
-} */
+.para {
+  width: 100%;
+}
+
+.appearance-setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Light Mode Styles */
 

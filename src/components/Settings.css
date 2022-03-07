@@ -134,7 +134,7 @@
   background-color: var(--light-1);
   padding: 5px;
   text-align: center;
-  width: 250px;
+  width: 100%;
 }
 
 .current-un-dark,
@@ -142,7 +142,8 @@
   background-color: var(--light-2);
   padding: 5px;
   text-align: center;
-  width: 250px;
+  width: 100%;
+  color: black;
 }
 
 /* Gen Info Styling end */
@@ -167,4 +168,21 @@ button {
 .btn-dark {
   background-color: #fff;
   color: #222;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .settings-cont {
+    flex: 1;
+    height: 88%;
+  }
+
+  .account-setting {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
