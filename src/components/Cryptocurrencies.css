@@ -86,7 +86,7 @@
   will-change: transform;
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   margin: 10px;
 }
 .crypto-lead::after {
@@ -146,6 +146,11 @@
 
 a {
   z-index: 101;
+  color: black;
+}
+
+a:hover {
+  color: var(--accent-1);
 }
 
 /*styling for top 3 end*/
@@ -191,6 +196,7 @@ a {
 .crypto-card .crypto-image {
   width: 30px;
   margin: 5px;
+  background-blend-mode: multiply;
 }
 
 .crypto-name {
