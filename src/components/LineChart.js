@@ -29,8 +29,9 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
+  // Changed from 'push' to 'unshift' to invert the dates of data in correct manner
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinPrice.push(coinHistory?.data?.history[i].price);
+    coinPrice.unshift(coinHistory?.data?.history[i].price);
   }
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
@@ -45,12 +46,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
         coinHistory?.data?.history[i].timestamp * 1000
       ).toLocaleDateString("en-MY");
     }
-    // coinTimestamp.push(
-    //   new Date(
-    //     coinHistory?.data?.history[i].timestamp * 1000
-    //   ).toLocaleDateString("en-MY")
-    // );
-    coinTimestamp.push(coinDate);
+    coinTimestamp.unshift(coinDate);
   }
 
   const data = {
@@ -111,7 +107,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
             Current {coinName} Price : ${currentPrice}
           </h5>
           {/* <Button onClick="resetZoomChart()">Reset Zoom</Button> */}
-          <button onClick={resetZoom}>Reset Zoom</button>
+          {/* <button onClick={resetZoom}>Reset Zoom</button> */}
         </div>
       </div>
       <Line data={data} options={options} />
