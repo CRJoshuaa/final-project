@@ -1,29 +1,18 @@
 .settings-cont {
-  color: white;
-  background-color: var(--dark-1);
-  border-top: 1px solid var(--accent-1);
-  padding: 25px;
+  color: black;
+  background-color: var(--off-white);
   flex: 0.8;
-}
-.profile-picture,
-.general-info {
-  margin-bottom: 10px;
-}
-
-.modal-setting-1 {
-  margin-bottom: 10px;
-}
-.header-avatar {
-  cursor: pointer;
-  border-radius: 999px;
-  height: 30px;
-  margin-right: 10px;
+  width: 100%;
 }
 
 .settings-header {
-  display: flex;
-  border-bottom: 1px solid var(--accent-1);
-  padding: 13px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 20px;
 }
 
 .settings-header > .MuiSvgIcon-root {
@@ -55,5 +44,86 @@
   font-size: 14px;
   margin-top: 1px;
   margin-right: 2px;
-  color: green;
+  color: var(--green-1);
+}
+
+/* Account Settings Styling */
+
+.account-cont {
+  background-color: var(--light-3);
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 85%;
+}
+
+.account-setting {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.account-header {
+  margin-bottom: 10px;
+}
+
+/* Account Settings Styling end */
+
+/* Profile Picture Styling start */
+
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pfp-title {
+  padding: 10px;
+}
+
+.header-avatar {
+  cursor: pointer;
+  border-radius: 999px;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  box-shadow: 0 0 20px var(--dark-2);
+  margin: 10px;
+}
+
+/* Profile Picture Styling end */
+
+/* Gen Info Styling start */
+
+.username {
+  display: flex;
+  flex-direction: column;
+}
+
+.un-deets,
+.email-deets {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.current-un,
+.current-email {
+  background-color: var(--light-1);
+  padding: 5px;
+  text-align: center;
+  width: 250px;
+}
+
+/* Gen Info Styling end */
+
+button {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 10px;
 }

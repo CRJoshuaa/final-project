@@ -3,20 +3,26 @@
 .background {
   padding: 5px;
   overflow: hidden;
+  /* background-color: var(--light-3); */
+  margin: 20px auto auto auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 85%;
 }
 
-.head {
-  text-transform: uppercase;
-}
+/* .head {
+  background-color: var(--main-color);
+} */
 
-.btn {
+/* .modal-setting-1 {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;
-  margin-top: 20px;
   font-size: 15px;
   cursor: pointer;
-}
+  width: fit-content;
+  margin: 10px;
+} */
 
 .para {
   width: 70vw;
@@ -25,7 +31,7 @@
 /* Light Mode Styles */
 
 .background-light {
-  background-color: #fff;
+  background-color: var(--light-3);
 }
 
 .head-light {
@@ -37,8 +43,8 @@
 }
 
 .btn-light {
-  background-color: #222;
-  color: #fff;
+  background-color: var(--dark-2);
+  color: white;
   font-size: 15px;
   cursor: pointer;
 }
@@ -46,7 +52,7 @@
 /* Dark Mode Styles */
 
 .background-dark {
-  background-color: #222;
+  background-color: var(--dark-1);
 }
 
 .head-dark {

@@ -8,11 +8,14 @@ import "./SettingsSideBar.css";
 // import SettingsSideBar from "./SettingsSideBar";
 import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
-import MessageNotifications from "./Notifications";
+// import MessageNotifications from "./Notifications";
 
 function Settings() {
   return (
     <div className="settings-cont">
+      <div className="settings-header">
+        <h1>Settings</h1>
+      </div>
       {/* <div>
         <SettingsSideBar Icon={PermIdentitySharpIcon} title="Account" />
         <SettingsSideBar Icon={ColorLensSharpIcon} title="Appearance" />
@@ -22,17 +25,13 @@ function Settings() {
         />
         <SettingsSideBar Icon={HelpOutlineSharpIcon} title="Help" />
       </div> */}
-      <div>
-        <AccountSetting />
-      </div>
-      <div>
-        <AppearanceSetting />
-      </div>
-      <br />
-      <hr />
-      <div>
+      <AccountSetting />
+
+      <AppearanceSetting />
+
+      {/* <div>
         <MessageNotifications />
-      </div>
+      </div> */}
     </div>
   );
 }

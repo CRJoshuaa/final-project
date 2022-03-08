@@ -2,7 +2,7 @@ import React from "react";
 import "./Message.css";
 import { db } from "../firebase";
 import { useDocument } from "react-firebase-hooks/firestore";
-import { checkedCheck } from "./testnoti";
+// import { checkedCheck } from "./testnoti";
 import ReplyIcon from "@mui/icons-material/Reply";
 import Linkify from "react-linkify";
 import { current } from "@reduxjs/toolkit";

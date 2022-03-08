@@ -1,0 +1,86 @@
+/*Loading animation test*/
+
+.coin {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  transform-style: preserve-3d;
+  animation: rotate3d 8s linear infinite;
+  transition: all 0.3s;
+  top: 35%;
+}
+.coin__front {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #0d1d2c;
+}
+.coin__front:after {
+  content: "";
+  position: absolute;
+  left: -150px;
+  bottom: 100%;
+  display: block;
+  height: 200px;
+  width: 600px;
+  background: #fff;
+  opacity: 0.3;
+  animation: shine linear 4s infinite;
+}
+.coin__front {
+  background-image: url(../images/appLogo.png);
+  background-size: cover;
+  transform: translateZ(10px);
+}
+
+.coin__edge div:nth-child(1) {
+  position: absolute;
+  height: 11.775px;
+  width: 20px;
+  background: #000;
+  transform: translateY(144.1125px) translateX(140px) rotateZ(94.5deg)
+    translateX(150px) rotateY(90deg);
+}
+.coin__shadow {
+  position: absolute;
+  width: 300px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 100px 100px #000;
+  opacity: 0.125;
+  transform: rotateX(90deg) translateZ(-330px) scale(0.5);
+}
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+@keyframes shine {
+  0%,
+  15% {
+    transform: translateY(600px) rotate(-40deg);
+  }
+  50% {
+    transform: translateY(-300px) rotate(-40deg);
+  }
+}
+.coin__edge_image {
+  background-image: url(https://placedog.net/540/205);
+}
+
+/*loading animation end*/
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+}

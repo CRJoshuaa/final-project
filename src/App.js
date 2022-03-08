@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
@@ -18,6 +17,7 @@ import { NotificationContextProvider } from "./components/NotificationsContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ShakeLoader from "./components/ShakeLoader";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -29,7 +29,11 @@ function App() {
             src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
             alt=""
           />
-          <Spinner name="ball-spin-fade-loader" color="purple" fadeIn="none" />
+          <Spinner
+            name="ball-spin-fade-loader"
+            color="var(--accent-1)"
+            fadeIn="none"
+          />
         </div>
       </div>
     );
