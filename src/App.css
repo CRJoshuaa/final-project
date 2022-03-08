@@ -1,7 +1,7 @@
 .app-body {
   display: flex;
   height: 100vh;
-  background-color: var(--off-white);
+  background-color: var(--light-1);
 }
 
 .app-loading {
