@@ -1,13 +1,13 @@
 .message-outer {
   display: flex;
   margin: 10px;
-  max-width: 80%;
+  flex-direction: column;
 }
 
 .message {
   display: flex;
   flex-direction: row;
-  max-width: 80%;
+  max-width: 70%;
 }
 
 .message-avatar {
@@ -80,7 +80,7 @@
 .message-info {
   padding-left: 10px;
   word-wrap: break-word;
-  max-width: 80%;
+  max-width: 95%;
 }
 
 .message-info > h4 {
