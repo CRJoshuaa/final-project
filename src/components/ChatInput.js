@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ChatInput.css";
 import { auth, db } from "../firebase";
-
+// import MessageNotifications from "./Notifications";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { IconButton } from "@mui/material";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
@@ -15,6 +15,7 @@ import Picker from "emoji-picker-react";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import { checkedCheck } from "./testnoti";
 
 toast.configure();
 
@@ -42,7 +43,9 @@ function ChatInput({
       return true;
     }
   };
-
+  // const setMessageToNotification = () => {
+  //   checkedCheck(channelName, input);
+  // };
   const sendMessage = (e) => {
     e.preventDefault(); //Prevents refresh
 
@@ -68,6 +71,9 @@ function ChatInput({
 
     setInput("");
     setReplyDocId(null);
+    // if(channelName){
+    // if(timestam)
+    // setMessageToNotification();
   };
   return (
     <div className="chat-input">
