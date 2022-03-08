@@ -5,15 +5,14 @@
   background-image: url("https://wallpaperaccess.com/full/449895.jpg");
 }
 
-.chat-body::-webkit-scrollbar {
+.chat-display::-webkit-scrollbar {
   display: none;
 }
 
 .chat-body {
-  flex: 0.8;
-  overflow-y: scroll;
-  height: 78.9%;
   background-color: transparent;
+  width: 95%;
+  margin: auto;
 }
 
 .chat-header {
@@ -73,13 +72,11 @@
 }
 
 .chat-messages {
-  min-height: 80%;
   display: flex;
   flex-direction: column;
   bottom: 0;
   overflow-y: scroll;
 }
-
 
 .chat-messages::-webkit-scrollbar {
   display: none;
@@ -88,6 +85,40 @@
 .chat-dummy {
   visibility: hidden;
   height: 10px;
+}
+
+.chat-display {
+  flex: 0.8;
+  overflow-y: scroll;
+  height: 80%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-sidebar {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 5%;
+  position: sticky;
+  top: 0;
+  background-color: var(--main-color);
+  justify-content: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50%;
+}
+
+.icons > button {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  transform: scale(1.3);
 }
 
 /*Mobile screens*/
