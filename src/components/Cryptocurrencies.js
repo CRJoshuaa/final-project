@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 import { Input } from "@material-ui/core";
 import { io } from "socket.io-client";
+import ShakeLoader from "./ShakeLoader";
 
 const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 3 : 100;
@@ -16,11 +17,15 @@ const Cryptocurrencies = ({ simplified }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const socket = useSelector(selectSocket);
+  // const socket = io("http://localhost:3001");
 
+  //REQUESTING DATA
+  // request crypto ranking data
   useEffect(() => {
     socket.emit("request-crypto", count);
   }, []);
 
+  //filter crypto data
   useEffect(() => {
     const filteredData = cryptos.filter((coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,14 +34,17 @@ const Cryptocurrencies = ({ simplified }) => {
     setFilteredCryptos(filteredData);
   }, [cryptos, searchTerm]);
 
+  //RECEIVE DATA
+  //receive crypto ranking data
   socket.on("response-crypto", (response) => {
-    setCryptos(response);
+    setCryptos(response.data.coins);
   });
 
   const top3 = filteredCryptos?.slice(0, 3);
   const theRest = filteredCryptos?.slice(3, 101);
 
-  if (filteredCryptos.length === 0) return <RotateLoading />;
+  //render loading screen
+  if (filteredCryptos.length === 0) return <ShakeLoader />;
 
   return (
     <div className="cryptocurrency-page">
