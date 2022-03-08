@@ -15,12 +15,9 @@ import Picker from "emoji-picker-react";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-<<<<<<< HEAD
 import { checkedCheck } from "./testnoti";
 import useNotificationContext from "./useNotificationsContext";
-=======
 // import { checkedCheck } from "./testnoti";
->>>>>>> c3b4a19c523921ed10298ea20f4274cedf30ead8
 
 toast.configure();
 
