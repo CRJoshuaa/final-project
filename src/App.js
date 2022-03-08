@@ -40,22 +40,22 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <ThemeProvider>
-          {!user ? (
-            <Login />
-          ) : (
-            <>
-              {/* A <Switch> looks through its children <Route>s and
+        {/* <ThemeProvider> */}
+        {!user ? (
+          <Login />
+        ) : (
+          <>
+            {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-              {/* <Header /> */}
+            {/* <Header /> */}
 
-              <div className="app-body">
-                <Sidebar />
-                <Switch>
-                  <Route path="/" exact>
-                    <Chat />
-                  </Route>
-                  {/* <Route path="/DirectMessage" exact>
+            <div className="app-body">
+              <Sidebar />
+              <Switch>
+                <Route path="/" exact>
+                  <Chat />
+                </Route>
+                {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
                 <Route path="/DirectMessage"></Route>
                 <Route path="/crypto-home" exact>
