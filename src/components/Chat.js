@@ -6,6 +6,7 @@ import ChatInput from "./ChatInput";
 import { useSelector } from "react-redux";
 import { useRef, useEffect } from "react";
 import { selectRoomId } from "../features/appSlice";
+import RightBar from "./RightBar";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
@@ -138,6 +139,7 @@ function Chat() {
                 </div>
               </>
             )}
+            <RightBar />
           </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>

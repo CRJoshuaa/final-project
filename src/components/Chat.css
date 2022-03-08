@@ -75,6 +75,12 @@
   flex-direction: column;
   min-height: 83%;
   bottom: 0;
+  overflow-y: scroll;
+}
+
+
+.chat-messages::-webkit-scrollbar {
+  display: none;
 }
 
 .chat-dummy {

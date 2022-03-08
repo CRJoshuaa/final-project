@@ -1,0 +1,22 @@
+.rightbar-cont {
+  float: right;
+  background-color: #3c4552;
+  align-items: flex-end;
+ 
+}
+
+.icons {
+  padding-left: 20px;
+  justify-content: space-between;
+  display: flex;
+  height: 35%;
+
+  flex-direction: column;
+  padding-right: 12px;
+}
+
+.icons > button {
+  display: flex;
+  flex-direction: row;
+  color: var(--light-1);
+}
