@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import "./CryptoHome.css";
-import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
 import RotateLoading from "./RotateLoading";
+import { io } from "socket.io-client";
+
+import { selectSocket } from "../features/appSlice";
+import { useSelector } from "react-redux";
 
 const CryptoHome = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
-  const globalStats = data?.data?.stats;
+  const socket = useSelector(selectSocket);
+  // const socket = io("http://localhost:3001");
 
-  console.log(data);
+  const [cryptos, setCryptos] = useState([]);
 
-  if (isFetching) return <RotateLoading />;
+  //REQUESTING DATA
+  // request crypto ranking data
+  useEffect(() => {
+    socket.emit("request-crypto", 10);
+  }, []);
+
+  //RECEIVE DATA
+  //receive crypto ranking data
+  socket.on("response-crypto", (response) => {
+    setCryptos(response);
+  });
+
+  const globalStats = cryptos?.data?.stats;
+
+  if (cryptos.length === 0) return <RotateLoading />;
 
   return (
     <div className="crypto-home">
@@ -21,7 +38,7 @@ const CryptoHome = () => {
         <h1>Crypto Homepage</h1>
       </div>
       <div className="crypto-stats">
-        <h2>Cryptocurrency Statistics</h2>
+        <h2>Global Cryptocurrency Statistics</h2>
         <div className="total-table">
           <div className="total-column">
             <p>Total Cryptocurrencies </p>

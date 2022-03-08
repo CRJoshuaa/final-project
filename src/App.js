@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
 import { auth } from "./firebase";
 import Login from "./components/Login";
 import Spinner from "react-spinkit";
@@ -13,6 +12,7 @@ import CryptoHome from "./components/CryptoHome";
 import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
+import { ThemeProvider } from "./components/ThemeContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        {/* <ThemeProvider> */}
         {!user ? (
           <Login />
         ) : (
@@ -53,9 +54,6 @@ function App() {
               <Switch>
                 <Route path="/" exact>
                   <Chat />
-                </Route>
-                <Route path="/settings" exact>
-                  <Settings />
                 </Route>
                 {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
