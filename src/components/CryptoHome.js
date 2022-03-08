@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import "./CryptoHome.css";
-import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
+import RotateLoading from "./RotateLoading";
+import { io } from "socket.io-client";
+
+import { selectSocket } from "../features/appSlice";
+import { useSelector } from "react-redux";
 
 const CryptoHome = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
-  const globalStats = data?.data?.stats;
+  const socket = useSelector(selectSocket);
+  // const socket = io("http://localhost:3001");
 
-  console.log(data);
+  const [cryptos, setCryptos] = useState([]);
 
-  if (isFetching) return "Loading...";
+  //REQUESTING DATA
+  // request crypto ranking data
+  useEffect(() => {
+    socket.emit("request-crypto", 10);
+  }, []);
+
+  //RECEIVE DATA
+  //receive crypto ranking data
+  socket.on("response-crypto", (response) => {
+    setCryptos(response);
+  });
+
+  const globalStats = cryptos?.data?.stats;
+
+  if (cryptos.length === 0) return <RotateLoading />;
 
   return (
     <div className="crypto-home">
@@ -39,13 +57,17 @@ const CryptoHome = () => {
         </div>
       </div>
       <div className="top-ten-container">
-        <h3 className="show-more"></h3> <Cryptocurrencies simplified />
-        <Link to="/cryptocurrencies">Show More</Link>
+        <Cryptocurrencies simplified />
+        <Link to="/cryptocurrencies">
+          <h4 className="show-more">Show More Cryptocurrencies</h4>
+        </Link>
       </div>
 
       <div className="crypto-news-cont">
-        <CryptoNews simplified /> <h3 className="show-more"></h3>
-        <Link to="/crypto-news">Show More</Link>
+        <CryptoNews simplified />
+        <Link to="/crypto-news">
+          <h4 className="show-more">Show More News</h4>
+        </Link>
       </div>
     </div>
   );
