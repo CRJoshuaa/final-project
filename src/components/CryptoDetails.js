@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import millify from "millify";
@@ -16,24 +16,49 @@ import {
 } from "@ant-design/icons";
 import Select from "react-select";
 
-import {
-  useGetCryptoDetailsQuery,
-  useGetCryptoHistoryQuery,
-} from "../services/cryptoApi";
+import { selectSocket } from "../features/appSlice";
+import { useSelector } from "react-redux";
+import { io } from "socket.io-client";
+
 import LineChart from "./LineChart";
 import ShakeLoader from "./ShakeLoader";
 
 const CryptoDetails = () => {
+  const socket = useSelector(selectSocket);
+  // const socket = io("http://localhost:3001");
+
   const { coinId } = useParams();
   const [timeperiod, setTimeperiod] = useState("7d");
-  const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
-  const { data: coinHistory } = useGetCryptoHistoryQuery({
-    coinId,
-    timeperiod,
+  const [cryptoDetails, setcryptoDetails] = useState([]);
+
+  const [coinHistory, setCoinHistory] = useState([]);
+
+  //REQUESTING DATA
+  //request crypto details data
+  useEffect(() => {
+    socket.emit("request-crypto-details", coinId);
+  }, []);
+
+  //request crypto history
+  useEffect(() => {
+    socket.emit("request-crypto-history", coinId, timeperiod);
+  }, [timeperiod]);
+
+  //RECEIVING DATA
+  //receiving coin history data
+  socket.on("response-crypto-history", (response) => {
+    setCoinHistory(response);
   });
 
-  const cryptoDetails = data?.data?.coin;
+  //receiving crypto details data
+  socket.on("response-crypto-details", (response) => {
+    setcryptoDetails(response.data.coin);
+  });
 
+  //is loading conditions
+  const isFetching = cryptoDetails.length === 0 || coinHistory.length === 0;
+
+  //render loading screen
   if (isFetching) return <ShakeLoader />;
 
   const time = [
@@ -91,7 +116,7 @@ const CryptoDetails = () => {
       icon: <MoneyCollectOutlined />,
     },
     {
-      title: "Aprroved Supply",
+      title: "Approved Supply",
       value: cryptoDetails?.supply?.confirmed ? (
         <CheckOutlined />
       ) : (
