@@ -1,6 +1,5 @@
 .settings-cont {
   color: black;
-  background-color: var(--off-white);
   flex: 0.8;
   width: 100%;
   overflow-y: scroll;
