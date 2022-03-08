@@ -17,8 +17,11 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import { useAuthState } from "react-firebase-hooks/auth";
 import Replybox from "./ReplyBox";
 import { checkedCheck } from "./testnoti";
+import useNotificationContext from "./useNotificationsContext";
 
 function Chat() {
+  const addNotification = useNotificationContext();
+
   // const roomId = useSelector(selectRoomId);
   const [replyDocId, setReplyDocId] = useState(null);
   const chatRef = useRef();
@@ -36,6 +39,32 @@ function Chat() {
 
         .orderBy("timestamp", "asc")
   );
+
+  const [latestRoomMessage, load] = useCollection(
+    roomId &&
+      db
+        .collection("rooms")
+        .doc(roomId)
+        .collection("messages")
+
+        .orderBy("timestamp", "desc")
+        .limit(1)
+  );
+  console.log(latestRoomMessage);
+  const getOnlyMessageForNoti = () => {
+    {
+      latestRoomMessage?.docs.map((doc) => {
+        const { message } = doc.data();
+        if (message) {
+          addNotification(message);
+          console.log(message);
+        }
+        return 0;
+      });
+    }
+  };
+
+  getOnlyMessageForNoti();
 
   const [currentUser] = useAuthState(auth);
 

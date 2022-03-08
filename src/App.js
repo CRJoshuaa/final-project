@@ -14,6 +14,7 @@ import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
 import { ThemeProvider } from "./components/ThemeContext";
+import { NotificationContextProvider } from "./components/NotificationsContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,46 +36,48 @@ function App() {
   }
   return (
     <div className="App">
-      <Router>
+      <NotificationContextProvider>
         <ThemeProvider>
-          {!user ? (
-            <Login />
-          ) : (
-            <>
-              {/* A <Switch> looks through its children <Route>s and
+          <Router>
+            {!user ? (
+              <Login />
+            ) : (
+              <>
+                {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-              {/* <Header /> */}
+                {/* <Header /> */}
 
-              <div className="app-body">
-                <Sidebar />
-                <Switch>
-                  <Route path="/" exact>
-                    <Chat />
-                  </Route>
-                  {/* <Route path="/DirectMessage" exact>
+                <div className="app-body">
+                  <Sidebar />
+                  <Switch>
+                    <Route path="/" exact>
+                      <Chat />
+                    </Route>
+                    {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
-                  <Route path="/DirectMessage"></Route>
-                  <Route path="/crypto-home" exact>
-                    <CryptoHome />
-                  </Route>
-                  <Route path="/cryptocurrencies" exact>
-                    <Cryptocurrencies />
-                  </Route>
-                  <Route path="/crypto/:coinId" exact>
-                    <CryptoDetails />
-                  </Route>
-                  <Route path="/crypto-news" exact>
-                    <CryptoNews />
-                  </Route>
-                  <Route path="/settings" exact>
-                    <Settings />
-                  </Route>
-                </Switch>
-              </div>
-            </>
-          )}
+                    <Route path="/DirectMessage"></Route>
+                    <Route path="/crypto-home" exact>
+                      <CryptoHome />
+                    </Route>
+                    <Route path="/cryptocurrencies" exact>
+                      <Cryptocurrencies />
+                    </Route>
+                    <Route path="/crypto/:coinId" exact>
+                      <CryptoDetails />
+                    </Route>
+                    <Route path="/crypto-news" exact>
+                      <CryptoNews />
+                    </Route>
+                    <Route path="/settings" exact>
+                      <Settings />
+                    </Route>
+                  </Switch>
+                </div>
+              </>
+            )}
+          </Router>
         </ThemeProvider>
-      </Router>
+      </NotificationContextProvider>
     </div>
   );
 }

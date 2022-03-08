@@ -6,6 +6,8 @@ import { checkedCheck } from "./testnoti";
 import ReplyIcon from "@mui/icons-material/Reply";
 import Linkify from "react-linkify";
 import { current } from "@reduxjs/toolkit";
+import { List } from "@mui/material";
+import useNotificationContext from "./useNotificationsContext";
 
 function Message({
   messageId,
@@ -19,22 +21,22 @@ function Message({
   isCurrentUser,
   setReplyDocId,
 }) {
-  // var currentTimestamp = Math.round(new Date().getTime() / 1000);
-  // console.log(Date(currentTimestamp?.toDate()).toLocaleString(Date.DATE_FULL));
-  // console.log("currentTimestamp: " + currentTimestamp);
-  // console.log("timestamp from channel: " + Math.floor(timestamp / 1000));
-  // console.log("Normal timestamp: " + timestamp);
-  // console.log(Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL));
+  const addNotification = useNotificationContext();
+
   const [replyDetails] = useDocument(
     roomId &&
       replyDocId &&
       db.collection("rooms").doc(roomId).collection("messages").doc(replyDocId)
   );
+
+  // addNotification(message);
+
   // if (
   //   Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL) <= currentTimestamp
   // ) {
-  // checkedCheck(channelName, message[1]);
-  console.log(message[10]);
+  // checkedCheck(channelName, message);
+
+  // console.log(message);
   // }
   return (
     <div className="message-outer">
