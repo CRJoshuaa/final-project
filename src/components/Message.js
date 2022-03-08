@@ -34,7 +34,7 @@ function Message({
   //   Date(timestamp?.toDate()).toLocaleString(Date.DATE_FULL) <= currentTimestamp
   // ) {
   // checkedCheck(channelName, message[1]);
-  console.log(message[10]);
+
   // }
   return (
     <div className="message-outer">
