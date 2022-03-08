@@ -116,6 +116,7 @@
     bottom: 0;
     position: absolute;
     overflow-x: scroll;
+    z-index: 5;
   }
 
   .sidebar-cont::-webkit-scrollbar {

@@ -68,6 +68,16 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
     ],
   };
 
+  // const actions = {
+  //   handler(LineChart) {
+  //     LineChart.resetZoom();
+  //   },
+  // };
+
+  // const resetZoomChart = (resetZoom) => {
+  //   LineChart.resetZoom;
+  // };
+
   const options = {
     // plugins: {
     //   zoom: {
@@ -103,7 +113,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
             Current {coinName} Price : ${currentPrice}
           </h5>
           {/* <Button onClick="resetZoomChart()">Reset Zoom</Button> */}
-          {/* <button onClick={resetZoom}>Reset Zoom</button> */}
+          <button onClick={resetZoom}>Reset Zoom</button>
         </div>
       </div>
       <Line data={data} options={options} />
@@ -115,8 +125,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
 //   LineChart.resetZoom();
 // }
 
-// function resetZoom() {
-//   LineChart.resetZoom();
-// }
+function resetZoom() {
+  LineChart.resetZoom();
+}
 
 export default LineChart;
