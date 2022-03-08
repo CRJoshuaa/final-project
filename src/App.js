@@ -16,6 +16,7 @@ import { ThemeProvider } from "./components/ThemeContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ShakeLoader from "./components/ShakeLoader";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -56,27 +57,29 @@ function App() {
                   </Route>
                   {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
-                  <Route path="/DirectMessage"></Route>
-                  <Route path="/crypto-home" exact>
-                    <CryptoHome />
-                  </Route>
-                  <Route path="/cryptocurrencies" exact>
-                    <Cryptocurrencies />
-                  </Route>
-                  <Route path="/crypto/:coinId" exact>
-                    <CryptoDetails />
-                  </Route>
-                  <Route path="/crypto-news" exact>
-                    <CryptoNews />
-                  </Route>
-                  <Route path="/settings" exact>
-                    <Settings />
-                  </Route>
-                </Switch>
-              </div>
-            </>
-          )}
-        </ThemeProvider>
+                <Route path="/DirectMessage"></Route>
+                <Route path="/crypto-home" exact>
+                  <CryptoHome />
+                </Route>
+                <Route path="/cryptocurrencies" exact>
+                  <Cryptocurrencies />
+                </Route>
+                <Route path="/crypto/:coinId" exact>
+                  <CryptoDetails />
+                </Route>
+                <Route path="/crypto-news" exact>
+                  <CryptoNews />
+                </Route>
+                <Route path="/settings" exact>
+                  <Settings />
+                </Route>
+                {/* <Route path="/loader">
+                  <ShakeLoader />
+                </Route> */}
+              </Switch>
+            </div>
+          </>
+        )}
       </Router>
     </div>
   );

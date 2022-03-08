@@ -25,7 +25,6 @@ const CryptoNews = ({ simplified }) => {
   socket.on("response-crypto-news", (message) => {
     setCryptoNews(message);
   });
-
   if (!cryptoNews?.value) return <RotateLoading />;
   return (
     <div className="crypto-news-cont">
@@ -35,11 +34,11 @@ const CryptoNews = ({ simplified }) => {
       <div className="crypto-news-feed">
         {cryptoNews.value.map((news, i) => (
           <a
-            key={i}
             href={news.url}
             target="_blank"
             rel="noreferrer"
             className="top"
+            key={news.url}
           >
             <div className="crypto-news-card">
               <div className="crypto-news-img">
