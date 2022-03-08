@@ -144,13 +144,8 @@
   justify-content: center;
 }
 
-a {
+.crypto-lead > a {
   z-index: 101;
-  color: black;
-}
-
-a:hover {
-  color: var(--accent-1);
 }
 
 /*styling for top 3 end*/
@@ -181,7 +176,6 @@ a:hover {
   margin: 10px;
   background-color: var(--light-3);
   border-radius: 15px;
-  /* border: 1px solid var(--accent-1); */
   transition-duration: 0.5s;
 }
 

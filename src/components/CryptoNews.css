@@ -76,10 +76,6 @@
   text-align: end;
 }
 
-a:link {
-  text-decoration: none;
-}
-
 .crypto-news-source > p {
   font-size: 12px;
   text-decoration: none;

@@ -78,10 +78,6 @@
   color: white;
 }
 
-a {
-  text-decoration: none;
-}
-
 .crypto-news-cont {
   display: flex;
   flex-direction: column;

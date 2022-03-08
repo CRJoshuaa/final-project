@@ -10,9 +10,9 @@
   width: 85%;
 }
 
-/* .head {
-  background-color: var(--main-color);
-} */
+.header {
+  padding: 10px;
+}
 
 /* .modal-setting-1 {
   border: none;
@@ -40,7 +40,7 @@
   background-color: var(--light-3);
 }
 
-.head-light {
+.header-light {
   color: #222;
 }
 
@@ -64,7 +64,7 @@
   transition-duration: 0.5s;
 }
 
-.head-dark {
+.header-dark {
   color: #fff;
 }
 
@@ -81,14 +81,14 @@
 /*preview styling */
 
 .chat-preview {
-  margin: 10px;
+  margin: 20px;
 }
 
 .chat-preview > h3 {
   margin: 15px;
 }
 
-.avatar {
+.preview-avatar {
   border-radius: 999px;
   height: 50px;
   margin-right: 10px;

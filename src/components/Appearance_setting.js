@@ -24,7 +24,7 @@ function AppearanceSetting() {
         darkMode ? "background-dark" : "background-light"
       }`}
     >
-      <h2 className={`head ${darkMode ? "head-dark" : "head-light"}`}>
+      <h2 className={`header ${darkMode ? "header-dark" : "header-light"}`}>
         Appearance
       </h2>
       <div className="appearance-setting">
@@ -33,7 +33,7 @@ function AppearanceSetting() {
             <h3> Chatroom Preview</h3>
             <div className="preview-msg">
               <img
-                className="avatar"
+                className="preview-avatar"
                 alt={user?.displayName}
                 src={user?.photoURL}
               />
@@ -53,7 +53,7 @@ function AppearanceSetting() {
             </div>
             <div className="preview-msg">
               <img
-                className="avatar"
+                className="preview-avatar"
                 alt={user?.displayName}
                 src={user?.photoURL}
               />
