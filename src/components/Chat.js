@@ -10,14 +10,14 @@ import RightBar from "./RightBar";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
-
+import { ref } from "firebase/database";
 import Message from "./Message";
 import { IconButton } from "@mui/material";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import Replybox from "./ReplyBox";
-import { checkedCheck } from "./testnoti";
+// import { checkedCheck } from "./testnoti";
 import useNotificationContext from "./useNotificationsContext";
 import LandingPage from "./LandingPage";
 
@@ -45,13 +45,23 @@ function Chat() {
   const [latestRoomMessage, load] = useCollection(
     roomId &&
       db
-        .collection("rooms")
-        .doc(roomId)
-        .collection("messages")
+        // .collection("rooms")
+        // // .doc(roomId)
+        // .
+        // .collection("messages")
 
+        // .orderBy("timestamp", "desc")
+        // .limit(1)
+        .ref("rooms")
+        .orderByChild("messages")
+        .equalTo("message")
         .orderBy("timestamp", "desc")
         .limit(1)
   );
+
+  // const ref = firebase.db.ref("rooms");
+  // console.log(ref);
+
   console.log(latestRoomMessage);
   const getOnlyMessageForNoti = () => {
     {

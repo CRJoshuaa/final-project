@@ -5,7 +5,7 @@ const NotificationContext = createContext();
 
 export default NotificationContext;
 
-export function NotificationContextProvider({ children }) {
+export function NotificationContextProvider(props) {
   const [toast, setToast] = useState();
 
   // useEffect(() => {
@@ -27,12 +27,12 @@ export function NotificationContextProvider({ children }) {
 
   return (
     <NotificationContext.Provider value={addToast}>
-      {children}
+      {props.children}
 
       {toastify.info(toast, {
         position: "top-center",
         autoClose: 3000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,

@@ -40,8 +40,8 @@ function App() {
   }
   return (
     <div className="App">
-      <NotificationContextProvider>
-        <ThemeProvider>
+      <ThemeProvider>
+        <NotificationContextProvider>
           <Router>
             {!user ? (
               <Login />
@@ -80,8 +80,8 @@ function App() {
               </>
             )}
           </Router>
-        </ThemeProvider>
-      </NotificationContextProvider>
+        </NotificationContextProvider>
+      </ThemeProvider>
     </div>
   );
 }
