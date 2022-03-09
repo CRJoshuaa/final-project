@@ -10,7 +10,7 @@
   align-content: stretch;
   align-items: stretch;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--light-1);
+  /* background-color: var(--light-1); */
 }
 
 .crypto-news-cont::-webkit-scrollbar {
