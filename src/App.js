@@ -16,6 +16,7 @@ import { ThemeProvider } from "./components/ThemeContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ShakeLoader from "./components/ShakeLoader";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -38,8 +39,8 @@ function App() {
   }
   return (
     <div className="App">
-      <Router>
-        <ThemeProvider>
+      <ThemeProvider>
+        <Router>
           {!user ? (
             <Login />
           ) : (
@@ -72,12 +73,15 @@ function App() {
                   <Route path="/settings" exact>
                     <Settings />
                   </Route>
+                  {/* <Route path="/loader">
+                  <ShakeLoader />
+                </Route> */}
                 </Switch>
               </div>
             </>
           )}
-        </ThemeProvider>
-      </Router>
+        </Router>
+      </ThemeProvider>
     </div>
   );
 }

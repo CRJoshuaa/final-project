@@ -3,16 +3,16 @@ import "./RotateLoading.css";
 
 const RotateLoading = () => {
   return (
-    <div class="coin">
-      <div class="coin__front"></div>
-      <div class="coin__edge">
-        <div class="coin__edge_image"></div>
-        <div class="coin__edge_image"></div>
-        <div class="coin__edge_image"></div>
-        <div class="coin__edge_image"></div>
-        <div class="coin__edge_image"></div>
-        <div class="coin__edge_image"></div>
-        <div class="coin__shadow"></div>
+    <div className="coin">
+      <div className="coin__front"></div>
+      <div className="coin__edge">
+        <div className="coin__edge_image"></div>
+        <div className="coin__edge_image"></div>
+        <div className="coin__edge_image"></div>
+        <div className="coin__edge_image"></div>
+        <div className="coin__edge_image"></div>
+        <div className="coin__edge_image"></div>
+        <div className="coin__shadow"></div>
       </div>
     </div>
   );
