@@ -151,7 +151,10 @@ const CryptoDetails = () => {
     <div className="coin-detail-container">
       <div className="coin-detail-heading">
         <IconButton>
-          <Link to="/cryptocurrencies">
+          <Link
+            to="/cryptocurrencies"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
             <ArrowBackIosNewOutlinedIcon />
           </Link>
         </IconButton>
