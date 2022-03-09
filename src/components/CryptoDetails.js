@@ -23,6 +23,10 @@ import { io } from "socket.io-client";
 import LineChart from "./LineChart";
 import ShakeLoader from "./ShakeLoader";
 
+import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
+import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
+
 const CryptoDetails = () => {
   const socket = useSelector(selectSocket);
   // const socket = io("http://localhost:3001");
@@ -146,6 +150,12 @@ const CryptoDetails = () => {
   return (
     <div className="coin-detail-container">
       <div className="coin-detail-heading">
+        <IconButton>
+          <Link to="/cryptocurrencies">
+            <ArrowBackIosNewOutlinedIcon />
+          </Link>
+        </IconButton>
+
         <h1>
           All About {cryptoDetails.name} ({cryptoDetails.symbol})
         </h1>
