@@ -1,8 +1,20 @@
 .settings-cont {
   color: black;
-  background-color: var(--off-white);
   flex: 0.8;
   width: 100%;
+  overflow-y: scroll;
+}
+
+.settings-dark {
+  color: white;
+  background-color: var(--dark-2);
+  flex: 0.8;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.settings-cont::-webkit-scrollbar {
+  display: none;
 }
 
 .settings-header {
@@ -49,12 +61,27 @@
 
 /* Account Settings Styling */
 
-.account-cont {
+.acct-light {
   background-color: var(--light-3);
   margin: auto;
   padding: 10px;
   border-radius: 15px;
   width: 85%;
+  transition-duration: 0.5s;
+}
+
+.acct-dark {
+  background-color: var(--dark-1);
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  width: 85%;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+.account-header {
+  padding: 10px;
 }
 
 .account-setting {
@@ -62,10 +89,7 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: space-evenly;
-}
-
-.account-header {
-  margin-bottom: 10px;
+  padding: 15px 0;
 }
 
 /* Account Settings Styling end */
@@ -100,12 +124,14 @@
 .username {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .un-deets,
 .email-deets {
   font-size: 18px;
   font-style: italic;
+  margin: 5px;
 }
 
 .current-un,
@@ -113,7 +139,18 @@
   background-color: var(--light-1);
   padding: 5px;
   text-align: center;
-  width: 250px;
+  width: 100%;
+  transition-duration: 0.5s;
+}
+
+.current-un-dark,
+.current-email-dark {
+  background-color: var(--light-2);
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  color: black;
+  transition-duration: 0.5s;
 }
 
 /* Gen Info Styling end */
@@ -126,4 +163,37 @@ button {
   cursor: pointer;
   width: fit-content;
   margin: 10px;
+}
+
+.btn-light {
+  background-color: var(--dark-2);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.btn-dark {
+  background-color: #fff;
+  color: #222;
+  font-size: 15px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .settings-cont {
+    flex: 1;
+    height: 88%;
+  }
+
+  .account-setting {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
