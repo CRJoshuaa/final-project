@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Settings.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { updateProfile } from "firebase/auth";
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
+
+import { ThemeContext } from "./ThemeContext";
+
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
 // import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
@@ -18,6 +21,19 @@ function AccountSetting() {
     useState(false);
   const [modalNameIsOpen, setModalNameIsOpen] = useState(false);
   const [name, setName] = useState("");
+
+  /*adding light/dark mode start*/
+
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
+  const changeTheme = () => {
+    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+    else theme.dispatch({ type: "DARKMODE" });
+  };
+
+  /*adding light/dark mode end*/
 
   async function uploadPhotoToFirebase() {
     await updateProfile(user, {
@@ -49,7 +65,7 @@ function AccountSetting() {
   }
 
   return (
-    <div className="account-cont">
+    <div className={`account-header ${darkMode ? "acct-dark" : "acct-light"}`}>
       <div className="account-header">
         <h2>Account</h2>
       </div>
@@ -65,7 +81,7 @@ function AccountSetting() {
             src={user?.photoURL}
           />
           <button
-            className="modal-setting-1"
+            className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
             onClick={() => setModalProfilePictureIsOpen(true)}
           >
             Edit profile picture
@@ -88,10 +104,19 @@ function AccountSetting() {
 
         <div className="general-info">
           <h3>General Info</h3>
+          <div className="un-deets">Username:</div>
           <div className="username">
-            <div className="un-deets">Username:</div>
-            <div className="current-un">{user?.displayName}</div>
-            <button onClick={() => setModalNameIsOpen(true)}>
+            <div
+              className={`current-un ${
+                darkMode ? "current-un-dark" : "current-un"
+              }`}
+            >
+              {user?.displayName}
+            </div>
+            <button
+              className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
+              onClick={() => setModalNameIsOpen(true)}
+            >
               Edit profile name
             </button>
           </div>
@@ -111,7 +136,14 @@ function AccountSetting() {
 
           <div className="email">
             <div className="email-deets">Email:</div>
-            <div className="current-email"> {user?.email}</div>
+            <div
+              className={`current-email ${
+                darkMode ? "current-email-dark" : "current-email"
+              }`}
+            >
+              {" "}
+              {user?.email}
+            </div>
           </div>
         </div>
       </div>

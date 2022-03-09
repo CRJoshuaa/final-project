@@ -22,7 +22,7 @@
     "emoji-picker-react": "^3.5.1",
     "faker": "5.5.3",
     "firebase": "^9.6.6",
-    "firebase-tools": "^10.2.0",
+    "firebase-tools": "^10.2.2",
     "html-react-parser": "^1.4.8",
     "millify": "^4.0.0",
     "moment": "^2.29.1",

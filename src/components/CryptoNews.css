@@ -10,7 +10,7 @@
   align-content: stretch;
   align-items: stretch;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--light-1);
+  /* background-color: var(--light-1); */
 }
 
 .crypto-news-cont::-webkit-scrollbar {
@@ -76,10 +76,6 @@
   text-align: end;
 }
 
-a:link {
-  text-decoration: none;
-}
-
 .crypto-news-source > p {
   font-size: 12px;
   text-decoration: none;
@@ -117,6 +113,7 @@ a:link {
 
   .crypto-news-cont {
     margin-top: 0px;
+    height: 88%;
   }
 
   .crypto-news-title {

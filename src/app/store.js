@@ -6,7 +6,8 @@ import { cryptoNewsApi } from "../services/cryptoNewsApi";
 export const store = configureStore({
   reducer: {
     app: appReducer,
-    [cryptoApi.reducerPath]: cryptoApi.reducer,
-    [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
+
+    // [cryptoApi.reducerPath]: cryptoApi.reducer,
+    // [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
   },
 });
