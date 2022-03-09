@@ -94,9 +94,6 @@ function Chat() {
                 <StarBorderOutlinedIcon />
               </IconButton>
             </div>
-            <div className="chat-header-right">
-              <InfoOutlinedIcon /> Details
-            </div>
           </div>
           <div className="chat-display">
             <div className="chat-body">
