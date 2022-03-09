@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.MuiSvgIcon-root {
+.coin-detail-heading > button {
   color: white;
   transform: scale(1.2);
   align-items: center;
