@@ -3,7 +3,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_APIKEY,
+  apiKey: "AIzaSyAgMHG6C4PyAX1rxlQazbSzA86wLc7pS24",
   authDomain: "besquare-final-project.firebaseapp.com",
   projectId: "besquare-final-project",
   storageBucket: "besquare-final-project.appspot.com",
