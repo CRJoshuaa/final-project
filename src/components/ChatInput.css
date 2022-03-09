@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--off-white);
+  background-color: var(--light-1);
   flex-direction: column;
   margin-bottom: 1rem;
 }
