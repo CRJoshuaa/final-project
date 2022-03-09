@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Settings.css";
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
@@ -10,9 +10,28 @@ import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
 // import MessageNotifications from "./Notifications";
 
+import { ThemeContext } from "./ThemeContext";
+
 function Settings() {
+  /*adding light/dark mode start*/
+
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
+  const changeTheme = () => {
+    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+    else theme.dispatch({ type: "DARKMODE" });
+  };
+
+  /*adding light/dark mode end*/
+
   return (
-    <div className="settings-cont">
+    <div
+      className={`settings-cont ${
+        darkMode ? "settings-dark" : "settings-cont"
+      }`}
+    >
       <div className="settings-header">
         <h1>Settings</h1>
       </div>
