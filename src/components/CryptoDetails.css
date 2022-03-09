@@ -28,13 +28,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--light-2);
 }
 
 .coin-heading-container .coin-name {
   font-size: 2rem;
   font-weight: 900;
-  color: var(--pink);
+  color: var(--accent-1);
 }
 
 .coin-heading-container p {
@@ -53,19 +53,19 @@
   font-weight: 700;
   font-size: 1.4rem;
   margin-top: 20px;
-  color: var(--pink);
+  color: var(--accent-1);
 }
 
 .coin-details-heading {
   font-weight: 700 !important;
   margin-top: 20px !important;
-  color: var(--pink) !important;
+  color: var(--accent-1) !important;
 }
 
 .coin-stats {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--light-2);
   font-size: 1rem;
   opacity: 0.9;
   padding: 20px;
@@ -123,7 +123,7 @@
 
 .coin-desc-link h2 {
   font-weight: 700;
-  color: var(--pink);
+  color: var(--accent-1);
 }
 
 .coin-desc-link p {
@@ -132,7 +132,11 @@
 }
 
 .coin-desc-link a {
-  color: var(--pink);
+  color: var(--dark-2);
+}
+
+.coin-desc-link a:hover {
+  color: var(--accent-1);
 }
 
 .coin-desc-link h3 {
@@ -142,6 +146,10 @@
 .coin-desc {
   flex: 0.5;
   margin-left: 1%;
+}
+
+.coin-desc > h3 {
+  color: var(--accent-1);
 }
 
 .coin-desc > p {
@@ -160,7 +168,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--light-2);
   padding: 20px;
 }
 
@@ -170,14 +178,14 @@
 }
 
 .coin-link a {
-  color: var(--pink);
+  /* color: black; */
   font-weight: 700;
   font-size: 1rem;
 }
 
 .coin-link:hover,
 .coin-stats:hover {
-  background-color: var(--bgSecondary);
+  background-color: var(--off-white);
 }
 
 @media screen and (max-width: 1000px) {
