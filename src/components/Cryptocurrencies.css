@@ -179,7 +179,8 @@
 }
 
 .crypto-card:hover {
-  box-shadow: 0 8px 16px 0 var(--accent-1);
+  box-shadow: 0 8px 16px 0 grey;
+  background-color: var(--accent-2);
 }
 
 .crypto-card > a {
