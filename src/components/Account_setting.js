@@ -86,7 +86,10 @@ function AccountSetting() {
           >
             Edit profile picture
           </button>
-          <Modal isOpen={modalProfilePictureIsOpen}>
+          <Modal
+            isOpen={modalProfilePictureIsOpen}
+            className={`pop-up ${darkMode ? "pop-up-dark" : "pop-up"}`}
+          >
             <div className="input">
               <input
                 type="url"
@@ -95,10 +98,16 @@ function AccountSetting() {
                 onChange={(e) => setImageURL(e.target.value)}
               />
             </div>
-            <button onClick={uploadPhotoToFirebase}>Upload</button>
-            <button onClick={() => setModalProfilePictureIsOpen(false)}>
-              Cancel
-            </button>
+            <div
+              className={`pop-up-btn ${
+                darkMode ? "pop-up-btn-dark" : "pop-up-btn"
+              }`}
+            >
+              <button onClick={uploadPhotoToFirebase}>Upload</button>
+              <button onClick={() => setModalProfilePictureIsOpen(false)}>
+                Cancel
+              </button>
+            </div>
           </Modal>
         </div>
 
@@ -122,16 +131,18 @@ function AccountSetting() {
           </div>
           <br />
 
-          <Modal isOpen={modalNameIsOpen}>
+          <Modal isOpen={modalNameIsOpen} className="pop-up">
             <div className="input">
               <input
                 type="text"
-                placeholder="Your name..."
+                placeholder="Your name please!"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <button onClick={uploadNewNametoFirebase}>Upload</button>
-            <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
+            <div className="pop-up-btn">
+              <button onClick={uploadNewNametoFirebase}>Upload</button>
+              <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
+            </div>
           </Modal>
 
           <div className="email">
