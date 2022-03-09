@@ -18,6 +18,7 @@ const CryptoNews = ({ simplified }) => {
 
   useEffect(() => {
     socket.emit("request-crypto-news", "Cryptocurrency", simplified ? 3 : 10);
+    return () => {};
   }, []);
 
   const [cryptoNews, setCryptoNews] = useState([]);

@@ -1,5 +1,4 @@
 .cryptocurrency-page {
-  background-color: var(--light-1);
   width: 100%;
   overflow-y: scroll;
 }
@@ -86,8 +85,8 @@
   will-change: transform;
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
-  border-radius: 15px;
-  /* margin: 10px; */
+  border-radius: 15px 15px 0 0;
+  margin: 10px;
 }
 .crypto-lead::after {
   display: block;
@@ -144,7 +143,7 @@
   justify-content: center;
 }
 
-a {
+.crypto-lead > a {
   z-index: 101;
 }
 
@@ -176,7 +175,6 @@ a {
   margin: 10px;
   background-color: var(--light-3);
   border-radius: 15px;
-  /* border: 1px solid var(--accent-1); */
   transition-duration: 0.5s;
 }
 
@@ -191,6 +189,7 @@ a {
 .crypto-card .crypto-image {
   width: 30px;
   margin: 5px;
+  background-blend-mode: multiply;
 }
 
 .crypto-name {
@@ -219,6 +218,25 @@ a {
     margin: 10px;
   }
 
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
   .crypto-name {
     font-size: 16px;
   }
@@ -232,4 +250,51 @@ a {
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
+  .crypto-name {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .crypto-lead {
+    border-radius: 15px;
+  }
+
+  .crypto-lead:nth-child(1) {
+    order: 1;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(2) {
+    order: 2;
+    height: 260px;
+  }
+
+  .crypto-lead:nth-child(3) {
+    order: 3;
+    height: 260px;
+  }
+
+  .crypto-name {
+    font-size: 16px;
+  }
 }

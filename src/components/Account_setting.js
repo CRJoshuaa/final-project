@@ -26,6 +26,19 @@ function AccountSetting() {
   const [modalNameIsOpen, setModalNameIsOpen] = useState(false);
   const [name, setName] = useState("");
 
+  /*adding light/dark mode start*/
+
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
+  const changeTheme = () => {
+    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+    else theme.dispatch({ type: "DARKMODE" });
+  };
+
+  /*adding light/dark mode end*/
+
   async function uploadPhotoToFirebase() {
     await updateProfile(user, {
       photoURL: imageURL,
@@ -76,7 +89,7 @@ function AccountSetting() {
             src={user?.photoURL}
           />
           <button
-            className="modal-setting-1"
+            className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
             onClick={() => setModalProfilePictureIsOpen(true)}
           >
             Edit profile picture
@@ -99,10 +112,19 @@ function AccountSetting() {
 
         <div className="general-info">
           <h3>General Info</h3>
+          <div className="un-deets">Username:</div>
           <div className="username">
-            <div className="un-deets">Username:</div>
-            <div className="current-un">{user?.displayName}</div>
-            <button onClick={() => setModalNameIsOpen(true)}>
+            <div
+              className={`current-un ${
+                darkMode ? "current-un-dark" : "current-un"
+              }`}
+            >
+              {user?.displayName}
+            </div>
+            <button
+              className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
+              onClick={() => setModalNameIsOpen(true)}
+            >
               Edit profile name
             </button>
           </div>
@@ -122,7 +144,14 @@ function AccountSetting() {
 
           <div className="email">
             <div className="email-deets">Email:</div>
-            <div className="current-email"> {user?.email}</div>
+            <div
+              className={`current-email ${
+                darkMode ? "current-email-dark" : "current-email"
+              }`}
+            >
+              {" "}
+              {user?.email}
+            </div>
           </div>
         </div>
       </div>

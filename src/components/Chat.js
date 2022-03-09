@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import "./Chat.css";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
+import PermMediaOutlinedIcon from "@mui/icons-material/PermMediaOutlined";
+import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
+import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
+
 import ChatInput from "./ChatInput";
 import { useSelector } from "react-redux";
 import { useRef, useEffect } from "react";
 import { selectRoomId } from "../features/appSlice";
-import RightBar from "./RightBar";
 
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { db, auth } from "../firebase";
 import { ref } from "firebase/database";
 import Message from "./Message";
 import { IconButton } from "@mui/material";
+
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -138,54 +144,78 @@ function Chat() {
               <InfoOutlinedIcon /> Details
             </div>
           </div>
+          <div className="chat-display">
+            <div className="chat-body">
+              {roomDetails && roomMessages && (
+                <>
+                  <div className="chat-messages">
+                    <div id="scroll-down">
+                      <IconButton
+                        style={{ position: "absolute" }}
+                        onClick={scrollIntoView}
+                      >
+                        <KeyboardDoubleArrowDownIcon
+                          style={{
+                            fontSize: "25px",
+                            backgroundColor: "white",
+                            borderRadius: "999px",
+                            marginRight: "0px",
+                            marginLeft: "auto",
+                            position: "relative",
+                            right: "0px",
+                          }}
+                        />
+                      </IconButton>
+                    </div>
 
-          <div className="chat-body">
-            {roomDetails && roomMessages && (
-              <>
-                <div className="chat-messages">
-                  <div id="scroll-down">
-                    <IconButton
-                      style={{ position: "absolute" }}
-                      onClick={scrollIntoView}
-                    >
-                      <KeyboardDoubleArrowDownIcon
-                        style={{
-                          fontSize: "25px",
-                          backgroundColor: "white",
-                          borderRadius: "999px",
-                          marginRight: "0px",
-                          marginLeft: "auto",
-                          position: "relative",
-                          right: "0px",
-                        }}
-                      />
-                    </IconButton>
+                    {roomMessages?.docs.map((doc) => {
+                      const {
+                        message,
+                        replyDocId,
+                        timestamp,
+                        user,
+                        userImage,
+                      } = doc.data();
+
+                      return (
+                        <Message
+                          key={doc.id}
+                          messageId={doc.id}
+                          message={message}
+                          replyDocId={replyDocId}
+                          roomId={roomId}
+                          timestamp={timestamp}
+                          user={user}
+                          userImage={userImage}
+                          isCurrentUser={user === currentUser.displayName}
+                          setReplyDocId={setReplyDocId}
+                        />
+                      );
+                    })}
+                    <div id="dummy" className="chat-messages"></div>
                   </div>
-
-                  {roomMessages?.docs.map((doc) => {
-                    const { message, replyDocId, timestamp, user, userImage } =
-                      doc.data();
-
-                    return (
-                      <Message
-                        key={doc.id}
-                        messageId={doc.id}
-                        message={message}
-                        replyDocId={replyDocId}
-                        roomId={roomId}
-                        timestamp={timestamp}
-                        user={user}
-                        userImage={userImage}
-                        isCurrentUser={user === currentUser.displayName}
-                        setReplyDocId={setReplyDocId}
-                      />
-                    );
-                  })}
-                  <div id="dummy" className="chat-messages"></div>
-                </div>
-              </>
-            )}
-            <RightBar />
+                </>
+              )}
+            </div>
+            <div className="chat-sidebar">
+              <div className="icons">
+                <IconButton>
+                  <InfoOutlinedIcon />
+                </IconButton>
+                <IconButton>
+                  <PushPinOutlinedIcon />
+                </IconButton>
+                <IconButton>
+                  <PermMediaOutlinedIcon />
+                </IconButton>
+                <IconButton>
+                  <InsertDriveFileOutlinedIcon />
+                </IconButton>
+                <IconButton>
+                  <LinkOutlinedIcon />
+                </IconButton>
+              </div>
+            </div>
           </div>
           <div className="chat-footer">
             <div className="chat-input" ref={chatRef}>
