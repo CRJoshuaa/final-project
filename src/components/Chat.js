@@ -45,19 +45,25 @@ function Chat() {
   const [latestRoomMessage, load] = useCollection(
     roomId &&
       db
-        // .collection("rooms")
-        // // .doc(roomId)
-        // .
-        // .collection("messages")
+        .collection("rooms")
+        .doc(roomId)
 
-        // .orderBy("timestamp", "desc")
-        // .limit(1)
-        .ref("rooms")
-        .orderByChild("messages")
-        .equalTo("message")
+        .collection("messages")
+
         .orderBy("timestamp", "desc")
         .limit(1)
+    // .ref("rooms")
+    // .orderByChild("messages")
+    // .equalTo("message")
+    // .orderBy("timestamp", "desc")
+    // .limit(1)
   );
+
+  const [lastMessageInTheList, load2] = useCollection(
+    db.collection("messages").orderBy("timestamp", "desc").limit(1)
+  );
+
+  console.log(lastMessageInTheList);
 
   // const ref = firebase.db.ref("rooms");
   // console.log(ref);

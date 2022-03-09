@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Settings.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { updateProfile } from "firebase/auth";
+import { ThemeContext } from "./ThemeContext";
+
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
+import "./Apperance_setting.css";
+
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
 // import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
 // import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
 
 function AccountSetting() {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   const [user] = useAuthState(auth);
 
   const [imageURL, setImageURL] = useState("");
@@ -49,7 +56,11 @@ function AccountSetting() {
   }
 
   return (
-    <div className="account-cont">
+    <div
+      className={`account-cont ${
+        darkMode ? "background-dark" : "background-light"
+      }`}
+    >
       <div className="account-header">
         <h2>Account</h2>
       </div>

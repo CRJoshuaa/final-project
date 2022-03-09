@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import SettingsIcon from "@mui/icons-material/Settings";
-
+import { ThemeContext } from "./ThemeContext";
+import "./Apperance_setting.css";
 import CreateIcon from "@mui/icons-material/Create";
 
 import SidebarOption from "./SidebarOption";
@@ -22,11 +23,19 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { IconButton } from "@mui/material";
 
 function Sidebar() {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
   const [channels] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
 
   return (
-    <div className="sidebar-cont">
+    <div
+      className={`sidebar-cont ${
+        darkMode ? "background-dark" : "background-light"
+      }`}
+    >
       <div className="sidebar-header">
         <div className="sidebar-left">
           <img
