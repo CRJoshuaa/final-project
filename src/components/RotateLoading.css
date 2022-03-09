@@ -16,7 +16,7 @@
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: black;
+  background-color: #0d1d2c;
 }
 .coin__front:after {
   content: "";
