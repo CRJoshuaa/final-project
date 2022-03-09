@@ -1,58 +1,70 @@
 @keyframes pop {
   0% {
-    transform: translate(-50%, -50%) scale(1.25, 0.75);
+    transform: translate(0, 0) scale(1.25, 0.75);
   }
   50% {
-    transform: translate(-50%, -100%) scale(1, 1);
+    transform: translate(0, -50%) scale(1, 1);
   }
   55% {
-    transform: translate(-50%, -100%) rotate(15deg);
+    transform: translate(0, -50%) rotate(15deg);
   }
   60% {
-    transform: translate(-50%, -100%) rotate(-15deg);
+    transform: translate(0, -50%) rotate(-15deg);
   }
   65% {
-    transform: translate(-50%, -100%) rotate(15deg);
+    transform: translate(0, -50%) rotate(15deg);
   }
   70% {
-    transform: translate(-50%, -100%) rotate(-15deg);
+    transform: translate(0, -50%) rotate(-15deg);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.25, 0.75);
+    transform: translate(0, 0) scale(1.25, 0.75);
   }
 }
 
-.coingram-logo > img {
+.shaker-load {
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  animation: pop 1.2s infinite;
+  color: var(--dark-1);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--off-white);
+}
 
-  height: 35%;
-  border-radius: 100%;
+.shaker-load > img {
+  height: 350px;
+  border: 10px solid #fff;
+  border-radius: 999px;
   background-color: transparent;
-  margin: 3%;
+  margin: 50px;
+  transform: translate(0, 0);
+  animation: pop 1.2s infinite;
 }
 
-.coingram-logo > h1 {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
+h1 {
+  font-size: 40px;
 }
 
+/*for mobile screens*/
 @media screen and (max-width: 480px) {
-  .coingram-logo > img {
-    top: 40%;
-    left: 40%;
-
+  .shaker-load > img {
     height: 250px;
   }
+  h1 {
+    font-size: 30px;
+  }
+}
 
-  .coingram-logo > h1 {
-    padding: 3%;
-    bottom: 20%;
-    left: 0%;
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .shaker-load > img {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 35px;
   }
 }

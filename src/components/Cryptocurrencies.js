@@ -23,6 +23,8 @@ const Cryptocurrencies = ({ simplified }) => {
   // request crypto ranking data
   useEffect(() => {
     socket.emit("request-crypto", count);
+
+    return () => {};
   }, []);
 
   //filter crypto data
