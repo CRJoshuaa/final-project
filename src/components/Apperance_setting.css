@@ -58,11 +58,9 @@
 }
 
 .appearance-setting > .btn-light {
-  /* background-color: var(--dark-2); */
   color: white;
   font-size: 15px;
   cursor: pointer;
-  /* transition-duration: 0.5s;s */
   background: linear-gradient(to left, var(--dark-2) 50%, white 50%) repeat
     scroll right bottom/200% 100% transparent;
   transition: all 0.4s ease-in-out;
@@ -95,11 +93,9 @@
 }
 
 .appearance-setting > .btn-dark {
-  /* background-color: var(--dark-2); */
   color: black;
   font-size: 15px;
   cursor: pointer;
-  /* transition-duration: 0.5s;s */
   background: linear-gradient(to left, white 50%, var(--dark-2) 50%) repeat
     scroll right bottom/200% 100% transparent;
   transition: all 0.4s ease-in-out;
