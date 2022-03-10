@@ -1,111 +1,92 @@
-.Login-container {
-  background-color: var(--main-color);
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-.Login-inner-container {
+.container {
   /* display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 50%; */
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 75px;
-  text-align: center;
-  background-color: var(--light-1);
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.Login-inner-container > img {
-  object-fit: contain;
-  height: 100px;
-  margin-bottom: 25px;
+  height: 100 vh;
+  width: 100 vw;
+  background-color: var(--light-3); */
 }
 
-.Login-inner-container > button {
-  text-transform: inherit !important;
-  background-color: var(--green-1) !important;
+.container > section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+section > .left {
+  height: 100vh;
+  width: 60vw;
+  background-color: var(--light-2);
+}
+
+section > .left > img {
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+section > .right {
+  height: 100vh;
+  width: 40vw;
+  background-color: var(--dark-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box > h1 {
+  margin-top: 80px;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  font-size: 70px;
   color: white;
 }
 
+.form > h2 {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin-bottom: 90px;
+  color: white;
+}
+
+.bttn {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: white;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+.bttn > .button:hover {
+  background-color: var(--light-1);
+}
+
+.bttnText,
+.bttnIcon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 100%;
+  font-weight: 900;
+}
+
+.bttnIcon {
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
 /*Mobile screens*/
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .Login-inner-container {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    padding: 30px;
-    text-align: center;
-    width: 50%;
-    height: 25%;
-    background-color: var(--light-1);
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
-
-  .Login-inner-container > button {
-    text-transform: inherit !important;
-    background-color: var(--green-1) !important;
-    color: white;
-    margin: 10px;
-  }
-
-  .Login-inner-container > p {
-    /* color: var(--red-1); */
-    display: none;
-  }
-
-  .Login-inner-container > h1 {
-    /* color: var(--red-1); */
-    /* padding-top: 10px; */
-    font-size: 20px;
-  }
-
-  .Login-inner-container > img {
-    object-fit: contain;
-    height: 100px;
-    margin-bottom: 10px;
-  }
+@media (min-width: 320px) {
 }
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .Login-inner-container {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    padding: 30px;
-    text-align: center;
-    width: 50%;
-    /* height: 50%; */
-    /* background-color: var(--red-1); */
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
-
-  .Login-inner-container > button {
-    text-transform: inherit !important;
-    background-color: var(--green-1) !important;
-    color: white;
-    margin: 10px;
-    width: 150px;
-  }
-
-  .Login-inner-container > p {
-    /* color: var(--red-1); */
-    display: none;
-  }
-
-  .Login-inner-container > h1 {
-    /* color: var(--red-1); */
-    /* padding-top: 10px; */
-    font-size: 20px;
-  }
-
-  .Login-inner-container > img {
-    object-fit: contain;
-    height: 100px;
-    margin-top: 20px;
-  }
 }
