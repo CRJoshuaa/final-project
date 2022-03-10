@@ -38,7 +38,7 @@ const CryptoHome = () => {
         <h1>Crypto Homepage</h1>
       </div>
       <div className="crypto-stats">
-        <h2>Cryptocurrency Statistics</h2>
+        <h2>Global Cryptocurrency Statistics</h2>
         <div className="total-table">
           <div className="total-column">
             <p>Total Cryptocurrencies </p>
