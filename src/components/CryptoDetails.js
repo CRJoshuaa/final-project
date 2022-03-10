@@ -160,6 +160,7 @@ const CryptoDetails = () => {
             statistics, market cap, and supply.
           </p>
         </div>
+        <h2 className="chart-title">{cryptoDetails.name} Price Chart</h2>
         <Select
           defaultValue="7d"
           className="select-timeperiod"
