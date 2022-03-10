@@ -77,12 +77,13 @@ const CryptoDetails = () => {
   ];
 
   const stats = [
+    // { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "Price in USD",
       value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
-    // { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
+
     {
       title: "24h Volume",
       value: `$ ${
@@ -168,7 +169,14 @@ const CryptoDetails = () => {
         <div className="coin-header">
           <div className="coin-img">
             <img src={cryptoDetails.iconUrl} />
-            <h2>{cryptoDetails.name}</h2>
+            <div className="ranking-cont">
+              <h2>{cryptoDetails.name}</h2>
+              <div className="ranking">
+                <p>
+                  <NumberOutlined /> Rank: {cryptoDetails?.rank}
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="coin-header-stats-cont">
