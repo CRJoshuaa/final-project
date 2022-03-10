@@ -89,7 +89,18 @@
   font-size: 1rem;
 }
 
-/* coin-header end */
+.chart-title {
+  display: flex;
+  color: #0071bd;
+  margin-top: 2%;
+  padding-left: 2%;
+}
+
+.select-timeperiod {
+  width: 200px !important;
+  margin-top: 20px !important;
+  margin-left: 2%;
+}
 
 .stats-container {
   display: flex;
@@ -330,9 +341,4 @@
   .coin-header-stats-cont {
     flex-direction: column;
   }
-}
-
-.select-timeperiod {
-  width: 200px !important;
-  margin-top: 20px !important;
 }
