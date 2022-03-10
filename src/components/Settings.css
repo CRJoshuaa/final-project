@@ -155,7 +155,7 @@
 
 /* Gen Info Styling end */
 
-button {
+.settings-cont > button {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;
@@ -174,8 +174,8 @@ button {
 }
 
 .btn-dark {
-  background-color: #fff;
-  color: #222;
+  background-color: white;
+  color: black;
   font-size: 15px;
   cursor: pointer;
   transition-duration: 0.5s;
@@ -185,7 +185,6 @@ button {
 
 .pop-up {
   background-color: var(--light-3);
-  /* z-index: 10; */
   width: 35vw;
   height: 35vh;
   display: flex;
@@ -196,14 +195,6 @@ button {
   border-radius: 15px;
 }
 
-input {
-  background-color: var(--light-1);
-  padding: 5px;
-  text-align: center;
-  border: 1px solid var(--accent-1);
-  border-radius: 5px;
-}
-
 .pop-up-btn {
   /* height: 100px; */
   display: flex;
@@ -211,8 +202,8 @@ input {
 }
 
 .pop-up-btn-dark > button {
-  background-color: #fff;
-  color: #222;
+  background-color: white;
+  color: black;
   font-size: 15px;
   cursor: pointer;
 }
@@ -237,6 +228,11 @@ input {
   .account-setting {
     flex-direction: column;
     align-items: center;
+  }
+
+  .pop-up {
+    background-color: var(--light-3);
+    width: fit-content;
   }
 }
 
