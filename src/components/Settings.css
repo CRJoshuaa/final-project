@@ -155,7 +155,7 @@
 
 /* Gen Info Styling end */
 
-button {
+.settings-cont > button {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;
