@@ -15,9 +15,6 @@ import "./Apperance_setting.css";
 // import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
 
 function AccountSetting() {
-  const theme = useContext(ThemeContext);
-
-  const darkMode = theme.state.darkMode;
   const [user] = useAuthState(auth);
 
   const [imageURL, setImageURL] = useState("");
@@ -32,10 +29,10 @@ function AccountSetting() {
 
   const darkMode = theme.state.darkMode;
 
-  const changeTheme = () => {
-    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
-    else theme.dispatch({ type: "DARKMODE" });
-  };
+  // const changeTheme = () => {
+  //   if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+  //   else theme.dispatch({ type: "DARKMODE" });
+  // };
 
   /*adding light/dark mode end*/
 

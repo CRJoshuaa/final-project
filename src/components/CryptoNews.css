@@ -13,6 +13,14 @@
   /* background-color: var(--light-1); */
 }
 
+.crypto-news-cont-dark {
+  background-color: var(--dark-2);
+}
+
+.crypto-news-cont-light {
+  background-color: white;
+}
+
 .crypto-news-cont::-webkit-scrollbar {
   display: none;
 }

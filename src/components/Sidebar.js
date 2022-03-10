@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { ThemeContext } from "./ThemeContext";
-import "./Apperance_setting.css";
+// import "./Apperance_setting.css";
 import CreateIcon from "@mui/icons-material/Create";
 
 import SidebarOption from "./SidebarOption";
@@ -33,10 +33,14 @@ function Sidebar() {
   return (
     <div
       className={`sidebar-cont ${
-        darkMode ? "background-dark" : "background-light"
+        darkMode ? "sidebar-cont-dark" : "sidebar-cont-dark"
       }`}
     >
-      <div className="sidebar-header">
+      <div
+        className={`sidebar-header ${
+          darkMode ? "sidebar-header-dark" : "sidebar-header-dark"
+        }`}
+      >
         <div className="sidebar-left">
           <img
             className="sidebar-avatar"

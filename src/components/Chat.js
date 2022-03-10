@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Chat.css";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
@@ -7,6 +7,7 @@ import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import PermMediaOutlinedIcon from "@mui/icons-material/PermMediaOutlined";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
+import { ThemeContext } from "./ThemeContext";
 
 import ChatInput from "./ChatInput";
 import { useSelector } from "react-redux";
@@ -37,7 +38,7 @@ function Chat() {
   const [roomDetails] = useDocument(
     roomId && db.collection("rooms").doc(roomId)
   );
-  const [notificationMessage, setNotificationMessage] = useState("");
+  // const [notificationMessage, setNotificationMessage] = useState("");
   const [roomMessages, loading] = useCollection(
     roomId &&
       db
@@ -48,47 +49,47 @@ function Chat() {
         .orderBy("timestamp", "asc")
   );
 
-  const [latestRoomMessage, load] = useCollection(
-    roomId &&
-      db
-        .collection("rooms")
-        .doc(roomId)
+  // const [latestRoomMessage, load] = useCollection(
+  //   roomId &&
+  //     db
+  //       .collection("rooms")
+  //       .doc(roomId)
 
-        .collection("messages")
+  //       .collection("messages")
 
-        .orderBy("timestamp", "desc")
-        .limit(1)
-    // .ref("rooms")
-    // .orderByChild("messages")
-    // .equalTo("message")
-    // .orderBy("timestamp", "desc")
-    // .limit(1)
-  );
+  //       .orderBy("timestamp", "desc")
+  //       .limit(1)
+  //   // .ref("rooms")
+  //   // .orderByChild("messages")
+  //   // .equalTo("message")
+  //   // .orderBy("timestamp", "desc")
+  //   // .limit(1)
+  // );
 
-  const [lastMessageInTheList, load2] = useCollection(
-    db.collection("messages").orderBy("timestamp", "desc").limit(1)
-  );
+  // const [lastMessageInTheList, load2] = useCollection(
+  //   db.collection("messages").orderBy("timestamp", "desc").limit(1)
+  // );
 
-  console.log(lastMessageInTheList);
+  // console.log(lastMessageInTheList);
 
   // const ref = firebase.db.ref("rooms");
   // console.log(ref);
 
-  console.log(latestRoomMessage);
-  const getOnlyMessageForNoti = () => {
-    {
-      latestRoomMessage?.docs.map((doc) => {
-        const { message } = doc.data();
-        if (message) {
-          addNotification(message);
-          console.log(message);
-        }
-        return 0;
-      });
-    }
-  };
+  // console.log(latestRoomMessage);
+  // const getOnlyMessageForNoti = () => {
+  //   {
+  //     latestRoomMessage?.docs.map((doc) => {
+  //       const { message } = doc.data();
+  //       if (message) {
+  //         addNotification(message);
+  //         console.log(message);
+  //       }
+  //       return 0;
+  //     });
+  //   }
+  // };
 
-  getOnlyMessageForNoti();
+  // getOnlyMessageForNoti();
 
   const [currentUser] = useAuthState(auth);
 
@@ -115,6 +116,9 @@ function Chat() {
   // } else {
   //   document.querySelector("#scroll-down").style.visibility = "visible";
   // }
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
 
   useEffect(() => {
     scrollIntoView();
@@ -127,7 +131,7 @@ function Chat() {
   }, [roomId, loading, roomMessages]);
 
   return (
-    <div className="chat">
+    <div className={`chat ${darkMode ? "chat-dark" : "chat-light"}`}>
       {!roomId && <LandingPage user={currentUser} />}
       {roomId && (
         <>
@@ -145,10 +149,20 @@ function Chat() {
             </div>
           </div>
           <div className="chat-display">
-            <div className="chat-body">
+            <div
+              className="chat-body"
+              // {`chat-body ${
+              //   darkMode ? "chat-body-dark" : "chat-body-light"
+              // }`}
+            >
               {roomDetails && roomMessages && (
                 <>
-                  <div className="chat-messages">
+                  <div
+                    className="chat-messages"
+                    // {`chat-messages ${
+                    //   darkMode ? "chat-messages-dark" : "chat-messages-light"
+                    // }`}
+                  >
                     <div id="scroll-down">
                       <IconButton
                         style={{ position: "absolute" }}
@@ -217,7 +231,12 @@ function Chat() {
               </div>
             </div>
           </div>
-          <div className="chat-footer">
+          <div
+            className="chat-footer"
+            // {`chat-footer ${
+            //   darkMode ? "chat-footer-dark" : "chat-footer-light"
+            // }`}
+          >
             <div className="chat-input" ref={chatRef}>
               {replyDocId && (
                 <div>

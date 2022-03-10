@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import "./Cryptocurrencies.css";
 import RotateLoading from "./RotateLoading";
 import { selectSocket } from "../features/appSlice";
 import { useSelector } from "react-redux";
+import { ThemeContext } from "./ThemeContext";
 
 import { Input } from "@material-ui/core";
 import { io } from "socket.io-client";
 import ShakeLoader from "./ShakeLoader";
 
 const Cryptocurrencies = ({ simplified }) => {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   const count = simplified ? 3 : 100;
   const [cryptos, setCryptos] = useState([]);
   const [filteredCryptos, setFilteredCryptos] = useState([]);
@@ -49,7 +53,11 @@ const Cryptocurrencies = ({ simplified }) => {
   if (filteredCryptos.length === 0) return <ShakeLoader />;
 
   return (
-    <div className="cryptocurrency-page">
+    <div
+      className={`cryptocurrency-page ${
+        darkMode ? "cryptocurrency-page-dark" : "cryptocurrency-page-light"
+      }`}
+    >
       <div className="cryptocurrency-header">
         <h1>Cryptocurrencies</h1>
       </div>{" "}

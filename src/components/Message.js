@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Message.css";
 import { db } from "../firebase";
 import { useDocument } from "react-firebase-hooks/firestore";
@@ -7,6 +7,8 @@ import ReplyIcon from "@mui/icons-material/Reply";
 import Linkify from "react-linkify";
 import { current } from "@reduxjs/toolkit";
 import { List } from "@mui/material";
+import { ThemeContext } from "./ThemeContext";
+
 import useNotificationContext from "./useNotificationsContext";
 
 function Message({
@@ -38,11 +40,26 @@ function Message({
 
   // console.log(message);
   // }
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
   return (
     <div className="message-outer">
-      <div className={`message ${isCurrentUser && `current-user`}`}>
+      <div
+        className={`message ${
+          isCurrentUser &&
+          `current-user ${
+            darkMode ? "current-user-dark" : "current-user-light"
+          }`
+        }`}
+      >
         <img className="message-avatar" src={userImage} alt="" />
-        <div className="message-details">
+        <div
+          className={`message-details ${
+            darkMode ? "message-details-dark" : "message-details-light"
+          }`}
+        >
           {replyDocId && (
             <div className="reply-message">
               <h5>{replyDetails?.data().user}</h5>
@@ -52,7 +69,12 @@ function Message({
             </div>
           )}
 
-          <div className="current-message">
+          <div
+            className="current-message"
+            // {`current-message ${
+            //   darkMode ? "current-message-dark" : "current-message-light"
+            // }`}
+          >
             <div className="message-info">
               <h4>
                 {user}

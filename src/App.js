@@ -41,46 +41,46 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider>
-        <NotificationContextProvider>
-          <Router>
-            {!user ? (
-              <Login />
-            ) : (
-              <>
-                {/* A <Switch> looks through its children <Route>s and
+        {/* <NotificationContextProvider> */}
+        <Router>
+          {!user ? (
+            <Login />
+          ) : (
+            <>
+              {/* A <Switch> looks through its children <Route>s and
            renders the first one that matches the current URL. */}
-                {/* <Header /> */}
+              {/* <Header /> */}
 
-                <div className="app-body">
-                  <Sidebar />
-                  <Switch>
-                    <Route path="/" exact>
-                      <Chat />
-                    </Route>
-                    {/* <Route path="/DirectMessage" exact>
+              <div className="app-body">
+                <Sidebar />
+                <Switch>
+                  <Route path="/" exact>
+                    <Chat />
+                  </Route>
+                  {/* <Route path="/DirectMessage" exact>
                   <DirectMessage /> */}
-                    <Route path="/DirectMessage"></Route>
-                    <Route path="/crypto-home" exact>
-                      <CryptoHome />
-                    </Route>
-                    <Route path="/cryptocurrencies" exact>
-                      <Cryptocurrencies />
-                    </Route>
-                    <Route path="/crypto/:coinId" exact>
-                      <CryptoDetails />
-                    </Route>
-                    <Route path="/crypto-news" exact>
-                      <CryptoNews />
-                    </Route>
-                    <Route path="/settings" exact>
-                      <Settings />
-                    </Route>
-                  </Switch>
-                </div>
-              </>
-            )}
-          </Router>
-        </NotificationContextProvider>
+                  <Route path="/DirectMessage"></Route>
+                  <Route path="/crypto-home" exact>
+                    <CryptoHome />
+                  </Route>
+                  <Route path="/cryptocurrencies" exact>
+                    <Cryptocurrencies />
+                  </Route>
+                  <Route path="/crypto/:coinId" exact>
+                    <CryptoDetails />
+                  </Route>
+                  <Route path="/crypto-news" exact>
+                    <CryptoNews />
+                  </Route>
+                  <Route path="/settings" exact>
+                    <Settings />
+                  </Route>
+                </Switch>
+              </div>
+            </>
+          )}
+        </Router>
+        {/* </NotificationContextProvider> */}
       </ThemeProvider>
     </div>
   );

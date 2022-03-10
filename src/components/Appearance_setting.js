@@ -27,7 +27,12 @@ function AppearanceSetting() {
       <h2 className={`header ${darkMode ? "header-dark" : "header-light"}`}>
         Appearance
       </h2>
-      <div className="appearance-setting">
+      <div
+        className="appearance-setting"
+        // {` appearance-setting ${
+        //   darkMode ? "appearance-setting-dark" : "appearance-setting-light"
+        // }`}
+      >
         <div className={`para ${darkMode ? "para-dark" : "para-light"}`}>
           <div className="chat-preview">
             <h3> Chatroom Preview</h3>

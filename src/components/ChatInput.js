@@ -18,6 +18,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import { checkedCheck } from "./testnoti";
 import useNotificationContext from "./useNotificationsContext";
 // import { checkedCheck } from "./testnoti";
+import { ThemeContext } from "./ThemeContext";
 
 toast.configure();
 

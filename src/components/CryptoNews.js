@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import "./CryptoNews.css";
 import { Typography, Select, Avatar } from "antd";
 import moment from "moment";
 import RotateLoading from "./RotateLoading";
 import { selectSocket } from "../features/appSlice";
 import { useSelector } from "react-redux";
+import { ThemeContext } from "./ThemeContext";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -13,6 +14,9 @@ const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const CryptoNews = ({ simplified }) => {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   // const socket = io("http://localhost:3001");
   const socket = useSelector(selectSocket);
 
@@ -28,7 +32,11 @@ const CryptoNews = ({ simplified }) => {
   });
   if (!cryptoNews?.value) return <RotateLoading />;
   return (
-    <div className="crypto-news-cont">
+    <div
+      className={`crypto-news-cont ${
+        darkMode ? "crypto-news-cont-dark" : "crypto-news-cont-light"
+      }`}
+    >
       <div className="news-header">
         <h1>Crypto News </h1>
       </div>

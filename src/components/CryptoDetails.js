@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import millify from "millify";
 import "./CryptoDetails.css";
+import { ThemeContext } from "./ThemeContext";
+
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -24,6 +26,9 @@ import LineChart from "./LineChart";
 import ShakeLoader from "./ShakeLoader";
 
 const CryptoDetails = () => {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   const socket = useSelector(selectSocket);
   // const socket = io("http://localhost:3001");
 
@@ -150,7 +155,11 @@ const CryptoDetails = () => {
           All About {cryptoDetails.name} ({cryptoDetails.symbol})
         </h1>
       </div>
-      <div className="coin-detail-body">
+      <div
+        className={`coin-detail-body ${
+          darkMode ? "coin-detail-body-dark" : "coin-detail-body-light"
+        }`}
+      >
         <div className="coin-heading-container">
           <h2 className="coin-name">
             {cryptoDetails.name} ({cryptoDetails.symbol}) Price
@@ -178,7 +187,13 @@ const CryptoDetails = () => {
           coinTimeperiod={timeperiod}
         />
         <div className="stats-container">
-          <div className="coin-value-statistics">
+          <div
+            className={`coin-value-statistics ${
+              darkMode
+                ? "coin-value-statistics-dark"
+                : "coin-value-statistics-light"
+            }`}
+          >
             <div
               className="coin-value-statistics-heading"
               key={cryptoDetails.name}
@@ -189,7 +204,12 @@ const CryptoDetails = () => {
               <p>An overview showing the stats of {cryptoDetails.name}</p>
             </div>
             {stats.map(({ icon, title, value }) => (
-              <div className="coin-stats" key={title}>
+              <div
+                className={`coin-stats ${
+                  darkMode ? "coin-stats-dark" : "coin-stats-light"
+                }`}
+                key={title}
+              >
                 <div className="coin-stats-name" key={value}>
                   <p>{icon} </p>
                   <p>{title}</p>
@@ -198,13 +218,22 @@ const CryptoDetails = () => {
               </div>
             ))}
           </div>
-          <div className="other-stats-info">
+          <div
+            className={`other-stats-info ${
+              darkMode ? "other-stats-info-dark" : "other-stats-info-light"
+            }`}
+          >
             <div className="coin-value-statistics-heading">
               <h3 className="coin-details-headings">Other Statistics</h3>
               <p>An overview showing the stats of all cryptocurrencies</p>
             </div>
             {genericStats.map(({ icon, title, value }) => (
-              <div className="coin-stats" key={title}>
+              <div
+                className={`coin-stats ${
+                  darkMode ? "coin-stats-dark" : "coin-stats-light"
+                }`}
+                key={title}
+              >
                 <div className="coin-stats-name" key={value}>
                   <p>{icon}</p>
                   <p>{title}</p>
@@ -224,7 +253,12 @@ const CryptoDetails = () => {
           <div className="coin-links">
             <h3 className="coin-details-heading">{cryptoDetails.name} Link</h3>
             {cryptoDetails.links.map((link) => (
-              <div className="coin-link" key={link.url}>
+              <div
+                className={`coin-link ${
+                  darkMode ? "coin-link-dark" : "coin-link-light"
+                }`}
+                key={link.url}
+              >
                 <h5 className="link-name">{link.type}</h5>
                 <a href={link.url} target="_blank" rel="noreferrer">
                   {link.name}
