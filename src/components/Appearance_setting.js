@@ -50,8 +50,7 @@ function AppearanceSetting() {
                     {user?.displayName}
                     <span>27/7/1987, 12:00:00 PM</span>
                   </h4>
-
-                  <p>Never gonna let you give you up</p>
+                  <p>Never gonna give you up</p>
                   <ReplyIcon />
                 </div>
               </div>

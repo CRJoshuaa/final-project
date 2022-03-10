@@ -66,7 +66,8 @@
 }
 
 .crypto-news-card:hover {
-  box-shadow: 0 8px 16px 0 rgb(0 26 114);
+  box-shadow: 0 8px 16px 0 grey;
+  background-color: var(--accent-2);
 }
 
 .crypto-news-feed {
@@ -130,6 +131,10 @@
 
   .crypto-news-desc {
     font-size: 12px;
+  }
+
+  .crypto-news-img > img {
+    width: 80px;
   }
 }
 

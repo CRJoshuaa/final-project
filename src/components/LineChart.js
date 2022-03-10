@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LineChart.css";
 import { Line } from "react-chartjs-2";
 import zoomPlugin from "chartjs-plugin-zoom";
+import Select from "react-select";
 import { Button } from "@mui/material";
 import {
   Chart as ChartJS,
@@ -25,12 +26,13 @@ ChartJS.register(
   zoomPlugin
 );
 
-const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
+const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
+  // Changed from 'push' to 'unshift' to invert the dates of data in correct manner
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinPrice.push(coinHistory?.data?.history[i].price);
+    coinPrice.unshift(coinHistory?.data?.history[i].price);
   }
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
@@ -45,12 +47,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
         coinHistory?.data?.history[i].timestamp * 1000
       ).toLocaleDateString("en-MY");
     }
-    // coinTimestamp.push(
-    //   new Date(
-    //     coinHistory?.data?.history[i].timestamp * 1000
-    //   ).toLocaleDateString("en-MY")
-    // );
-    coinTimestamp.push(coinDate);
+    coinTimestamp.unshift(coinDate);
   }
 
   const data = {
@@ -65,6 +62,20 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
       },
     ],
   };
+
+  // const actions = {
+  //   handler(LineChart) {
+  //     LineChart.resetZoom();
+  //   },
+  // };
+
+  // const resetZoomChart = () => {
+  //   LineChart.resetZoom();
+  // };
+
+  // function resetZoomChart() {
+  //   options.resetZoom();
+  // }
 
   const options = {
     // plugins: {
@@ -81,6 +92,29 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
     //   },
     // },
     scales: {
+      x: {
+        ticks: {
+          maxTicksLimit: function () {
+            if (coinTimeperiod === "3h") {
+              return 3;
+            } else if (coinTimeperiod === "24h") {
+              return 24;
+            } else if (coinTimeperiod === "7d") {
+              return 7;
+            } else if (coinTimeperiod === "30d") {
+              return 30;
+            } else if (coinTimeperiod === "3m") {
+              return 60;
+            } else if (coinTimeperiod === "1y") {
+              return 12;
+            } else if (coinTimeperiod === "3y") {
+              return 3;
+            } else if (coinTimeperiod === "5y") {
+              return 5;
+            }
+          },
+        },
+      },
       y: {
         ticks: {
           beginAtZero: true,
@@ -92,19 +126,18 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
   return (
     <>
       <div className="chart-header">
-        <h2 className="chart-title">{coinName} Price Chart</h2>
+        {/* <h2 className="chart-title">{coinName} Price Chart</h2> */}
         <div className="price-container">
           <h5 className="price-change">
             Change : {coinHistory?.data?.change}%
-          </h5>
-          <h5 className="current-price">
-            Current {coinName} Price : ${currentPrice}
           </h5>
           {/* <Button onClick="resetZoomChart()">Reset Zoom</Button> */}
           {/* <button onClick={resetZoom}>Reset Zoom</button> */}
         </div>
       </div>
-      <Line data={data} options={options} />
+      <div className="chart-cont">
+        <Line data={data} options={options} />
+      </div>
     </>
   );
 };
@@ -113,8 +146,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
 //   LineChart.resetZoom();
 // }
 
-// function resetZoom() {
-//   LineChart.resetZoom();
+// function resetZoomChart() {
+//   options.resetZoom();
 // }
 
 export default LineChart;

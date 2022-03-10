@@ -26,8 +26,8 @@ function App() {
       <div className="app-loading">
         <div className="app-loading-contents">
           <img
-            src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
-            alt=""
+            src="https://c.tenor.com/_4YgA77ExHEAAAAd/rick-roll.gif"
+            alt="lol"
           />
           <Spinner
             name="ball-spin-fade-loader"

@@ -13,7 +13,8 @@ body {
   --light-1: #e0fbfc;
   --light-2: #a3acbd;
   --light-3: #98c1d9;
-  --accent-1: #001a72; /*for icons*/
+  --accent-1: #001a72;
+  --accent-2: #a9f0d1;
   --red-1: #e7543f; /*for status*/
   --green-1: #1fb384; /*for status*/
   --yellow-1: #f9f871; /*for status*/
@@ -35,6 +36,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 a:hover {
   color: var(--accent-1);
 }

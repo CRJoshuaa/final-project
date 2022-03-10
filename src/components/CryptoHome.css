@@ -53,10 +53,27 @@
 .crypto-home-light {
   color: black;
 }
+.crypto-stats > h2 {
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+.total-column > p {
+  /* font-weight: bold; */
+  padding-bottom: 20px;
+}
+
+.numbers-column > p {
+  padding-bottom: 20px;
+}
 
 .total-table {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 3rem;
+  font-size: larger;
 }
 
 .top-ten-container {
