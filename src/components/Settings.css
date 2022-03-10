@@ -195,14 +195,6 @@ button {
   border-radius: 15px;
 }
 
-/* .pop-up > input {
-  background-color: var(--light-1);
-  padding: 5px;
-  text-align: center;
-  border: 1px solid var(--accent-1);
-  border-radius: 5px;
-} */
-
 .pop-up-btn {
   /* height: 100px; */
   display: flex;
@@ -236,6 +228,11 @@ button {
   .account-setting {
     flex-direction: column;
     align-items: center;
+  }
+
+  .pop-up {
+    background-color: var(--light-3);
+    width: fit-content;
   }
 }
 
