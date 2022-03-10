@@ -34,10 +34,20 @@
   align-items: center;
 }
 
+/* .appearance-setting-dark {
+  background-size: cover;
+  background-image: url("https://media.istockphoto.com/photos/background-black-total-grunge-abstract-cement-concrete-paper-texture-picture-id1251205256?b=1&k=20&m=1251205256&s=170667a&w=0&h=o4N-O5lZywE2lBuauTZX6NiutPCNbKAnuKaTSKWM0Lo=");
+}
+
+.appearance-setting-light {
+  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
+} */
+
 /* Light Mode Styles */
 
 .background-light {
   background-color: var(--light-3);
+  color: var(--dark-1);
 }
 
 .header-light {
@@ -45,6 +55,9 @@
 }
 
 .para-light {
+  color: #222;
+  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
+  border-radius: 10px;
   color: black;
   transition-duration: 0.5s;
 }
@@ -83,6 +96,10 @@
 }
 
 .para-dark {
+  color: #fff;
+  background-size: cover;
+  background-image: url("https://media.istockphoto.com/photos/background-black-total-grunge-abstract-cement-concrete-paper-texture-picture-id1251205256?b=1&k=20&m=1251205256&s=170667a&w=0&h=o4N-O5lZywE2lBuauTZX6NiutPCNbKAnuKaTSKWM0Lo=");
+  border-radius: 10px;
   color: white;
 }
 
@@ -163,7 +180,7 @@
   flex-direction: column;
   padding: 5px 15px 5px 5px;
   border-radius: 15px;
-  background-color: var(--dark-2);
+  background-color: var(--dark-1);
   transition-duration: 0.5s;
 }
 
@@ -204,7 +221,7 @@
   flex-direction: column;
   padding: 5px 15px 5px 5px;
   border-radius: 15px;
-  background-color: var(--main-color);
+  background-color: var(--dark-3);
   transition-duration: 0.5s;
   color: white;
 }

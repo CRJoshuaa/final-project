@@ -3,6 +3,14 @@
   overflow-y: scroll;
 }
 
+.cryptocurrency-page-dark {
+  background-color: var(--dark-2);
+}
+
+.cryptocurrency-page-white {
+  background-color: white;
+}
+
 .cryptocurrency-page::-webkit-scrollbar {
   display: none;
 }

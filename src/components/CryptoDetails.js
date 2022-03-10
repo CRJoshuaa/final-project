@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import millify from "millify";
 import "./CryptoDetails.css";
+import { ThemeContext } from "./ThemeContext";
+
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -28,6 +30,9 @@ import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const CryptoDetails = () => {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   const socket = useSelector(selectSocket);
   // const socket = io("http://localhost:3001");
 
