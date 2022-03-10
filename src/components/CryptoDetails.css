@@ -84,7 +84,7 @@
     var(--off-white) 50%,
     var(--accent-2) 50%
   );
-  background-size: 200% 100%;
+  background-size: 201% 100%;
   background-position: right;
   transition: all 0.35s ease-out;
 }
@@ -111,7 +111,8 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 20px;
   padding: 3%;
-  background-color: #a9f0d1;
+  background-color: var(--accent-2);
+  min-width: 315px;
 }
 
 /* #cfffb3 */
@@ -132,7 +133,8 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 20px;
   padding: 3%;
-  background-color: #a9f0d1;
+  background-color: var(--accent-2);
+  min-width: 315px;
 }
 
 .other-stats-info:hover {

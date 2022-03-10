@@ -78,7 +78,7 @@ const CryptoDetails = () => {
 
   const stats = [
     {
-      title: "Price to USD",
+      title: "Price in USD",
       value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
@@ -99,7 +99,7 @@ const CryptoDetails = () => {
       icon: <DollarCircleOutlined />,
     },
     {
-      title: "All-time-high(daily avg.)",
+      title: "All-time high(daily avg.)",
       value: `$ ${
         cryptoDetails?.allTimeHigh?.price &&
         millify(cryptoDetails?.allTimeHigh?.price)
@@ -166,12 +166,9 @@ const CryptoDetails = () => {
       <div className="coin-detail-body">
         <div className="coin-heading-container">
           <h2 className="coin-name">
-            {cryptoDetails.name} ({cryptoDetails.symbol}) Price
+            {cryptoDetails.name} Price : ${cryptoDetails.price}
           </h2>
-          <p>
-            {cryptoDetails.name} live price in US dollars (USD). View value
-            statistics, market cap, and supply.
-          </p>
+          {/* <h5 className="current-price"></h5> */}
         </div>
         <Select
           defaultValue="7d"
@@ -214,7 +211,7 @@ const CryptoDetails = () => {
           <div className="other-stats-info">
             <div className="coin-value-statistics-heading">
               <h3 className="coin-details-headings">Other Statistics</h3>
-              <p>An overview showing the stats of all cryptocurrencies</p>
+              <p>An overview of {cryptoDetails.name}'s details</p>
             </div>
             {genericStats.map(({ icon, title, value }) => (
               <div className="coin-stats" key={title}>
