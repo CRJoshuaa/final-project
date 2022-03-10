@@ -29,10 +29,10 @@ function Login() {
             </div>
             <h2>" Experience a totally new way to communicate! "</h2>
             <button onClick={signIn} type="button" className="bttn">
-              <span class="bttnIcon">
+              <span className="bttnIcon">
                 <FcGoogle />
               </span>
-              <span class="bttnText"> Sign In With Google</span>
+              <span className="bttnText"> Sign In With Google</span>
             </button>
           </div>
         </div>
