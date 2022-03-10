@@ -110,6 +110,16 @@
   color: white;
 }
 
+.btn {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 10px;
+}
+
 /*preview styling */
 
 .chat-preview {
@@ -238,3 +248,13 @@ h4 > span {
 }
 
 /*preview styling end*/
+
+.pop-up-btn > button {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 10px;
+}
