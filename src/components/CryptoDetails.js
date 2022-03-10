@@ -170,8 +170,16 @@ const CryptoDetails = () => {
           All About {cryptoDetails.name} ({cryptoDetails.symbol})
         </h1>
       </div>
-      <div className="coin-detail-body">
-        <div className="coin-header">
+      <div
+        className={`coin-detail-body ${
+          darkMode ? "coin-detail-body-dark" : "coin-detail-body"
+        }`}
+      >
+        <div
+          className={`coin-header ${
+            darkMode ? "coin-header-dark" : "coin-header"
+          }`}
+        >
           <div className="coin-img">
             <img src={cryptoDetails.iconUrl} />
             <div className="ranking-cont">
@@ -186,7 +194,12 @@ const CryptoDetails = () => {
 
           <div className="coin-header-stats-cont">
             {stats.map(({ icon, title, value }) => (
-              <div className="coin-header-stats" key={title}>
+              <div
+                className={`coin-header-stats- ${
+                  darkMode ? "coin-header-stats-dark" : "coin-header-stats"
+                }`}
+                key={title}
+              >
                 <div className="coin-header-stats-name" key={value}>
                   <p>{icon} </p>
                   <p>{title}</p>
@@ -222,13 +235,22 @@ const CryptoDetails = () => {
             {HTMLReactParser(cryptoDetails.description)}
           </div>
           <div className="misc-details">
-            <div className="other-stats-info">
+            <div
+              className={`other-stats-info ${
+                darkMode ? "other-stats-info-dark" : "other-stats-info"
+              }`}
+            >
               <div className="coin-value-statistics-heading">
                 <h3 className="coin-details-headings">Other Statistics</h3>
                 <p>An overview of {cryptoDetails.name}'s details</p>
               </div>
               {genericStats.map(({ icon, title, value }) => (
-                <div className="coin-stats" key={title}>
+                <div
+                  className={`"coin-stats" ${
+                    darkMode ? "coin-stats-dark" : "coin-stats"
+                  }`}
+                  key={title}
+                >
                   <div className="coin-stats-name" key={value}>
                     <p>{icon}</p>
                     <p>{title}</p>
@@ -242,7 +264,12 @@ const CryptoDetails = () => {
                 {cryptoDetails.name} Link
               </h3>
               {cryptoDetails.links.map((link) => (
-                <div className="coin-link" key={link.url}>
+                <div
+                  className={`coin-link ${
+                    darkMode ? "coin-link-dark" : "coin-link"
+                  }`}
+                  key={link.url}
+                >
                   <h5 className="link-name">{link.type}</h5>
                   <a href={link.url} target="_blank" rel="noreferrer">
                     {link.name}

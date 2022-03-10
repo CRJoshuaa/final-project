@@ -43,7 +43,9 @@
 
 .message-details-dark:hover {
   background-color: var(--light-3);
+  color: black;
 }
+
 .reply-message {
   display: flex;
   flex-direction: column;
@@ -51,6 +53,16 @@
   margin: 5px;
   background-color: var(--light-1);
   color: black;
+  border-radius: 5px;
+}
+
+.reply-message {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+  background-color: var(--dark-1);
+  color: white;
   border-radius: 5px;
 }
 
@@ -129,6 +141,10 @@
 
 .message-buttons > .MuiSvgIcon-root:hover {
   color: white;
+}
+
+.message-buttons-dark > .MuiSvgIcon-root:hover {
+  color: black;
 }
 
 .message-buttons > .MuiSvgIcon-root {

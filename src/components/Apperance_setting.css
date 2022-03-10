@@ -48,6 +48,7 @@
 .background-light {
   background-color: var(--light-3);
   color: var(--dark-1);
+  width: 85%;
 }
 
 .header-light {
@@ -89,6 +90,7 @@
 .background-dark {
   background-color: var(--dark-1);
   transition-duration: 0.5s;
+  width: 85%;
 }
 
 .header-dark {

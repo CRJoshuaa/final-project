@@ -61,7 +61,11 @@ function Message({
           }`}
         >
           {replyDocId && (
-            <div className="reply-message">
+            <div
+              className={`reply-message ${
+                darkMode ? "reply-message-dark" : "reply-message"
+              }`}
+            >
               <h5>{replyDetails?.data().user}</h5>
               <Linkify>
                 <p>{replyDetails?.data().message}</p>
@@ -88,7 +92,11 @@ function Message({
                 <p>{message}</p>
               </Linkify>
 
-              <div className="message-buttons">
+              <div
+                className={`message-buttons ${
+                  darkMode ? "message-buttons-dark" : "message-buttons"
+                }`}
+              >
                 <ReplyIcon
                   onClick={() => {
                     setReplyDocId(messageId);

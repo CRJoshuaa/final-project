@@ -38,10 +38,10 @@
   top: 0;
 }
 
-.sidebar-header-dark {
+/* .sidebar-header-dark {
   background-color: var(--main-color);
   border-bottom: 1px solid var(--dark-1);
-}
+} */
 
 .sidebar-header-light {
   background-color: var(--main-color);
@@ -58,10 +58,10 @@
 
 /* theme changing */
 /* dark*/
-.sidebar-cont-dark {
+/* .sidebar-cont-dark {
   color: white;
   background-color: var(--dark-1);
-}
+} */
 
 /* light*/
 .sidebar-cont-light {
