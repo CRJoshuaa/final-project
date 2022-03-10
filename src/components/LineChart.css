@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  color: #0071bd;
+  color: var(--accent-1);
   margin-top: 2%;
   padding-left: 2%;
 }
 .chart-title {
-  color: #0071bd !important;
+  color: var(--accent-1) !important;
 }
 .price-container {
   display: flex !important;
@@ -21,4 +21,21 @@
 .current-price {
   margin-top: 0% !important;
   font-weight: 900 !important;
+}
+
+.chart-cont {
+  margin: 20px auto;
+  width: 95%;
+}
+
+/* Mobile Screens */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+}
+
+/* Laptop screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 }

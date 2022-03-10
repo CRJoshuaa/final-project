@@ -26,7 +26,7 @@ ChartJS.register(
   zoomPlugin
 );
 
-const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
+const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
@@ -131,14 +131,13 @@ const LineChart = ({ coinHistory, currentPrice, coinName, coinTimeperiod }) => {
           <h5 className="price-change">
             Change : {coinHistory?.data?.change}%
           </h5>
-          <h5 className="current-price">
-            Current {coinName} Price : ${currentPrice}
-          </h5>
           {/* <Button onClick="resetZoomChart()">Reset Zoom</Button> */}
           {/* <button onClick={resetZoom}>Reset Zoom</button> */}
         </div>
       </div>
-      <Line data={data} options={options} />
+      <div className="chart-cont">
+        <Line data={data} options={options} />
+      </div>
     </>
   );
 };

@@ -17,6 +17,7 @@ import { ThemeProvider } from "./components/ThemeContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ShakeLoader from "./components/ShakeLoader";
+import LoginBackUp from "./components/LoginBackUp";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -25,8 +26,8 @@ function App() {
       <div className="app-loading">
         <div className="app-loading-contents">
           <img
-            src="https://c.tenor.com/46lAWM-p0eYAAAAC/kermit-falling.gif"
-            alt=""
+            src="https://c.tenor.com/_4YgA77ExHEAAAAd/rick-roll.gif"
+            alt="lol"
           />
           <Spinner
             name="ball-spin-fade-loader"
@@ -42,7 +43,7 @@ function App() {
       <ThemeProvider>
         <Router>
           {!user ? (
-            <Login />
+            <LoginBackUp />
           ) : (
             <>
               {/* A <Switch> looks through its children <Route>s and

@@ -23,6 +23,10 @@ import { io } from "socket.io-client";
 import LineChart from "./LineChart";
 import ShakeLoader from "./ShakeLoader";
 
+import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
+import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
+
 const CryptoDetails = () => {
   const socket = useSelector(selectSocket);
   // const socket = io("http://localhost:3001");
@@ -74,11 +78,11 @@ const CryptoDetails = () => {
 
   const stats = [
     {
-      title: "Price to USD",
+      title: "Price in USD",
       value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
-    { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
+    // { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
       value: `$ ${
@@ -94,17 +98,26 @@ const CryptoDetails = () => {
       }`,
       icon: <DollarCircleOutlined />,
     },
+
     {
-      title: "All-time-high(daily avg.)",
+      title: "Circulating Supply",
+      value: `$ ${
+        cryptoDetails?.supply?.circulating &&
+        millify(cryptoDetails?.supply?.circulating)
+      }`,
+      icon: <ExclamationCircleOutlined />,
+    },
+  ];
+
+  const genericStats = [
+    {
+      title: "All-time high (daily avg.)",
       value: `$ ${
         cryptoDetails?.allTimeHigh?.price &&
         millify(cryptoDetails?.allTimeHigh?.price)
       }`,
       icon: <TrophyOutlined />,
     },
-  ];
-
-  const genericStats = [
     {
       title: "Number Of Markets",
       value: cryptoDetails?.numberOfMarkets,
@@ -131,14 +144,6 @@ const CryptoDetails = () => {
       }`,
       icon: <ExclamationCircleOutlined />,
     },
-    {
-      title: "Circulating Supply",
-      value: `$ ${
-        cryptoDetails?.supply?.circulating &&
-        millify(cryptoDetails?.supply?.circulating)
-      }`,
-      icon: <ExclamationCircleOutlined />,
-    },
   ];
 
   if (isFetching) return <ShakeLoader />;
@@ -146,19 +151,37 @@ const CryptoDetails = () => {
   return (
     <div className="coin-detail-container">
       <div className="coin-detail-heading">
+        <IconButton>
+          <Link
+            to="/cryptocurrencies"
+            style={{ textDecoration: "inherit", color: "inherit" }}
+          >
+            <ArrowBackIosNewOutlinedIcon />
+          </Link>
+        </IconButton>
+
         <h1>
           All About {cryptoDetails.name} ({cryptoDetails.symbol})
         </h1>
       </div>
       <div className="coin-detail-body">
-        <div className="coin-heading-container">
-          <h2 className="coin-name">
-            {cryptoDetails.name} ({cryptoDetails.symbol}) Price
-          </h2>
-          <p>
-            {cryptoDetails.name} live price in US dollars (USD). View value
-            statistics, market cap, and supply.
-          </p>
+        <div className="coin-header">
+          <div className="coin-img">
+            <img src={cryptoDetails.iconUrl} />
+            <h2>{cryptoDetails.name}</h2>
+          </div>
+
+          <div className="coin-header-stats-cont">
+            {stats.map(({ icon, title, value }) => (
+              <div className="coin-header-stats" key={title}>
+                <div className="coin-header-stats-name" key={value}>
+                  <p>{icon} </p>
+                  <p>{title}</p>
+                </div>
+                <p className="stats">{value}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <h2 className="chart-title">{cryptoDetails.name} Price Chart</h2>
         <Select
@@ -178,43 +201,6 @@ const CryptoDetails = () => {
           coinName={cryptoDetails?.name}
           coinTimeperiod={timeperiod}
         />
-        <div className="stats-container">
-          <div className="coin-value-statistics">
-            <div
-              className="coin-value-statistics-heading"
-              key={cryptoDetails.name}
-            >
-              <h3 className="coin-details-headings">
-                {cryptoDetails.name} Value Statistics
-              </h3>
-              <p>An overview showing the stats of {cryptoDetails.name}</p>
-            </div>
-            {stats.map(({ icon, title, value }) => (
-              <div className="coin-stats" key={title}>
-                <div className="coin-stats-name" key={value}>
-                  <p>{icon} </p>
-                  <p>{title}</p>
-                </div>
-                <p className="stats">{value}</p>
-              </div>
-            ))}
-          </div>
-          <div className="other-stats-info">
-            <div className="coin-value-statistics-heading">
-              <h3 className="coin-details-headings">Other Statistics</h3>
-              <p>An overview showing the stats of all cryptocurrencies</p>
-            </div>
-            {genericStats.map(({ icon, title, value }) => (
-              <div className="coin-stats" key={title}>
-                <div className="coin-stats-name" key={value}>
-                  <p>{icon}</p>
-                  <p>{title}</p>
-                </div>
-                <p className="stats">{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="coin-desc-link">
           <div className="coin-desc">
             <h3 className="coin-details-heading">
@@ -222,16 +208,35 @@ const CryptoDetails = () => {
             </h3>
             {HTMLReactParser(cryptoDetails.description)}
           </div>
-          <div className="coin-links">
-            <h3 className="coin-details-heading">{cryptoDetails.name} Link</h3>
-            {cryptoDetails.links.map((link) => (
-              <div className="coin-link" key={link.url}>
-                <h5 className="link-name">{link.type}</h5>
-                <a href={link.url} target="_blank" rel="noreferrer">
-                  {link.name}
-                </a>
+          <div className="misc-details">
+            <div className="other-stats-info">
+              <div className="coin-value-statistics-heading">
+                <h3 className="coin-details-headings">Other Statistics</h3>
+                <p>An overview of {cryptoDetails.name}'s details</p>
               </div>
-            ))}
+              {genericStats.map(({ icon, title, value }) => (
+                <div className="coin-stats" key={title}>
+                  <div className="coin-stats-name" key={value}>
+                    <p>{icon}</p>
+                    <p>{title}</p>
+                  </div>
+                  <p className="stats">{value}</p>
+                </div>
+              ))}
+            </div>
+            <div className="coin-links">
+              <h3 className="coin-details-heading">
+                {cryptoDetails.name} Link
+              </h3>
+              {cryptoDetails.links.map((link) => (
+                <div className="coin-link" key={link.url}>
+                  <h5 className="link-name">{link.type}</h5>
+                  <a href={link.url} target="_blank" rel="noreferrer">
+                    {link.name}
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
