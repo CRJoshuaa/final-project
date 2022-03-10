@@ -56,6 +56,11 @@
   border-radius: 5px;
 }
 
+.message-details-dark:hover > .reply-message {
+  background-color: var(--light-3);
+  color: black;
+}
+
 .reply-message {
   display: flex;
   flex-direction: column;
