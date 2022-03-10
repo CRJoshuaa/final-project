@@ -22,3 +22,20 @@
   margin-top: 0% !important;
   font-weight: 900 !important;
 }
+
+.chart-cont {
+  margin: 20px auto;
+  width: 95%;
+}
+
+/* Mobile Screens */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+}
+
+/* Laptop screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
