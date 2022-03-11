@@ -1,6 +1,4 @@
-/* gen styling start */
-
-.crypto-news-cont {
+.crypto-news {
   width: 100%;
   display: flex;
   flex: 0.7;
@@ -10,9 +8,16 @@
   flex-wrap: nowrap;
   align-content: stretch;
   align-items: stretch;
+  background-image: url("../images/coinGramBackgroundMobile.jpg");
+  background-attachment: scroll;
 }
 
-.crypto-news-cont::-webkit-scrollbar {
+.crypto-news.simplified {
+  background-image: none;
+  background-color: transparent;
+}
+
+.crypto-news::-webkit-scrollbar {
   display: none;
 }
 .crypto-news-title {
@@ -50,7 +55,7 @@
   padding: 10px;
   margin-bottom: 10px;
   transition-duration: 0.5s;
-  width: 95%;
+  width: 85%;
   margin: 15px auto 15px auto;
 }
 
@@ -136,7 +141,7 @@
     font-size: 14px;
   }
 
-  .crypto-news-cont {
+  .crypto-news {
     margin-top: 0px;
     height: 88%;
   }

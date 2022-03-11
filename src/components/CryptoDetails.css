@@ -2,6 +2,7 @@
 
 .coin-detail-container {
   overflow-y: scroll;
+  width: 100%;
 }
 
 .coin-detail-container::-webkit-scrollbar {

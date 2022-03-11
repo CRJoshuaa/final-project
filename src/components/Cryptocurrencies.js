@@ -51,13 +51,15 @@ const Cryptocurrencies = ({ simplified }) => {
 
   return (
     <div
-      className={`cryptocurrency-page ${
+      className={`cryptocurrency-page ${simplified && `simplified`} ${
         darkMode ? "cryptocurrency-page-dark" : "cryptocurrency-page-light"
       }`}
     >
-      <div className="cryptocurrency-header">
-        <h1>Cryptocurrencies</h1>
-      </div>
+      {!simplified && (
+        <div className="cryptocurrency-header">
+          <h1>Cryptocurrencies</h1>
+        </div>
+      )}
       <div className="leaderboard">
         {top3 &&
           top3.map((currency) => (
