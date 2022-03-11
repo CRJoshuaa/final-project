@@ -10,8 +10,9 @@
   align-items: stretch;
 }
 
-.crypto-news.cn-simplified {
+.crypto-news.simplified {
   background-image: none;
+  background-color: transparent;
 }
 
 .crypto-news::-webkit-scrollbar {

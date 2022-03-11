@@ -10,6 +10,7 @@
 
 .cryptocurrency-page.simplified {
   background-image: none;
+  background-color: transparent;
 }
 
 .cryptocurrency-page::-webkit-scrollbar {

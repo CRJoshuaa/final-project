@@ -51,7 +51,7 @@ const Cryptocurrencies = ({ simplified }) => {
 
   return (
     <div
-      className={`cryptocurrency-page ${simplified && `simplified`}${
+      className={`cryptocurrency-page ${simplified && `simplified`} ${
         darkMode ? "cryptocurrency-page-dark" : "cryptocurrency-page-light"
       }`}
     >

@@ -71,11 +71,11 @@ const CryptoHome = () => {
         <Cryptocurrencies simplified />
         <Link to="/cryptocurrencies">
           <h4
-            className={`show-more ${
+            className={`show-more-icon ${
               darkMode ? "show-more-dark" : "show-more-light"
             }`}
           >
-            Show More Cryptocurrencies
+            <ReadMoreIcon />
           </h4>
         </Link>
       </div>
@@ -84,11 +84,11 @@ const CryptoHome = () => {
         <CryptoNews simplified />
         <Link to="/crypto-news">
           <h4
-            className={`show-more ${
+            className={`show-more-icon ${
               darkMode ? "show-more-dark" : "show-more-light"
             }`}
           >
-            Show More News
+            <ReadMoreIcon />
           </h4>
         </Link>
       </div>

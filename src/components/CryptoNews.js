@@ -37,13 +37,16 @@ const CryptoNews = ({ simplified }) => {
   if (!cryptoNews?.value) return <RotateLoading />;
   return (
     <div
-      className={`crypto-news-cont ${
+      className={`crypto-news ${simplified && `simplified`} ${
         darkMode ? "crypto-news-cont-dark" : "crypto-news-cont-light"
       }`}
     >
-      <div className="news-header">
-        <h1>Crypto News </h1>
-      </div>
+      {!simplified && (
+        <div className="news-header">
+          <h1>Crypto News </h1>
+        </div>
+      )}
+
       <div className="crypto-news-feed">
         {cryptoNews.value.map((news, i) => (
           <a
