@@ -7,6 +7,8 @@
   }
 }
 
+/* gen styling start*/
+
 .crypto-home {
   flex: 0.7;
   flex-grow: 1;
@@ -32,7 +34,6 @@
 }
 
 .crypto-stats {
-  color: black;
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -45,49 +46,22 @@
   margin-top: 10px;
 }
 
-.top-row-box {
-  margin: 0 auto;
-  width: 100%;
+/* gen styling end*/
+
+/* light mode start*/
+
+.crypto-home-light {
+  color: black;
 }
 
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* light mode end*/
+
+.crypto-home-dark {
+  background-color: var(--dark-2);
 }
 
-.cards li {
-  border: none;
-  border-radius: 15px;
-  background-color: rgb(53, 177, 235);
-  color: #fff;
-  flex: 1 1 200px;
-}
-
-.cards h3 {
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  background-color: #0071bd;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-}
-
-.cards p {
-  padding: 10px;
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.total-box {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -20px;
-}
-
-.total-box li {
-  flex: 1 1 200px;
-  margin: 10px;
+.crypto-stats-dark {
+  color: white;
 }
 
 .crypto-stats > h2 {
@@ -163,6 +137,12 @@
   background-color: var(--dark-2);
   color: white;
   border-radius: 999px;
+}
+.show-more-dark {
+  color: white;
+}
+.show-more-light {
+  color: black;
 }
 
 /* Mobile */

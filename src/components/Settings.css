@@ -84,6 +84,12 @@
   padding: 10px;
 }
 
+.account-cont {
+  padding: 10px;
+  margin: auto;
+  border-radius: 15px;
+}
+
 .account-setting {
   display: flex;
   flex-direction: row;
@@ -155,7 +161,7 @@
 
 /* Gen Info Styling end */
 
-.settings-cont > button {
+button {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;
