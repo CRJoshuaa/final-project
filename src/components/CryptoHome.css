@@ -13,6 +13,9 @@
   overflow-y: scroll;
   animation: 0.5s loadEaseIn;
   transition-duration: 0.5s;
+  background-image: url("../images/coinGramBackgroundLarge.webp");
+  background-size: cover;
+  background-attachment: scroll;
 }
 
 .crypto-home::-webkit-scrollbar {
@@ -54,14 +57,16 @@
 }
 
 .cards li {
-  border: 2px solid #490a3d;
-  border-radius: 5px;
+  border: none;
+  border-radius: 15px;
   background-color: rgb(53, 177, 235);
   color: #fff;
   flex: 1 1 200px;
 }
 
 .cards h3 {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
   background-color: #0071bd;
   margin: 0;
   padding: 10px;
@@ -144,8 +149,20 @@
   flex-direction: column;
 }
 
-.show-more {
-  margin: 20px;
+.show-more-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 5px;
+}
+.show-more-icon > .MuiSvgIcon-root {
+  padding: 5px;
+  transition-delay: 5s;
+}
+
+.show-more-icon > .MuiSvgIcon-root:hover {
+  background-color: var(--dark-2);
+  color: white;
+  border-radius: 999px;
 }
 
 /* Mobile */
@@ -153,7 +170,7 @@
   .crypto-home {
     height: 88%;
   }
-  .show-more {
+  .show-more-icon {
     margin: 20px;
   }
   .top-row-box {

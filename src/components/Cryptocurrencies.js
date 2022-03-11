@@ -49,10 +49,13 @@ const Cryptocurrencies = ({ simplified }) => {
   if (filteredCryptos.length === 0) return <ShakeLoader />;
 
   return (
-    <div className="cryptocurrency-page">
-      <div className="cryptocurrency-header">
-        <h1>Cryptocurrencies</h1>
-      </div>{" "}
+    <div className={`cryptocurrency-page ${simplified && `simplified`}`}>
+      {!simplified && (
+        <div className="cryptocurrency-header">
+          <h1>Cryptocurrencies</h1>
+        </div>
+      )}
+
       {/* <div className="crypto-search-bar">
         {" "}
         {!simplified && (

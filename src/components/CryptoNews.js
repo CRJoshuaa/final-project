@@ -16,6 +16,8 @@ const CryptoNews = ({ simplified }) => {
   // const socket = io("http://localhost:3001");
   const socket = useSelector(selectSocket);
 
+  //REQUEST DATA
+  //crypto news
   useEffect(() => {
     socket.emit("request-crypto-news", "Cryptocurrency", simplified ? 3 : 10);
     return () => {};
@@ -23,15 +25,20 @@ const CryptoNews = ({ simplified }) => {
 
   const [cryptoNews, setCryptoNews] = useState([]);
 
+  //RECEIVE DATA
+  //crypto news
   socket.on("response-crypto-news", (message) => {
     setCryptoNews(message);
   });
   if (!cryptoNews?.value) return <RotateLoading />;
   return (
-    <div className="crypto-news-cont">
-      <div className="news-header">
-        <h1>Crypto News </h1>
-      </div>
+    <div className={`crypto-news ${simplified && `cn-simplified`}`}>
+      {!simplified && (
+        <div className="news-header">
+          <h1>Crypto News </h1>
+        </div>
+      )}
+
       <div className="crypto-news-feed">
         {cryptoNews.value.map((news, i) => (
           <a

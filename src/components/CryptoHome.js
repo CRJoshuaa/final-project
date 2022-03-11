@@ -6,6 +6,7 @@ import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
 import RotateLoading from "./RotateLoading";
 import { io } from "socket.io-client";
+import ReadMoreIcon from "@mui/icons-material/ReadMore";
 
 import { selectSocket } from "../features/appSlice";
 import { useSelector } from "react-redux";
@@ -85,14 +86,18 @@ const CryptoHome = () => {
       <div className="top-ten-container">
         <Cryptocurrencies simplified />
         <Link to="/cryptocurrencies">
-          <h4 className="show-more">Show More Cryptocurrencies</h4>
+          <div className="show-more-icon">
+            <ReadMoreIcon />
+          </div>
         </Link>
       </div>
 
       <div className="crypto-news-cont">
         <CryptoNews simplified />
         <Link to="/crypto-news">
-          <h4 className="show-more">Show More News</h4>
+          <div className="show-more-icon">
+            <ReadMoreIcon />
+          </div>
         </Link>
       </div>
     </div>
