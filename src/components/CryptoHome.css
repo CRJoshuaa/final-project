@@ -64,6 +64,49 @@
   color: white;
 }
 
+.top-row-box {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  /* border: 2px solid #490a3d; */
+  border-radius: 10px;
+  background-color: var(--accent-2);
+  color: black;
+}
+
+.cards h3 {
+  background-color: var(--light-3);
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.cards p {
+  padding: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.total-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.total-box li {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
 .crypto-stats > h2 {
   font-size: 2rem;
   padding-bottom: 20px;
@@ -123,26 +166,15 @@
   flex-direction: column;
 }
 
-.show-more-icon {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 5px;
-}
-.show-more-icon > .MuiSvgIcon-root {
-  padding: 5px;
-  transition-delay: 5s;
-}
-
-.show-more-icon > .MuiSvgIcon-root:hover {
-  background-color: var(--dark-2);
-  color: white;
-  border-radius: 999px;
-}
 .show-more-dark {
   color: white;
 }
 .show-more-light {
   color: black;
+}
+
+.show-more {
+  margin: 20px;
 }
 
 /* Mobile */
