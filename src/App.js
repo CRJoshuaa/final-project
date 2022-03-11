@@ -18,6 +18,7 @@ import { NotificationContextProvider } from "./components/NotificationsContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ShakeLoader from "./components/ShakeLoader";
+import LoginBackUp from "./components/LoginBackUp";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -44,7 +45,7 @@ function App() {
         {/* <NotificationContextProvider> */}
         <Router>
           {!user ? (
-            <Login />
+            <LoginBackUp />
           ) : (
             <>
               {/* A <Switch> looks through its children <Route>s and
