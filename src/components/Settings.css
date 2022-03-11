@@ -1,6 +1,6 @@
 .settings-cont {
   color: black;
-  flex: 0.8;
+  /* flex: 0.8; */
   width: 100%;
   overflow-y: scroll;
 }
@@ -8,7 +8,7 @@
 .settings-dark {
   color: white;
   background-color: var(--dark-2);
-  flex: 0.8;
+  /* flex: 0.8; */
   width: 100%;
   overflow-y: scroll;
 }
