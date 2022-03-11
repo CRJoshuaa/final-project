@@ -4,7 +4,7 @@ import "./Settings.css";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
 // import NotificationsNoneSharpIcon from "@mui/icons-material/NotificationsNoneSharp";
 // import HelpOutlineSharpIcon from "@mui/icons-material/HelpOutlineSharp";
-import "./SettingsSideBar.css";
+// import "./SettingsSideBar.css";
 // import SettingsSideBar from "./SettingsSideBar";
 import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
@@ -19,10 +19,10 @@ function Settings() {
 
   const darkMode = theme.state.darkMode;
 
-  const changeTheme = () => {
-    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
-    else theme.dispatch({ type: "DARKMODE" });
-  };
+  // const changeTheme = () => {
+  //   if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+  //   else theme.dispatch({ type: "DARKMODE" });
+  // };
 
   /*adding light/dark mode end*/
 

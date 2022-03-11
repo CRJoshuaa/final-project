@@ -7,10 +7,17 @@
   transition-duration: 0.5s;
 }
 
-.sidebar-option-cont:hover {
+.sidebar-option-cont-dark:hover {
   opacity: 0.9;
   background-color: var(--light-1);
   color: var(--dark-1);
+  border-radius: 5px;
+}
+
+.sidebar-option-cont-light:hover {
+  opacity: 0.9;
+  background-color: var(--dark-1);
+  color: white;
   border-radius: 5px;
 }
 

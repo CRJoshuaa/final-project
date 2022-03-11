@@ -32,12 +32,21 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid var(--dark-1);
   padding: 13px;
   height: 75px;
   position: sticky;
   top: 0;
+}
+
+/* .sidebar-header-dark {
   background-color: var(--main-color);
+  border-bottom: 1px solid var(--dark-1);
+} */
+
+.sidebar-header-light {
+  background-color: var(--main-color);
+  border-bottom: 1px solid var(--dark-1);
+  color: white;
 }
 
 .sidebar-header > button {
@@ -45,6 +54,19 @@
   color: white;
   /* font-size: 16px; */
   /* border-radius: 999px; */
+}
+
+/* theme changing */
+/* dark*/
+/* .sidebar-cont-dark {
+  color: white;
+  background-color: var(--dark-1);
+} */
+
+/* light*/
+.sidebar-cont-light {
+  background-color: var(--light-1);
+  color: black;
 }
 
 /* below is originally header left */

@@ -10,6 +10,15 @@
   transition: all 0.3s;
   top: 35%;
 }
+
+/* .coin-dark {
+  background-color: var(--dark-1);
+}
+
+.coin-light {
+  background-color: white;
+}
+*/
 .coin__front {
   position: absolute;
   width: 100px;

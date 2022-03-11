@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SidebarOption.css";
 import { db } from "../firebase";
 import { useDispatch } from "react-redux";
 import { enterRoom } from "../features/appSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Settings } from "@mui/icons-material";
+import { ThemeContext } from "./ThemeContext";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
+
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
 
   const routeChange = () => {
     let path = "DirectMessage";
@@ -70,7 +75,9 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 
   return (
     <div
-      className="sidebar-option-cont"
+      className={`sidebar-option-cont ${
+        darkMode ? "sidebar-option-cont-dark" : "sidebar-option-cont-dark"
+      }`}
       onClick={
         // {addChannelOption ? addChannel : selectChannel}
         (e) => {

@@ -7,6 +7,8 @@
   }
 }
 
+/* gen styling start*/
+
 .crypto-home {
   flex: 0.7;
   flex-grow: 1;
@@ -29,7 +31,6 @@
 }
 
 .crypto-stats {
-  color: black;
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -40,6 +41,24 @@
   border-radius: 15px;
   transition-duration: 0.5s;
   margin-top: 10px;
+}
+
+/* gen styling end*/
+
+/* light mode start*/
+
+.crypto-home-light {
+  color: black;
+}
+
+/* light mode end*/
+
+.crypto-home-dark {
+  background-color: var(--dark-2);
+}
+
+.crypto-stats-dark {
+  color: white;
 }
 
 .crypto-stats > h2 {
@@ -99,6 +118,13 @@
 .crypto-news-cont {
   display: flex;
   flex-direction: column;
+}
+
+.show-more-dark {
+  color: white;
+}
+.show-more-light {
+  color: black;
 }
 
 /* Mobile */

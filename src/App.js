@@ -13,6 +13,7 @@ import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoDetails from "./components/CryptoDetails";
 import Settings from "./components/Settings";
 import { ThemeProvider } from "./components/ThemeContext";
+import { NotificationContextProvider } from "./components/NotificationsContext";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider>
+        {/* <NotificationContextProvider> */}
         <Router>
           {!user ? (
             <Login />
@@ -73,14 +75,12 @@ function App() {
                   <Route path="/settings" exact>
                     <Settings />
                   </Route>
-                  {/* <Route path="/loader">
-                  <ShakeLoader />
-                </Route> */}
                 </Switch>
               </div>
             </>
           )}
         </Router>
+        {/* </NotificationContextProvider> */}
       </ThemeProvider>
     </div>
   );

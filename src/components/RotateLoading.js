@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./RotateLoading.css";
+import { ThemeContext } from "./ThemeContext";
 
 const RotateLoading = () => {
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
   return (
     <div className="coin">
       <div className="coin__front"></div>
