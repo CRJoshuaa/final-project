@@ -172,12 +172,12 @@ const CryptoDetails = () => {
       </div>
       <div
         className={`coin-detail-body ${
-          darkMode ? "coin-detail-body-dark" : "coin-detail-body"
+          darkMode ? "coin-detail-body-dark" : "coin-detail-body-light"
         }`}
       >
         <div
           className={`coin-header ${
-            darkMode ? "coin-header-dark" : "coin-header"
+            darkMode ? "coin-header-dark" : "coin-header-light"
           }`}
         >
           <div className="coin-img">
@@ -195,8 +195,10 @@ const CryptoDetails = () => {
           <div className="coin-header-stats-cont">
             {stats.map(({ icon, title, value }) => (
               <div
-                className={`coin-header-stats- ${
-                  darkMode ? "coin-header-stats-dark" : "coin-header-stats"
+                className={`coin-header-stats ${
+                  darkMode
+                    ? "coin-header-stats-dark"
+                    : "coin-header-stats-light"
                 }`}
                 key={title}
               >
@@ -209,7 +211,13 @@ const CryptoDetails = () => {
             ))}
           </div>
         </div>
-        <h2 className="chart-title">{cryptoDetails.name} Price Chart</h2>
+        <h2
+          className={`chart-title ${
+            darkMode ? "chart-title-dark" : "chart-title-light"
+          }`}
+        >
+          {cryptoDetails.name} Price Chart
+        </h2>
         <Select
           defaultValue="7d"
           className="select-timeperiod"
@@ -237,7 +245,7 @@ const CryptoDetails = () => {
           <div className="misc-details">
             <div
               className={`other-stats-info ${
-                darkMode ? "other-stats-info-dark" : "other-stats-info"
+                darkMode ? "other-stats-info-dark" : "other-stats-info-light"
               }`}
             >
               <div className="coin-value-statistics-heading">
@@ -246,8 +254,8 @@ const CryptoDetails = () => {
               </div>
               {genericStats.map(({ icon, title, value }) => (
                 <div
-                  className={`"coin-stats" ${
-                    darkMode ? "coin-stats-dark" : "coin-stats"
+                  className={`coin-stats ${
+                    darkMode ? "coin-stats-dark" : "coin-stats-light"
                   }`}
                   key={title}
                 >
@@ -266,7 +274,7 @@ const CryptoDetails = () => {
               {cryptoDetails.links.map((link) => (
                 <div
                   className={`coin-link ${
-                    darkMode ? "coin-link-dark" : "coin-link"
+                    darkMode ? "coin-link-dark" : "coin-link-light"
                   }`}
                   key={link.url}
                 >
