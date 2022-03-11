@@ -63,7 +63,7 @@ function Message({
           {replyDocId && (
             <div
               className={`reply-message ${
-                darkMode ? "reply-message-dark" : "reply-message"
+                darkMode ? "reply-message-dark" : "reply-message-light"
               }`}
             >
               <h5>{replyDetails?.data().user}</h5>

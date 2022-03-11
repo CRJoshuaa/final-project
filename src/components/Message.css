@@ -22,52 +22,15 @@
   flex-direction: column;
   padding: 5px 15px 5px 5px;
   border-radius: 15px;
-  /* background-color: var(--light-1); */
   transition-duration: 0.5s;
   max-width: 80%;
 }
 
-.message-details-dark {
-  background-color: var(--dark-1);
-  color: white;
-}
-
-.message-details-light {
-  background-color: var(--light-1);
-}
-
-.message-details-light:hover {
-  background-color: var(--accent-1);
-  color: white;
-}
-
-.message-details-dark:hover {
-  background-color: var(--light-3);
-  color: black;
-}
-
 .reply-message {
   display: flex;
   flex-direction: column;
   padding: 5px;
   margin: 5px;
-  background-color: var(--light-1);
-  color: black;
-  border-radius: 5px;
-}
-
-.message-details-dark:hover > .reply-message {
-  background-color: var(--light-3);
-  color: black;
-}
-
-.reply-message {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  margin: 5px;
-  background-color: var(--dark-1);
-  color: white;
   border-radius: 5px;
 }
 
@@ -77,31 +40,11 @@
   padding: 15px;
 }
 
-/* .current-message-dark {
-  background-color: var(--main-color);
-} */
-
 .current-user {
   margin-left: auto;
   color: white;
   display: flex;
   flex-direction: row-reverse;
-}
-
-.current-user-dark > .message-details {
-  background-color: var(--dark-3);
-}
-
-.current-user-light > .message-details {
-  background-color: var(--dark-2);
-}
-
-.current-user-light > .message-details:hover {
-  background-color: var(--accent-1);
-}
-
-.current-user-dark > .message-details:hover {
-  background-color: var(--light-3);
 }
 
 .current-user > .message-details > .current-message > .message-info > h4 {
@@ -148,10 +91,6 @@
   color: white;
 }
 
-.message-buttons-dark > .MuiSvgIcon-root:hover {
-  color: black;
-}
-
 .message-buttons > .MuiSvgIcon-root {
   margin-top: 5px;
   margin-left: auto;
@@ -174,6 +113,79 @@
 .message.current-user > .message-info > h4 > span {
   color: white;
 }
+
+/* gen styling end */
+
+/* light mode styling start*/
+
+.message-details-light {
+  background-color: var(--light-1);
+}
+
+.message-details-light:hover {
+  background-color: var(--accent-1);
+  color: white;
+}
+
+.reply-message-light {
+  background-color: var(--light-1);
+  color: black;
+}
+
+.current-user-light > .message-details {
+  background-color: var(--dark-2);
+}
+
+.current-user-light > .message-details:hover {
+  background-color: var(--accent-1);
+}
+
+.current-user-light > .message-details-light > .reply-message-light {
+  background-color: var(--dark-2);
+  color: white;
+}
+
+.current-user-light:hover > .message-details-light > .reply-message-light {
+  background-color: var(--accent-1);
+}
+
+.message-details-light:hover > .reply-message {
+  background-color: var(--accent-1);
+  color: white;
+  transition-duration: 0.3s;
+}
+/* light mode styling end */
+
+/* dark mode styling start */
+
+.message-details-dark {
+  background-color: var(--dark-1);
+  color: white;
+}
+
+.message-details-dark:hover {
+  background-color: var(--light-3);
+  color: black;
+}
+
+.message-details-dark:hover > .reply-message {
+  background-color: var(--light-3);
+  color: black;
+  transition-duration: 0.3s;
+}
+
+.current-user-dark > .message-details {
+  background-color: var(--dark-3);
+}
+
+.current-user-dark > .message-details:hover {
+  background-color: var(--light-3);
+}
+
+.message-buttons-dark > .MuiSvgIcon-root:hover {
+  color: black;
+}
+/* dark mode styling end */
 
 /*Mobile screens*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
