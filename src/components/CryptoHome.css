@@ -7,16 +7,14 @@
   }
 }
 
+/* gen styling start*/
+
 .crypto-home {
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
   animation: 0.5s loadEaseIn;
   transition-duration: 0.5s;
-}
-
-.crypto-home-dark {
-  background-color: var(--dark-2);
 }
 
 .crypto-home::-webkit-scrollbar {
@@ -33,7 +31,6 @@
 }
 
 .crypto-stats {
-  /* color: black; */
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -46,13 +43,24 @@
   margin-top: 10px;
 }
 
-.crypto-stats-dark {
-  color: white;
-}
+/* gen styling end*/
+
+/* light mode start*/
 
 .crypto-home-light {
   color: black;
 }
+
+/* light mode end*/
+
+.crypto-home-dark {
+  background-color: var(--dark-2);
+}
+
+.crypto-stats-dark {
+  color: white;
+}
+
 .crypto-stats > h2 {
   font-size: 2rem;
   padding-bottom: 20px;
