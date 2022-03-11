@@ -1,0 +1,176 @@
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(1);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("https://wallpapercave.com/wp/wp8063327.jpg");
+
+  background-size: cover;
+  position: absolute;
+}
+.login-header {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 5%;
+  width: 100%;
+}
+
+.social-icon > .MuiSvgIcon-root {
+  transition-duration: 0.5s;
+  color: var(--dark-1);
+  font-size: 2rem;
+  transition-duration: 0.5s;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 1.5rem 0 0;
+  transition-duration: 0.5s;
+  padding: 0.3rem;
+  border-radius: 999px;
+}
+
+.social-icon:hover {
+  background-color: var(--dark-1);
+}
+
+.social-icon:hover > .MuiSvgIcon-root {
+  color: white;
+}
+
+.login-body {
+  display: flex;
+  height: 95%;
+  width: 100%;
+  align-items: center;
+}
+
+.login-left {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-left > img {
+  height: 70%;
+  border-radius: 999px;
+
+  animation: pulse-black 5s infinite;
+}
+
+.login-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--main-color); */
+}
+
+.login-right > h1 {
+  font-size: 70px;
+  letter-spacing: 0.1em;
+  /* font-size: 70px; */
+  color: var(--dark-1);
+}
+
+.login-right > h2 {
+  color: var(--dark-1);
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 10rem;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: var(--dark-1);
+  font-size: 1.3rem;
+  font-weight: 900;
+  transition-duration: 0.25s;
+}
+.login-button:hover {
+  color: var(--dark-1);
+  background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 4rem 4.8rem rgba(0, 0, 0, 0.12);
+}
+.login-button:active {
+}
+
+.google-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: white;
+  padding: 5px;
+  margin: 10px;
+}
+
+/*Mobile screens*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .login {
+    background-image: url("https://manofmany.com/wp-content/uploads/2019/07/50-Minimalist-iPhone-Wallpapers-13.jpg");
+    background-color: var(--light-2);
+  }
+  .login-right {
+    justify-content: flex-start;
+  }
+  .login-right > h1 {
+    font-size: 40px;
+  }
+  .login-right > h2 {
+    font-size: 20px;
+  }
+  .login-body {
+    flex-direction: column;
+  }
+  .login-left {
+    height: 50%;
+  }
+  .login-button {
+    padding: 0px;
+  }
+  .login-button > p {
+    display: none;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .login-body {
+    flex-direction: column;
+  }
+}
