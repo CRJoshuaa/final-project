@@ -7,8 +7,9 @@
 
 .chat-header {
   display: flex;
+  height: 9.825%;
   justify-content: space-between;
-  padding: 11.5px;
+  /* padding: 11.5px; */
   border-bottom: 1px solid var(--dark-1);
   position: sticky;
   top: 0;
@@ -101,9 +102,11 @@
 
 .chat-footer {
   display: flex;
-  padding: 25px;
+  align-items: center;
+
   position: sticky;
   bottom: 0;
+  height: 10%;
   background-color: transparent;
 }
 /* gen styling end */
