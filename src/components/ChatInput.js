@@ -16,6 +16,9 @@ import Picker from "emoji-picker-react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { checkedCheck } from "./testnoti";
+import useNotificationContext from "./useNotificationsContext";
+// import { checkedCheck } from "./testnoti";
+import { ThemeContext } from "./ThemeContext";
 
 toast.configure();
 
@@ -26,6 +29,7 @@ function ChatInput({
   replyDocId,
   setReplyDocId,
 }) {
+  const addNotification = useNotificationContext();
   const [input, setInput] = useState("");
   const [user] = useAuthState(auth);
 
@@ -69,10 +73,19 @@ function ChatInput({
       toast.success("Message sent!");
     }
 
+    // if (!channelName) {
+    // addNotification(input);
+
     setInput("");
     setReplyDocId(null);
     // if(channelName){
     // if(timestam)
+
+    console.log(input);
+
+    // if (!channelName) {
+    //   setMessageToNotification();
+    // }
     // setMessageToNotification();
   };
   return (

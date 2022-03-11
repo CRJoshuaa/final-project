@@ -3,10 +3,11 @@ import "./Settings.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { updateProfile } from "firebase/auth";
+import { ThemeContext } from "./ThemeContext";
+
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
-
-import { ThemeContext } from "./ThemeContext";
+import "./Apperance_setting.css";
 
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
@@ -28,10 +29,10 @@ function AccountSetting() {
 
   const darkMode = theme.state.darkMode;
 
-  const changeTheme = () => {
-    if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
-    else theme.dispatch({ type: "DARKMODE" });
-  };
+  // const changeTheme = () => {
+  //   if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
+  //   else theme.dispatch({ type: "DARKMODE" });
+  // };
 
   /*adding light/dark mode end*/
 
@@ -65,7 +66,11 @@ function AccountSetting() {
   }
 
   return (
-    <div className={`account-header ${darkMode ? "acct-dark" : "acct-light"}`}>
+    <div
+      className={`account-cont ${
+        darkMode ? "background-dark" : "background-light"
+      }`}
+    >
       <div className="account-header">
         <h2>Account</h2>
       </div>
