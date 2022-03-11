@@ -22,7 +22,7 @@
   }
 }
 
-.shaker-load {
+.loading-cont {
   display: flex;
   color: var(--dark-1);
   flex-direction: column;
@@ -32,6 +32,17 @@
   width: 100%;
   height: 100%;
   background-color: var(--off-white);
+}
+
+.shaker-load {
+  display: flex;
+  color: var(--dark-1);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .shaker-load > img {
