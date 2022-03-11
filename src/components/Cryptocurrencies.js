@@ -2,13 +2,10 @@ import React, { useState, useContext, useEffect } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import "./Cryptocurrencies.css";
-import RotateLoading from "./RotateLoading";
 import { selectSocket } from "../features/appSlice";
 import { useSelector } from "react-redux";
 import { ThemeContext } from "./ThemeContext";
 
-import { Input } from "@material-ui/core";
-import { io } from "socket.io-client";
 import ShakeLoader from "./ShakeLoader";
 
 const Cryptocurrencies = ({ simplified }) => {
@@ -18,7 +15,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 3 : 100;
   const [cryptos, setCryptos] = useState([]);
   const [filteredCryptos, setFilteredCryptos] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm] = useState("");
 
   const socket = useSelector(selectSocket);
   // const socket = io("http://localhost:3001");
@@ -60,17 +57,7 @@ const Cryptocurrencies = ({ simplified }) => {
     >
       <div className="cryptocurrency-header">
         <h1>Cryptocurrencies</h1>
-      </div>{" "}
-      {/* <div className="crypto-search-bar">
-        {" "}
-        {!simplified && (
-          <Input
-            className="crypto-search"
-            placeholder="Search Cryptocurrency"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          ></Input>
-        )}
-      </div> */}
+      </div>
       <div className="leaderboard">
         {top3 &&
           top3.map((currency) => (
@@ -96,16 +83,29 @@ const Cryptocurrencies = ({ simplified }) => {
       <div className="crypto-card-container">
         {filteredCryptos &&
           theRest?.map((currency) => (
-            <div className="crypto-card" key={currency.id}>
+            <div
+              className={`crypto-card ${
+                darkMode ? "crypto-card-dark" : "crypto-card-light"
+              }`}
+              key={currency.id}
+            >
               <div className="crypto-rank">
                 <h2>{`${currency.rank}`}</h2>
               </div>
               <Link to={`/crypto/${currency.uuid}`}>
-                <div className="crypto-name">
+                <div
+                  className={`crypto-name ${
+                    darkMode ? "crypto-name-dark" : "crypto-name-light"
+                  }`}
+                >
                   <img className="crypto-image" src={currency.iconUrl} />
                   {`${currency.name}`}{" "}
                 </div>
-                <div className="crypto-info">
+                <div
+                  className={`crypto-info ${
+                    darkMode ? "crypto-info-dark" : "crypto-info-light"
+                  }`}
+                >
                   <p>Price: {millify(currency.price)}</p>
                   <p>Market Cap: {millify(currency.marketCap)}</p>
                   <p>Daily Change: {millify(currency.change)}%</p>
