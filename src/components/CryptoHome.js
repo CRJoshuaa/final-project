@@ -76,23 +76,6 @@ const CryptoHome = () => {
             </div>
           </div>
         </div>
-
-        <div className="total-table">
-          <div className="total-column">
-            <p>Total Cryptocurrencies</p>
-            <p>Total Exchanges </p>
-            <p>Total Market Cap </p>
-            <p>Total 24h Volume </p>
-            <p>Total Markets </p>
-          </div>
-          <div className="numbers-column">
-            <p>: {globalStats.total}</p>
-            <p>: {millify(globalStats.totalExchanges)}</p>
-            <p>: {millify(globalStats.totalMarketCap)}</p>
-            <p>: {millify(globalStats.total24hVolume)}</p>
-            <p>: {millify(globalStats.totalMarkets)}</p>
-          </div>
-        </div>
       </div>
       <div className="top-ten-container">
         <Cryptocurrencies simplified />

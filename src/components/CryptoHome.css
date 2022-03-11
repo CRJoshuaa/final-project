@@ -172,9 +172,19 @@
 .show-more-light {
   color: black;
 }
-
-.show-more {
+.show-more-icon {
+  display: flex;
+  flex-direction: row-reverse;
   margin: 20px;
+}
+.show-more-icon > .MuiSvgIcon-root {
+  padding: 5px;
+  border-radius: 999px;
+}
+
+.show-more-icon > .MuiSvgIcon-root:hover {
+  background-color: var(--dark-2);
+  color: white;
 }
 
 /* Mobile */
