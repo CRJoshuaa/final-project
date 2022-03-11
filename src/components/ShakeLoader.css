@@ -46,17 +46,13 @@
 }
 
 .shaker-load > img {
-  height: 350px;
+  height: 100px;
   border: 10px solid white;
   border-radius: 999px;
   background-color: transparent;
   margin: 50px;
   transform: translate(0, 0);
   animation: pop 1.2s infinite;
-}
-
-h1 {
-  font-size: 40px;
 }
 
 /*for mobile screens*/
