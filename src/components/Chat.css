@@ -1,35 +1,9 @@
+/* gen styling start */
+
 .chat {
   flex: 0.8;
   width: 100%;
 }
-
-.chat-dark {
-  background-size: cover;
-  background-image: url("https://media.istockphoto.com/photos/background-black-total-grunge-abstract-cement-concrete-paper-texture-picture-id1251205256?b=1&k=20&m=1251205256&s=170667a&w=0&h=o4N-O5lZywE2lBuauTZX6NiutPCNbKAnuKaTSKWM0Lo=");
-}
-
-.chat-light {
-  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
-}
-
-.chat-display::-webkit-scrollbar {
-  display: none;
-}
-
-.chat-body {
-  width: 95%;
-  background: transparent;
-}
-
-/* .chat-body-dark {
-  background-color: var(--dark-2);
-  background-color: tansparent;
-}
-
-.chat-body-light {
-  background-color: transparent;
-  background-color: var(--light-3);
-} */
 
 .chat-header {
   display: flex;
@@ -66,22 +40,14 @@
   background-color: transparent;
 }
 
-.chat-footer {
-  display: flex;
-  padding: 25px;
-  position: sticky;
-  bottom: 0;
-  background-color: transparent;
+.chat-display::-webkit-scrollbar {
+  display: none;
 }
 
-/* .chat-footer-dark {
-  background-color: var(--dark-1);
-  padding: 28px;
+.chat-body {
+  width: 95%;
+  background: transparent;
 }
-
-.chat-footer-light {
-  background-color: transparent;
-} */
 
 .chat-messages {
   display: flex;
@@ -89,10 +55,6 @@
   bottom: 0;
   overflow-y: scroll;
 }
-/* 
-.chat-messages-dark {
-  background-color: var(--dark-2);
-} */
 
 .chat-messages::-webkit-scrollbar {
   display: none;
@@ -135,6 +97,28 @@
   flex-direction: row;
   color: white;
   transform: scale(1.2);
+}
+
+.chat-footer {
+  display: flex;
+  padding: 25px;
+  position: sticky;
+  bottom: 0;
+  background-color: transparent;
+}
+/* gen styling end */
+
+/* light mode styling*/
+
+.chat-light {
+  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
+}
+
+/* dark mode styling */
+
+.chat-dark {
+  background-size: cover;
+  background-image: url("https://media.istockphoto.com/photos/background-black-total-grunge-abstract-cement-concrete-paper-texture-picture-id1251205256?b=1&k=20&m=1251205256&s=170667a&w=0&h=o4N-O5lZywE2lBuauTZX6NiutPCNbKAnuKaTSKWM0Lo=");
 }
 
 /*Mobile screens*/
