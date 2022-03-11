@@ -9,6 +9,7 @@
   align-content: stretch;
   align-items: stretch;
   background-image: url("../images/coinGramBackgroundMobile.jpg");
+  background-attachment: scroll;
 }
 
 .crypto-news.simplified {
