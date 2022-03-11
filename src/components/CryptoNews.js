@@ -49,16 +49,33 @@ const CryptoNews = ({ simplified }) => {
             className="top"
             key={news.url}
           >
-            <div className="crypto-news-card">
+            <div
+              className={`crypto-news-card ${
+                darkMode ? "crypto-news-card-dark" : "crypto-news-card-light"
+              }`}
+            >
               <div className="crypto-news-img">
                 <img
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt="news"
                 />
               </div>
-              <div className="crypto-news-title" level={4}>
+              <div
+                className={`crypto-news-title ${
+                  darkMode
+                    ? "crypto-news-title-dark"
+                    : "crypto-news-title-light"
+                }`}
+                level={4}
+              >
                 {news.name}
-                <p className="crypto-news-desc">
+                <p
+                  className={`crypto-news-desc ${
+                    darkMode
+                      ? "crypto-news-desc-dark"
+                      : "crypto-news-desc-light"
+                  }`}
+                >
                   {news.description.length > 100
                     ? `${news.description.substring(0, 100)}...`
                     : news.description}
@@ -73,7 +90,13 @@ const CryptoNews = ({ simplified }) => {
                   }
                   alt="news"
                 />
-                <p className="provider-name">{news.provider[0]?.name}</p>
+                <p
+                  className={`provider-name ${
+                    darkMode ? "provider-name-dark" : "provider-name-light"
+                  }`}
+                >
+                  {news.provider[0]?.name}
+                </p>
                 <p>{moment(news.datePublished).startOf("ss").fromNow()}</p>
               </div>
             </div>
