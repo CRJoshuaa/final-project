@@ -30,7 +30,7 @@ function Message({
       replyDocId &&
       db.collection("rooms").doc(roomId).collection("messages").doc(replyDocId)
   );
-
+  //TODO: new message notification
   // addNotification(message);
 
   // if (
