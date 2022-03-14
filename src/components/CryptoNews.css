@@ -8,7 +8,7 @@
   flex-wrap: nowrap;
   align-content: stretch;
   align-items: stretch;
-  background-image: url("../images/coinGramBackgroundMobile.jpg");
+  background-image: var(--backgroundImageMobile);
   background-attachment: scroll;
 }
 

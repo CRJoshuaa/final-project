@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./SidebarOption.css";
 import { db } from "../firebase";
 import { useDispatch } from "react-redux";
@@ -6,9 +6,12 @@ import { enterRoom } from "../features/appSlice";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Settings } from "@mui/icons-material";
 import { ThemeContext } from "./ThemeContext";
+import Modal from "react-modal";
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
+  const [modalNewChannelIsOpen, setModalNewChannelIsOpen] = useState(false);
+  const [channelName, setChannelName] = useState("");
 
   const theme = useContext(ThemeContext);
 
@@ -21,12 +24,12 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   const dispatch = useDispatch();
 
   const addChannel = () => {
-    const channelName = prompt("Please enter the channel name");
-
     if (channelName) {
       db.collection("rooms").add({
         name: channelName,
       });
+
+      setModalNewChannelIsOpen(false);
     }
   };
   const selectChannel = () => {
@@ -86,7 +89,7 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
               routeSettings();
               break;
             case "Add Channel":
-              addChannel();
+              setModalNewChannelIsOpen(true);
               break;
             case "Direct Message":
               routeDirectMessage();
@@ -106,6 +109,25 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
         }
       }
     >
+      {
+        <Modal isOpen={modalNewChannelIsOpen} className="pop-up">
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Insert New Channel Name"
+              onChange={(e) => {
+                setChannelName(e.target.value);
+              }}
+            />
+          </div>
+          <div className="pop-up-btn">
+            <button onClick={addChannel}>Create</button>
+            <button onClick={() => setModalNewChannelIsOpen(false)}>
+              Cancel
+            </button>
+          </div>
+        </Modal>
+      }
       {Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
       {Icon ? (
         <h3>{title}</h3>

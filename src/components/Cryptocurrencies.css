@@ -3,7 +3,7 @@
 .cryptocurrency-page {
   width: 100%;
   overflow-y: scroll;
-  background-image: url("../images/coinGramBackgroundMobile.jpg");
+  background-image: var(--backgroundImageMobile);
   background-size: auto;
   background-attachment: scroll;
 }
