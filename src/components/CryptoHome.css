@@ -15,7 +15,7 @@
   overflow-y: scroll;
   animation: 0.5s loadEaseIn;
   transition-duration: 0.5s;
-  background-image: url("../images/coinGramBackgroundLarge.webp");
+  background-image: var(--backgrounImageDesktop);
   background-size: cover;
   background-attachment: scroll;
 }
