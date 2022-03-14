@@ -2,7 +2,6 @@
   display: flex;
   margin: 10px;
   flex-direction: column;
-  width: fit-content;
 }
 
 .message {
