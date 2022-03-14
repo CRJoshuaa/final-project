@@ -84,6 +84,10 @@
   padding-left: 5px;
 }
 
+.crypto-source-divider {
+  display: none;
+}
+
 .crypto-news-img {
   margin-right: 10px;
   flex: 0.1;
@@ -146,16 +150,40 @@
     height: 88%;
   }
 
+  .crypto-news-card {
+    flex-direction: column;
+  }
+
   .crypto-news-title {
     font-size: 14px;
   }
 
   .crypto-news-desc {
-    font-size: 12px;
+    display: none;
+  }
+
+  .crypto-news-source {
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    margin: none;
+    padding: none;
+    /* display: none; */
+  }
+
+  .crypto-news-source > p {
+    font-size: 10px;
+  }
+  .source-logo {
+    height: 15px;
+    margin-right: 5px;
+  }
+  .crypto-source-divider {
+    display: inline;
   }
 
   .crypto-news-img > img {
-    width: 80px;
+    width: 100%;
   }
 }
 
