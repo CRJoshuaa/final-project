@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
 }
 
 .chat-bar {
@@ -13,7 +14,9 @@
   justify-content: center;
   background-color: var(--light-1);
   flex-direction: column;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  position: sticky;
+  bottom: 0;
 }
 
 .chat-bar > form {
@@ -42,19 +45,40 @@
   color: var(--accent-1);
 }
 
+aside.emoji-picker-react {
+  width: 95% !important;
+  height: 350px !important;
+  margin-bottom: 155px !important;
+  position: sticky !important;
+}
+
+/* Mobile screens*/
 @media only screen and (max-width: 428px) {
   .chat-bar {
     font-size: 15px;
     padding: 10px;
-    margin-bottom: 100px;
   }
 
   .chat-bar > form > input {
     font-size: 15px;
     padding: 10px;
   }
+
+  aside.emoji-picker-react {
+    margin-bottom: 0px !important;
+  }
 }
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+  aside.emoji-picker-react {
+    margin-bottom: 0px !important;
+  }
+}
+
+/* Laptop screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  aside.emoji-picker-react {
+    margin-bottom: 0px !important;
+  }
 }

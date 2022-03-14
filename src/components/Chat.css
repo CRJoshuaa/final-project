@@ -156,14 +156,12 @@
     flex: 0.4;
   }
 
-  .chat-footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-  }
-
   .chat-sidebar {
     display: none;
+  }
+
+  .chat-footer {
+    flex-direction: column-reverse;
   }
 }
 
