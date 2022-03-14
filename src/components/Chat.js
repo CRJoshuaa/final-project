@@ -137,9 +137,7 @@ function Chat() {
         <>
           <div className="chat-header">
             <div className="chat-header-left">
-              <h4>
-                <strong>#{roomDetails?.data().name}</strong>
-              </h4>
+              <h4>#{roomDetails?.data().name}</h4>
               <IconButton>
                 <StarBorderOutlinedIcon />
               </IconButton>

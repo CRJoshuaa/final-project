@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./LineChart.css";
 import { Line } from "react-chartjs-2";
 import zoomPlugin from "chartjs-plugin-zoom";
@@ -14,6 +14,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+
+import { ThemeContext } from "./ThemeContext";
 
 ChartJS.register(
   CategoryScale,
@@ -57,6 +59,7 @@ const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
         label: "Price In USD",
         data: coinPrice,
         fill: false,
+        color: "white",
         backgroundColor: "#0071bd",
         borderColor: "#0071bd",
       },
@@ -77,6 +80,10 @@ const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
   //   options.resetZoom();
   // }
 
+  const theme = useContext(ThemeContext);
+
+  const darkMode = theme.state.darkMode;
+
   const options = {
     // plugins: {
     //   zoom: {
@@ -93,7 +100,10 @@ const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
     // },
     scales: {
       x: {
+        grid: { display: true, color: "grey" },
+
         ticks: {
+          color: "grey",
           maxTicksLimit: function () {
             if (coinTimeperiod === "3h") {
               return 3;
@@ -116,7 +126,9 @@ const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
         },
       },
       y: {
+        grid: { display: true, color: "grey" },
         ticks: {
+          color: "grey",
           beginAtZero: true,
         },
       },
@@ -125,7 +137,11 @@ const LineChart = ({ coinHistory, coinName, coinTimeperiod }) => {
 
   return (
     <>
-      <div className="chart-header">
+      <div
+        className={`chart-header ${
+          darkMode ? "chart-header-dark" : "chart-header-light"
+        }`}
+      >
         {/* <h2 className="chart-title">{coinName} Price Chart</h2> */}
         <div className="price-container">
           <h5 className="price-change">

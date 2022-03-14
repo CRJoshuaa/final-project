@@ -104,6 +104,9 @@ const CryptoNews = ({ simplified }) => {
                 >
                   {news.provider[0]?.name}
                 </p>
+
+                <p className="crypto-source-divider">&ensp;|&ensp;</p>
+
                 <p>{moment(news.datePublished).startOf("ss").fromNow()}</p>
               </div>
             </div>

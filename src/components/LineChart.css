@@ -28,6 +28,24 @@
   width: 95%;
 }
 
+/* light mode styling start*/
+
+.chart-cont-light {
+  background-image: (45deg, #a9f0d1, #f2ffff);
+}
+
+.chart-header-light {
+  color: var(--accent-1);
+}
+
+/* light mode styling end*/
+
+/* dark mode styling start */
+
+.chart-header-dark {
+  color: white;
+}
+
 /* Mobile Screens */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 }
