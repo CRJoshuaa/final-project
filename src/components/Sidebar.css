@@ -3,10 +3,9 @@
   flex-direction: column;
   color: white;
   background-color: var(--main-color);
-  flex: 0.2;
   border-top: 1px solid var(--dark-1);
   border-right: 1px solid var(--dark-1);
-  min-width: 20%;
+  min-width: 200px;
 }
 
 .sidebar-channel {

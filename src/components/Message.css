@@ -141,12 +141,12 @@
 }
 
 .current-user-light > .message-details-light > .reply-message-light {
-  background-color: var(--dark-2);
+  background-color: transparent;
   color: white;
 }
 
 .current-user-light:hover > .message-details-light > .reply-message-light {
-  background-color: var(--accent-1);
+  background-color: transparent;
 }
 
 .message-details-light:hover > .reply-message {
