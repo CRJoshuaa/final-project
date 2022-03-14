@@ -21,12 +21,12 @@
   align-items: center;
   justify-content: flex-start;
   flex: 0.4;
+  margin: 0 15px;
 }
 
 .chat-header-left > h4 {
   display: flex;
   text-transform: lowercase;
-  margin-right: 10px;
 }
 
 .chat-header-left > h4 > .MuiSvgIcon-root {
