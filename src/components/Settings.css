@@ -18,6 +18,8 @@
 }
 
 .settings-header {
+  display: flex;
+  flex-direction: row;
   background-color: var(--main-color);
   color: white;
   padding: 14px;
@@ -25,6 +27,11 @@
   top: 0;
   /* z-index: 1; */
   margin-bottom: 20px;
+}
+.settings-header > button {
+  color: white;
+  transform: scale(1.2);
+  align-items: center;
 }
 
 .settings-header > .MuiSvgIcon-root {
