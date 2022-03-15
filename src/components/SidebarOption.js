@@ -8,6 +8,9 @@ import { Settings } from "@mui/icons-material";
 import { ThemeContext } from "./ThemeContext";
 import Modal from "react-modal";
 
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import { IconButton } from "@mui/material";
+
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
   const [modalNewChannelIsOpen, setModalNewChannelIsOpen] = useState(false);
@@ -76,6 +79,38 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
     history.push(path);
   };
 
+  if (addChannelOption) {
+    return (
+      <div className="channel-header">
+        <h3>Channels</h3>
+        <IconButton
+          onClick={() => {
+            setModalNewChannelIsOpen(true);
+            console.log(modalNewChannelIsOpen);
+          }}
+        >
+          <AddOutlinedIcon />
+        </IconButton>
+        <Modal isOpen={modalNewChannelIsOpen} className="pop-up">
+          <div className="input">
+            <input
+              type="text"
+              placeholder="Insert New Channel Name"
+              onChange={(e) => {
+                setChannelName(e.target.value);
+              }}
+            />
+          </div>
+          <div className="pop-up-btn">
+            <button onClick={addChannel}>Create</button>
+            <button onClick={() => setModalNewChannelIsOpen(false)}>
+              Cancel
+            </button>
+          </div>
+        </Modal>
+      </div>
+    );
+  }
   return (
     <div
       className={`sidebar-option-cont ${
@@ -109,25 +144,6 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
         }
       }
     >
-      {
-        <Modal isOpen={modalNewChannelIsOpen} className="pop-up">
-          <div className="input">
-            <input
-              type="text"
-              placeholder="Insert New Channel Name"
-              onChange={(e) => {
-                setChannelName(e.target.value);
-              }}
-            />
-          </div>
-          <div className="pop-up-btn">
-            <button onClick={addChannel}>Create</button>
-            <button onClick={() => setModalNewChannelIsOpen(false)}>
-              Cancel
-            </button>
-          </div>
-        </Modal>
-      }
       {Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
       {Icon ? (
         <h3>{title}</h3>
