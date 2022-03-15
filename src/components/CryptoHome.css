@@ -78,7 +78,7 @@
 .cards li {
   /* border: 2px solid #490a3d; */
   border-radius: 10px;
-  background-color: var(--accent-2);
+  background-color: var(--light-1);
   color: black;
 }
 
