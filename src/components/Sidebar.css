@@ -22,9 +22,8 @@
 }
 
 .sidebar-cont > hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--dark-1);
+  margin-top: 5px;
+  border-top: 1px solid var(--light-1);
 }
 
 .sidebar-header {
