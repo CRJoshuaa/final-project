@@ -34,8 +34,23 @@
   font-weight: 300;
 }
 
+.channel-header {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.channel-header > button {
+  color: white;
+  transform: scale(0.75);
+}
+
 /*Mobile screens*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+  .channel-header {
+    font-size: 0;
+  }
 }
 
 /* IPad and Tablets */

@@ -15,7 +15,7 @@
   overflow-y: scroll;
   animation: 0.5s loadEaseIn;
   transition-duration: 0.5s;
-  background-image: url("../images/coinGramBackgroundLarge.webp");
+  background-image: var(--backgrounImageDesktop);
   background-size: cover;
   background-attachment: scroll;
 }
@@ -58,6 +58,8 @@
 
 .crypto-home-dark {
   background-color: var(--dark-2);
+  background-image: var(--appBackgroundDark-1);
+  background-size: cover;
 }
 
 .crypto-stats-dark {
@@ -78,7 +80,7 @@
 .cards li {
   /* border: 2px solid #490a3d; */
   border-radius: 10px;
-  background-color: var(--accent-2);
+  background-color: var(--light-1);
   color: black;
 }
 

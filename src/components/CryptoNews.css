@@ -8,8 +8,8 @@
   flex-wrap: nowrap;
   align-content: stretch;
   align-items: stretch;
-  background-image: url("../images/coinGramBackgroundMobile.jpg");
-  background-attachment: scroll;
+  background-image: var(--backgroundImageMobile);
+  background-size: cover;
 }
 
 .crypto-news.simplified {
@@ -84,6 +84,10 @@
   padding-left: 5px;
 }
 
+.crypto-source-divider {
+  display: none;
+}
+
 .crypto-news-img {
   margin-right: 10px;
   flex: 0.1;
@@ -94,6 +98,8 @@
 
 .crypto-news-cont-light {
   background-color: var(--off-white);
+  background-image: var(--backgrounImageDesktop);
+  background-size: cover;
 }
 
 .crypto-news-card-light {
@@ -110,6 +116,8 @@
 
 .crypto-news-cont-dark {
   background-color: var(--dark-2);
+  background-image: var(--appBackgroundDark-1);
+  background-size: cover;
 }
 
 .crypto-news-card-dark {
@@ -146,16 +154,40 @@
     height: 88%;
   }
 
+  .crypto-news-card {
+    flex-direction: column;
+  }
+
   .crypto-news-title {
     font-size: 14px;
   }
 
   .crypto-news-desc {
-    font-size: 12px;
+    display: none;
+  }
+
+  .crypto-news-source {
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    margin: none;
+    padding: none;
+    /* display: none; */
+  }
+
+  .crypto-news-source > p {
+    font-size: 10px;
+  }
+  .source-logo {
+    height: 15px;
+    margin-right: 5px;
+  }
+  .crypto-source-divider {
+    display: inline;
   }
 
   .crypto-news-img > img {
-    width: 80px;
+    width: 100%;
   }
 }
 

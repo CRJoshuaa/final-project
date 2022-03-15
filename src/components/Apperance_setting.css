@@ -16,6 +16,7 @@
 .para {
   width: 90%;
   border-radius: 10px;
+  transition-duration: 0.5s;
 }
 
 .appearance-setting {
@@ -46,9 +47,8 @@
 }
 
 .para-light {
-  background-image: url("https://wallpaperaccess.com/full/449895.jpg");
+  background-image: var(--chatBackgroundLight);
   color: black;
-  transition-duration: 0.5s;
 }
 
 .btn-light {
@@ -83,7 +83,7 @@
 .para-dark {
   color: white;
   background-size: cover;
-  background-image: url("https://media.istockphoto.com/photos/background-black-total-grunge-abstract-cement-concrete-paper-texture-picture-id1251205256?b=1&k=20&m=1251205256&s=170667a&w=0&h=o4N-O5lZywE2lBuauTZX6NiutPCNbKAnuKaTSKWM0Lo=");
+  background-image: var(--chatBackgroundDark);
 }
 
 .btn-dark {
