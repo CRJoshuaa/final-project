@@ -5,6 +5,11 @@
 }
 
 body {
+  --backgrounImageDesktop: url("./images/coinGramBackgroundLarge.webp");
+  --backgroundImageMobile: url("./images/coinGramBackgroundMobile.jpg");
+  --defaultProfilePic: url("./images/defaultProfilePic.jpg");
+  --chatBackgroundLight: url("./images/chatBackgroundLight.jpg");
+  --chatBackgroundDark: url("./images/chatBackgroundDark.png");
   --main-color: #3c4552;
   --dark-1: #293241;
   --dark-2: #3d5a80;

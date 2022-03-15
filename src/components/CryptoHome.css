@@ -7,16 +7,17 @@
   }
 }
 
+/* gen styling start*/
+
 .crypto-home {
   flex: 0.7;
   flex-grow: 1;
   overflow-y: scroll;
   animation: 0.5s loadEaseIn;
   transition-duration: 0.5s;
-}
-
-.crypto-home-dark {
-  background-color: var(--dark-2);
+  background-image: var(--backgrounImageDesktop);
+  background-size: cover;
+  background-attachment: scroll;
 }
 
 .crypto-home::-webkit-scrollbar {
@@ -33,7 +34,6 @@
 }
 
 .crypto-stats {
-  /* color: black; */
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -46,13 +46,67 @@
   margin-top: 10px;
 }
 
-.crypto-stats-dark {
-  color: white;
-}
+/* gen styling end*/
+
+/* light mode start*/
 
 .crypto-home-light {
   color: black;
 }
+
+/* light mode end*/
+
+.crypto-home-dark {
+  background-color: var(--dark-2);
+}
+
+.crypto-stats-dark {
+  color: white;
+}
+
+.top-row-box {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards li {
+  /* border: 2px solid #490a3d; */
+  border-radius: 10px;
+  background-color: var(--accent-2);
+  color: black;
+}
+
+.cards h3 {
+  background-color: var(--light-3);
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.cards p {
+  padding: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.total-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.total-box li {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
 .crypto-stats > h2 {
   font-size: 2rem;
   padding-bottom: 20px;
@@ -118,13 +172,30 @@
 .show-more-light {
   color: black;
 }
+.show-more-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px;
+}
+.show-more-icon > .MuiSvgIcon-root {
+  padding: 5px;
+  border-radius: 999px;
+}
+
+.show-more-icon > .MuiSvgIcon-root:hover {
+  background-color: var(--dark-2);
+  color: white;
+}
 
 /* Mobile */
 @media only screen and (max-width: 480px) {
   .crypto-home {
     height: 88%;
   }
-  .show-more {
+  .show-more-icon {
     margin: 20px;
+  }
+  .top-row-box {
+    flex-direction: column;
   }
 }

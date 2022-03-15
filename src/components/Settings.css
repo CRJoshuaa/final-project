@@ -1,6 +1,6 @@
 .settings-cont {
   color: black;
-  flex: 0.8;
+  /* flex: 0.8; */
   width: 100%;
   overflow-y: scroll;
 }
@@ -8,7 +8,7 @@
 .settings-dark {
   color: white;
   background-color: var(--dark-2);
-  flex: 0.8;
+  /* flex: 0.8; */
   width: 100%;
   overflow-y: scroll;
 }
@@ -84,6 +84,12 @@
   padding: 10px;
 }
 
+.account-cont {
+  padding: 10px;
+  margin: auto;
+  border-radius: 15px;
+}
+
 .account-setting {
   display: flex;
   flex-direction: row;
@@ -155,7 +161,7 @@
 
 /* Gen Info Styling end */
 
-.settings-cont > button {
+button {
   border: none;
   padding: 10px 30px;
   border-radius: 4px;

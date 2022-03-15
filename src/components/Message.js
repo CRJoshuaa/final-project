@@ -30,7 +30,7 @@ function Message({
       replyDocId &&
       db.collection("rooms").doc(roomId).collection("messages").doc(replyDocId)
   );
-
+  //TODO: new message notification
   // addNotification(message);
 
   // if (
@@ -61,7 +61,11 @@ function Message({
           }`}
         >
           {replyDocId && (
-            <div className="reply-message">
+            <div
+              className={`reply-message ${
+                darkMode ? "reply-message-dark" : "reply-message-light"
+              }`}
+            >
               <h5>{replyDetails?.data().user}</h5>
               <Linkify>
                 <p>{replyDetails?.data().message}</p>
@@ -88,7 +92,11 @@ function Message({
                 <p>{message}</p>
               </Linkify>
 
-              <div className="message-buttons">
+              <div
+                className={`message-buttons ${
+                  darkMode ? "message-buttons-dark" : "message-buttons"
+                }`}
+              >
                 <ReplyIcon
                   onClick={() => {
                     setReplyDocId(messageId);

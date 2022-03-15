@@ -120,7 +120,7 @@ function ChatInput({
       {showEmojiPick && (
         <Picker
           onEmojiClick={onEmojiPick}
-          pickerStyle={{ width: "100%", height: "200px" }}
+          pickerStyle={{ width: "100%", height: "400px" }}
           disableSearchBar
           native={true}
         />

@@ -6,6 +6,7 @@ import Cryptocurrencies from "./Cryptocurrencies";
 import CryptoNews from "./CryptoNews";
 import RotateLoading from "./RotateLoading";
 import { io } from "socket.io-client";
+import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import { ThemeContext } from "./ThemeContext";
 
 import { selectSocket } from "../features/appSlice";
@@ -50,19 +51,29 @@ const CryptoHome = () => {
       >
         <h2>Cryptocurrency Statistics</h2>
         <div className="total-table">
-          <div className="total-column">
-            <p>Total Cryptocurrencies </p>
-            <p>Total Exchanges </p>
-            <p>Total Market Cap </p>
-            <p>Total 24h Volume </p>
-            <p>Total Markets </p>
-          </div>
-          <div className="numbers-column">
-            <p>: {globalStats.total}</p>
-            <p>: {millify(globalStats.totalExchanges)}</p>
-            <p>: {millify(globalStats.totalMarketCap)}</p>
-            <p>: {millify(globalStats.total24hVolume)}</p>
-            <p>: {millify(globalStats.totalMarkets)}</p>
+          <div className="top-row-box">
+            <div className="total-box cards">
+              <li>
+                <h3>Total Crypto</h3>
+                <p>{globalStats.total}</p>
+              </li>
+              <li>
+                <h3>Total Exchanges</h3>
+                <p>{millify(globalStats.totalExchanges)}</p>
+              </li>
+              <li>
+                <h3>Total Market Cap</h3>
+                <p>{millify(globalStats.totalMarketCap)}</p>
+              </li>
+              <li>
+                <h3>Total 24h Volume</h3>
+                <p>{millify(globalStats.total24hVolume)}</p>
+              </li>
+              <li>
+                <h3>Total Markets</h3>
+                <p>{millify(globalStats.totalMarkets)}</p>
+              </li>
+            </div>
           </div>
         </div>
       </div>
@@ -70,11 +81,11 @@ const CryptoHome = () => {
         <Cryptocurrencies simplified />
         <Link to="/cryptocurrencies">
           <h4
-            className={`show-more ${
+            className={`show-more-icon ${
               darkMode ? "show-more-dark" : "show-more-light"
             }`}
           >
-            Show More Cryptocurrencies
+            <ReadMoreIcon />
           </h4>
         </Link>
       </div>
@@ -83,11 +94,11 @@ const CryptoHome = () => {
         <CryptoNews simplified />
         <Link to="/crypto-news">
           <h4
-            className={`show-more ${
+            className={`show-more-icon ${
               darkMode ? "show-more-dark" : "show-more-light"
             }`}
           >
-            Show More News
+            <ReadMoreIcon />
           </h4>
         </Link>
       </div>

@@ -20,6 +20,8 @@ const CryptoNews = ({ simplified }) => {
   // const socket = io("http://localhost:3001");
   const socket = useSelector(selectSocket);
 
+  //REQUEST DATA
+  //crypto news
   useEffect(() => {
     socket.emit("request-crypto-news", "Cryptocurrency", simplified ? 3 : 10);
     return () => {};
@@ -27,19 +29,24 @@ const CryptoNews = ({ simplified }) => {
 
   const [cryptoNews, setCryptoNews] = useState([]);
 
+  //RECEIVE DATA
+  //crypto news
   socket.on("response-crypto-news", (message) => {
     setCryptoNews(message);
   });
   if (!cryptoNews?.value) return <RotateLoading />;
   return (
     <div
-      className={`crypto-news-cont ${
+      className={`crypto-news ${simplified && `simplified`} ${
         darkMode ? "crypto-news-cont-dark" : "crypto-news-cont-light"
       }`}
     >
-      <div className="news-header">
-        <h1>Crypto News </h1>
-      </div>
+      {!simplified && (
+        <div className="news-header">
+          <h1>Crypto News </h1>
+        </div>
+      )}
+
       <div className="crypto-news-feed">
         {cryptoNews.value.map((news, i) => (
           <a
@@ -49,16 +56,33 @@ const CryptoNews = ({ simplified }) => {
             className="top"
             key={news.url}
           >
-            <div className="crypto-news-card">
+            <div
+              className={`crypto-news-card ${
+                darkMode ? "crypto-news-card-dark" : "crypto-news-card-light"
+              }`}
+            >
               <div className="crypto-news-img">
                 <img
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt="news"
                 />
               </div>
-              <div className="crypto-news-title" level={4}>
+              <div
+                className={`crypto-news-title ${
+                  darkMode
+                    ? "crypto-news-title-dark"
+                    : "crypto-news-title-light"
+                }`}
+                level={4}
+              >
                 {news.name}
-                <p className="crypto-news-desc">
+                <p
+                  className={`crypto-news-desc ${
+                    darkMode
+                      ? "crypto-news-desc-dark"
+                      : "crypto-news-desc-light"
+                  }`}
+                >
                   {news.description.length > 100
                     ? `${news.description.substring(0, 100)}...`
                     : news.description}
@@ -73,7 +97,16 @@ const CryptoNews = ({ simplified }) => {
                   }
                   alt="news"
                 />
-                <p className="provider-name">{news.provider[0]?.name}</p>
+                <p
+                  className={`provider-name ${
+                    darkMode ? "provider-name-dark" : "provider-name-light"
+                  }`}
+                >
+                  {news.provider[0]?.name}
+                </p>
+
+                <p className="crypto-source-divider">&ensp;|&ensp;</p>
+
                 <p>{moment(news.datePublished).startOf("ss").fromNow()}</p>
               </div>
             </div>

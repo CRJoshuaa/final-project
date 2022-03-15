@@ -3,10 +3,9 @@
   flex-direction: column;
   color: white;
   background-color: var(--main-color);
-  flex: 0.2;
   border-top: 1px solid var(--dark-1);
   border-right: 1px solid var(--dark-1);
-  min-width: 20%;
+  min-width: 200px;
 }
 
 .sidebar-channel {
@@ -38,10 +37,10 @@
   top: 0;
 }
 
-.sidebar-header-dark {
+/* .sidebar-header-dark {
   background-color: var(--main-color);
   border-bottom: 1px solid var(--dark-1);
-}
+} */
 
 .sidebar-header-light {
   background-color: var(--main-color);
@@ -58,10 +57,10 @@
 
 /* theme changing */
 /* dark*/
-.sidebar-cont-dark {
+/* .sidebar-cont-dark {
   color: white;
   background-color: var(--dark-1);
-}
+} */
 
 /* light*/
 .sidebar-cont-light {
