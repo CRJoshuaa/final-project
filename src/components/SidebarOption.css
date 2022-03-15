@@ -44,6 +44,12 @@
 .channel-header > button {
   color: white;
   transform: scale(0.75);
+  transition: 0.5s;
+}
+
+.channel-header > button:hover {
+  color: var(--dark-1);
+  background-color: var(--light-1);
 }
 
 /*Mobile screens*/
