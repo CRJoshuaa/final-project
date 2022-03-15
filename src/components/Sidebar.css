@@ -149,6 +149,7 @@
     flex-direction: row;
     align-items: center;
     font-size: 100px;
+    padding: 10px;
   }
 
   .sidebar-crypto {
