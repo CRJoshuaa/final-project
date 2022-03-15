@@ -10,6 +10,7 @@ body {
   --defaultProfilePic: url("./images/defaultProfilePic.jpg");
   --chatBackgroundLight: url("./images/chatBackgroundLight.jpg");
   --chatBackgroundDark: url("./images/chatBackgroundDark.png");
+  --appBackgroundDark-1: url("./images/appBackgroundDark5.webp");
   --main-color: #3c4552;
   --dark-1: #293241;
   --dark-2: #3d5a80;

@@ -159,8 +159,8 @@ const CryptoDetails = () => {
   return (
     <div className="coin-detail-container">
       <div className="coin-detail-heading">
-        <IconButton>
-          <ArrowBackIosNewOutlinedIcon onClick={() => history.goBack()} />
+        <IconButton onClick={() => history.goBack()}>
+          <ArrowBackIosNewOutlinedIcon />
         </IconButton>
 
         <h1>

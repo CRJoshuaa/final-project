@@ -58,6 +58,8 @@
 
 .crypto-home-dark {
   background-color: var(--dark-2);
+  background-image: var(--appBackgroundDark-1);
+  background-size: cover;
 }
 
 .crypto-stats-dark {
