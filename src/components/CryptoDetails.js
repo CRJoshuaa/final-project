@@ -28,9 +28,11 @@ import ShakeLoader from "./ShakeLoader";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const CryptoDetails = () => {
   const theme = useContext(ThemeContext);
+  const history = useHistory();
 
   const darkMode = theme.state.darkMode;
   const socket = useSelector(selectSocket);
@@ -158,12 +160,7 @@ const CryptoDetails = () => {
     <div className="coin-detail-container">
       <div className="coin-detail-heading">
         <IconButton>
-          <Link
-            to="/cryptocurrencies"
-            style={{ textDecoration: "inherit", color: "inherit" }}
-          >
-            <ArrowBackIosNewOutlinedIcon />
-          </Link>
+          <ArrowBackIosNewOutlinedIcon onClick={() => history.goBack()} />
         </IconButton>
 
         <h1>
