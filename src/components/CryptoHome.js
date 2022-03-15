@@ -8,11 +8,13 @@ import RotateLoading from "./RotateLoading";
 import { io } from "socket.io-client";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import { ThemeContext } from "./ThemeContext";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import { selectSocket } from "../features/appSlice";
 import { useSelector } from "react-redux";
 
 const CryptoHome = () => {
+  const history = useHistory();
   const theme = useContext(ThemeContext);
 
   const darkMode = theme.state.darkMode;
@@ -79,28 +81,26 @@ const CryptoHome = () => {
       </div>
       <div className="top-ten-container">
         <Cryptocurrencies simplified />
-        <Link to="/cryptocurrencies">
-          <h4
-            className={`show-more-icon ${
-              darkMode ? "show-more-dark" : "show-more-light"
-            }`}
-          >
-            <ReadMoreIcon />
-          </h4>
-        </Link>
+
+        <h4
+          className={`show-more-icon ${
+            darkMode ? "show-more-dark" : "show-more-light"
+          }`}
+        >
+          <ReadMoreIcon onClick={() => history.push("cryptocurrencies")} />
+        </h4>
       </div>
 
       <div className="crypto-news-cont">
         <CryptoNews simplified />
-        <Link to="/crypto-news">
-          <h4
-            className={`show-more-icon ${
-              darkMode ? "show-more-dark" : "show-more-light"
-            }`}
-          >
-            <ReadMoreIcon />
-          </h4>
-        </Link>
+
+        <h4
+          className={`show-more-icon ${
+            darkMode ? "show-more-dark" : "show-more-light"
+          }`}
+        >
+          <ReadMoreIcon onClick={() => history.push("crypto-news")} />
+        </h4>
       </div>
     </div>
   );
