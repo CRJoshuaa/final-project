@@ -9,7 +9,7 @@
   align-content: stretch;
   align-items: stretch;
   background-image: var(--backgroundImageMobile);
-  background-attachment: scroll;
+  background-size: cover;
 }
 
 .crypto-news.simplified {
