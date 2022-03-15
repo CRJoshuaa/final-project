@@ -184,7 +184,7 @@
 }
 
 .coin-desc-link a {
-  color: var(--dark-2);
+  color: var(--accent-2);
 }
 
 .coin-desc-link a:hover {
@@ -220,6 +220,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  transition: 0.5s;
 }
 
 .coin-link:hover {
@@ -302,6 +303,10 @@
   transition: all 0.35s ease-out;
 }
 
+.coin-link-light:hover > a {
+  color: var(--accent-1);
+}
+
 /* light mode end */
 
 /* dark mode start */
@@ -380,6 +385,11 @@
   border-radius: 5px;
   color: black;
 }
+
+.coin-link-dark:hover > a {
+  color: var(--accent-1);
+}
+
 /* dark mode end */
 
 @media screen and (max-width: 1000px) {
