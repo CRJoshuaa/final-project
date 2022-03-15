@@ -98,6 +98,8 @@
 
 .crypto-news-cont-light {
   background-color: var(--off-white);
+  background-image: var(--backgrounImageDesktop);
+  background-size: cover;
 }
 
 .crypto-news-card-light {
@@ -114,6 +116,8 @@
 
 .crypto-news-cont-dark {
   background-color: var(--dark-2);
+  background-image: var(--appBackgroundDark-1);
+  background-size: cover;
 }
 
 .crypto-news-card-dark {
