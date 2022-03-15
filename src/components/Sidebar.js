@@ -74,6 +74,7 @@ function Sidebar() {
         <SidebarOption Icon={MonetizationOn} title="Cryptocurrencies" />
         <SidebarOption Icon={Newspaper} title="Crypto News" />
       </div>
+      <hr />
       <div className="sidebar-misc">
         {/* <SidebarOption Icon={ExpandLess} title="Show less" /> */}
 
