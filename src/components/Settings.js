@@ -8,11 +8,15 @@ import "./Settings.css";
 // import SettingsSideBar from "./SettingsSideBar";
 import AccountSetting from "./Account_setting";
 import AppearanceSetting from "./Appearance_setting";
+import { IconButton } from "@mui/material";
+import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 // import MessageNotifications from "./Notifications";
 
 import { ThemeContext } from "./ThemeContext";
+import { useHistory } from "react-router-dom";
 
 function Settings() {
+  const history = useHistory();
   /*adding light/dark mode start*/
 
   const theme = useContext(ThemeContext);
@@ -33,6 +37,9 @@ function Settings() {
       }`}
     >
       <div className="settings-header">
+        <IconButton onClick={() => history.goBack()}>
+          <ArrowBackIosNewOutlinedIcon />
+        </IconButton>
         <h1>Settings</h1>
       </div>
       {/* <div>

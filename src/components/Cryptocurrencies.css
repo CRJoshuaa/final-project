@@ -188,6 +188,8 @@
 
 .cryptocurrency-page-light {
   background-color: var(--off-white);
+  background-image: var(--backgrounImageDesktop);
+  background-size: cover;
 }
 
 .crypto-card-light {
@@ -205,6 +207,8 @@
 
 .cryptocurrency-page-dark {
   background-color: var(--dark-2);
+  background-image: var(--appBackgroundDark-1);
+  background-size: cover;
 }
 
 .crypto-card-dark {
