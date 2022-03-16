@@ -231,6 +231,10 @@
 
 /* Mobile */
 @media only screen and (max-width: 480px) {
+  .cryptocurrency-page {
+    height: 88.5%;
+  }
+
   .crypto-deets {
     display: flex;
     width: 165px;

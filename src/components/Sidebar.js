@@ -57,7 +57,7 @@ function Sidebar() {
             {user?.displayName}
           </h3>
         </div>
-        <IconButton>
+        <IconButton title="Settings">
           <Link
             to="/settings"
             style={{ textDecoration: "inherit", color: "inherit" }}
