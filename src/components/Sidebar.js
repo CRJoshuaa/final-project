@@ -21,8 +21,10 @@ import {
 } from "@mui/icons-material";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { IconButton } from "@mui/material";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Sidebar() {
+  const history = useHistory();
   const theme = useContext(ThemeContext);
 
   const darkMode = theme.state.darkMode;
@@ -44,7 +46,9 @@ function Sidebar() {
         <div className="sidebar-left">
           <img
             className="sidebar-avatar"
-            onClick={() => auth.signOut()}
+            onClick={() => {
+              history.push("settings");
+            }}
             alt={user?.displayName}
             src={user?.photoURL}
           />
@@ -57,13 +61,12 @@ function Sidebar() {
             {user?.displayName}
           </h3>
         </div>
-        <IconButton>
-          <Link
-            to="/settings"
-            style={{ textDecoration: "inherit", color: "inherit" }}
-          >
-            <SettingsIcon />
-          </Link>
+        <IconButton
+          onClick={() => {
+            history.push("settings");
+          }}
+        >
+          <SettingsIcon />
         </IconButton>
         {/* <SidebarOption Icon={Settings} title="">
         </SidebarOption> */}
