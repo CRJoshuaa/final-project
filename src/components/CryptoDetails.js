@@ -217,7 +217,9 @@ const CryptoDetails = () => {
         </h2>
         <Select
           defaultValue="7d"
-          className="select-timeperiod"
+          className={`select-timeperiod ${
+            darkMode ? "select-timeperiod-dark" : "select-timeperiod-light"
+          } `}
           placeholder="Default : 7 Days"
           onChange={(value) => setTimeperiod(value.value)}
           options={time}

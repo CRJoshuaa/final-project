@@ -94,6 +94,11 @@
   margin-left: 2%;
 }
 
+/* dark mode*/
+.select-timeperiod-dark {
+  color: black;
+}
+
 .stats-container {
   display: flex;
   justify-content: space-evenly;
