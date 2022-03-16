@@ -43,10 +43,15 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
       toast.error("Channel name cannot start with white space");
     } else if (!symbolsRegex.test(channelName)) {
       toast.error("Channel name cannot have symbols");
+    } else if (channelName.length > 25) {
+      toast.error("Channel name cannot have more than 25 characters");
+    } else if (channelName.length < 3) {
+      toast.error("Channel name cannot have less than 3 characters");
     } else {
       db.collection("rooms").add({
         name: channelName,
       });
+      toast.success(`${channelName} channel successfully created!`);
       setChannelName("");
       setModalNewChannelIsOpen(false);
     }

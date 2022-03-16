@@ -32,30 +32,29 @@ function AccountSetting() {
 
   const darkMode = theme.state.darkMode;
 
-  // const changeTheme = () => {
-  //   if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
-  //   else theme.dispatch({ type: "DARKMODE" });
-  // };
-
   /*adding light/dark mode end*/
 
   async function uploadPhotoToFirebase() {
-    await updateProfile(user, {
-      photoURL: imageURL,
-    })
-      .then(() => {
-        console.log(imageURL);
-        console.log("Profile updated picture!!!");
+    //Profile picture URL string check
+    if (!imageURL) {
+      toast.error("New profile picture URL cannot be empty");
+    } else {
+      await updateProfile(user, {
+        photoURL: imageURL,
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then(() => {
+          toast.success("Profile picture successfully updated!");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
 
-    setTimeout(window.location.reload(), 10000);
+      setTimeout(window.location.reload(), 10000);
+    }
   }
 
   async function uploadNewNametoFirebase() {
-    //Channel string check
+    //Username string check
     let symbolsRegex = new RegExp(/^[a-zA-Z0-9_\s]*$/gm);
     let startingNumRegex = new RegExp(/^[0-9]/g);
     let startingWhitespaceRegex = new RegExp(/^[\s]/g);
@@ -68,12 +67,16 @@ function AccountSetting() {
       toast.error("New profile name cannot start with white space");
     } else if (!symbolsRegex.test(name)) {
       toast.error("New profile name cannot have symbols");
+    } else if (name.length > 25) {
+      toast.error("New profile name cannot have more than 25 characters");
+    } else if (name.length < 3) {
+      toast.error("New profile name cannot have less than 3 characters");
     } else {
       await updateProfile(user, {
         displayName: name,
       })
         .then(() => {
-          console.log("Profile updated name!!!");
+          toast.success("Username successfully updated!");
         })
         .catch((error) => {
           console.log(error);
