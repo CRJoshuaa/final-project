@@ -189,7 +189,8 @@ function AccountSetting() {
             </div>
           </div>
           <button
-            className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
+            // className={`log-out-btn ${darkMode ? "btn-dark" : "btn-light"}`}
+            className="log-out-btn"
             onClick={() => auth.signOut()}
           >
             Log Out
