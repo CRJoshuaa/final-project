@@ -10,6 +10,9 @@ import Modal from "react-modal";
 
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { IconButton } from "@mui/material";
+import { toast } from "react-toastify";
+
+toast.configure();
 
 function SidebarOption({ Icon, title, addChannelOption, id }) {
   const history = useHistory();
@@ -27,11 +30,29 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
   const dispatch = useDispatch();
 
   const addChannel = () => {
-    if (channelName) {
+    //Channel string check
+    let symbolsRegex = new RegExp(/^[a-zA-Z0-9_]*$/gm);
+    let startingNumRegex = new RegExp(/^[0-9]/g);
+    let startingWhitespaceRegex = new RegExp(/^[\s]/g);
+
+    if (!channelName) {
+      toast.error("Channel name cannot be empty");
+    } else if (startingNumRegex.test(channelName)) {
+      toast.error("Channel name cannot start with number");
+    } else if (startingWhitespaceRegex.test(channelName)) {
+      toast.error("Channel name cannot start with white space");
+    } else if (!symbolsRegex.test(channelName)) {
+      toast.error("Channel name cannot have symbols");
+    } else if (channelName.length > 25) {
+      toast.error("Channel name cannot have more than 25 characters");
+    } else if (channelName.length < 3) {
+      toast.error("Channel name cannot have less than 3 characters");
+    } else {
       db.collection("rooms").add({
         name: channelName,
       });
-
+      toast.success(`${channelName} channel successfully created!`);
+      setChannelName("");
       setModalNewChannelIsOpen(false);
     }
   };
@@ -103,7 +124,12 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
           </div>
           <div className="pop-up-btn">
             <button onClick={addChannel}>Create</button>
-            <button onClick={() => setModalNewChannelIsOpen(false)}>
+            <button
+              onClick={() => {
+                setChannelName("");
+                setModalNewChannelIsOpen(false);
+              }}
+            >
               Cancel
             </button>
           </div>

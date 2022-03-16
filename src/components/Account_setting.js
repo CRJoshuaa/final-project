@@ -8,6 +8,9 @@ import { ThemeContext } from "./ThemeContext";
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
 import "./Apperance_setting.css";
+import { toast } from "react-toastify";
+
+toast.configure();
 
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
@@ -29,40 +32,57 @@ function AccountSetting() {
 
   const darkMode = theme.state.darkMode;
 
-  // const changeTheme = () => {
-  //   if (darkMode) theme.dispatch({ type: "LIGHTMODE" });
-  //   else theme.dispatch({ type: "DARKMODE" });
-  // };
-
   /*adding light/dark mode end*/
 
   async function uploadPhotoToFirebase() {
-    await updateProfile(user, {
-      photoURL: imageURL,
-    })
-      .then(() => {
-        console.log(imageURL);
-        console.log("Profile updated picture!!!");
+    //Profile picture URL string check
+    if (!imageURL) {
+      toast.error("New profile picture URL cannot be empty");
+    } else {
+      await updateProfile(user, {
+        photoURL: imageURL,
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then(() => {
+          toast.success("Profile picture successfully updated!");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
 
-    setTimeout(window.location.reload(), 10000);
+      setTimeout(window.location.reload(), 10000);
+    }
   }
 
   async function uploadNewNametoFirebase() {
-    await updateProfile(user, {
-      displayName: name,
-    })
-      .then(() => {
-        console.log(imageURL);
-        console.log("Profile updated name!!!");
+    //Username string check
+    let symbolsRegex = new RegExp(/^[a-zA-Z0-9_\s]*$/gm);
+    let startingNumRegex = new RegExp(/^[0-9]/g);
+    let startingWhitespaceRegex = new RegExp(/^[\s]/g);
+
+    if (!name) {
+      toast.error("New profile name cannot be empty");
+    } else if (startingNumRegex.test(name)) {
+      toast.error("New profile name cannot start with number");
+    } else if (startingWhitespaceRegex.test(name)) {
+      toast.error("New profile name cannot start with white space");
+    } else if (!symbolsRegex.test(name)) {
+      toast.error("New profile name cannot have symbols");
+    } else if (name.length > 25) {
+      toast.error("New profile name cannot have more than 25 characters");
+    } else if (name.length < 3) {
+      toast.error("New profile name cannot have less than 3 characters");
+    } else {
+      await updateProfile(user, {
+        displayName: name,
       })
-      .catch((error) => {
-        console.log(error);
-      });
-    setTimeout(window.location.reload(), 10000);
+        .then(() => {
+          toast.success("Username successfully updated!");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      setTimeout(window.location.reload(), 10000);
+    }
   }
 
   return (
@@ -140,13 +160,20 @@ function AccountSetting() {
             <div className="input">
               <input
                 type="text"
-                placeholder="Your name please!"
+                placeholder="Enter new profile name"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="pop-up-btn">
               <button onClick={uploadNewNametoFirebase}>Upload</button>
-              <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
+              <button
+                onClick={() => {
+                  setName("");
+                  setModalNameIsOpen(false);
+                }}
+              >
+                Cancel
+              </button>
             </div>
           </Modal>
 
