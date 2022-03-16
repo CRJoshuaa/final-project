@@ -8,6 +8,9 @@ import { ThemeContext } from "./ThemeContext";
 // import SettingsSideBar from "./SettingsSideBar";
 import Modal from "react-modal";
 import "./Apperance_setting.css";
+import { toast } from "react-toastify";
+
+toast.configure();
 
 // import PermIdentitySharpIcon from "@mui/icons-material/PermIdentitySharp";
 // import ColorLensSharpIcon from "@mui/icons-material/ColorLensSharp";
@@ -52,17 +55,31 @@ function AccountSetting() {
   }
 
   async function uploadNewNametoFirebase() {
-    await updateProfile(user, {
-      displayName: name,
-    })
-      .then(() => {
-        console.log(imageURL);
-        console.log("Profile updated name!!!");
+    //Channel string check
+    let symbolsRegex = new RegExp(/^[a-zA-Z0-9_\s]*$/gm);
+    let startingNumRegex = new RegExp(/^[0-9]/g);
+    let startingWhitespaceRegex = new RegExp(/^[\s]/g);
+
+    if (!name) {
+      toast.error("New profile name cannot be empty");
+    } else if (startingNumRegex.test(name)) {
+      toast.error("New profile name cannot start with number");
+    } else if (startingWhitespaceRegex.test(name)) {
+      toast.error("New profile name cannot start with white space");
+    } else if (!symbolsRegex.test(name)) {
+      toast.error("New profile name cannot have symbols");
+    } else {
+      await updateProfile(user, {
+        displayName: name,
       })
-      .catch((error) => {
-        console.log(error);
-      });
-    setTimeout(window.location.reload(), 10000);
+        .then(() => {
+          console.log("Profile updated name!!!");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      setTimeout(window.location.reload(), 10000);
+    }
   }
 
   return (
@@ -140,13 +157,20 @@ function AccountSetting() {
             <div className="input">
               <input
                 type="text"
-                placeholder="Your name please!"
+                placeholder="Enter new profile name"
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="pop-up-btn">
               <button onClick={uploadNewNametoFirebase}>Upload</button>
-              <button onClick={() => setModalNameIsOpen(false)}>Cancel</button>
+              <button
+                onClick={() => {
+                  setName("");
+                  setModalNameIsOpen(false);
+                }}
+              >
+                Cancel
+              </button>
             </div>
           </Modal>
 
