@@ -157,14 +157,12 @@
     flex: 0.4;
   }
 
-  .chat-footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-  }
-
   .chat-sidebar {
     display: none;
+  }
+
+  .chat-footer {
+    flex-direction: column-reverse;
   }
 }
 
@@ -172,6 +170,7 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .chat {
     margin-top: 0;
+    width: 73.8%;
   }
 
   .chat-sidebar {
@@ -183,5 +182,9 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .chat-sidebar {
     display: none;
+  }
+
+  .chat {
+    width: 80.25%;
   }
 }

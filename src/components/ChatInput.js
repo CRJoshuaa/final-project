@@ -90,6 +90,9 @@ function ChatInput({
   };
   return (
     <div className="chat-input">
+      {showEmojiPick && (
+        <Picker onEmojiClick={onEmojiPick} disableSearchBar native={true} />
+      )}
       <div className="chat-bar">
         <form>
           <InsertEmoticonIcon
@@ -116,15 +119,6 @@ function ChatInput({
           </div>
         </form>
       </div>
-
-      {showEmojiPick && (
-        <Picker
-          onEmojiClick={onEmojiPick}
-          pickerStyle={{ width: "100%", height: "400px" }}
-          disableSearchBar
-          native={true}
-        />
-      )}
     </div>
   );
 }

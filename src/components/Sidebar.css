@@ -147,9 +147,9 @@
   .sidebar-channel {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     font-size: 100px;
+    padding: 10px;
   }
 
   .sidebar-crypto {
