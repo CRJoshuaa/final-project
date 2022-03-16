@@ -70,7 +70,7 @@ function ChatInput({
           replyDocId: replyDocId ? replyDocId : null,
         });
 
-      toast.success("Message sent!");
+      // toast.success("Message sent!");
     }
 
     // if (!channelName) {
