@@ -1,6 +1,6 @@
 
 
-This website is an early working prototype of community-based cryptocurrency website.
+This website is an early working prototype of a community-based cryptocurrency website.
 
 ![](readme_images/coingramLoginPage.png)
 
