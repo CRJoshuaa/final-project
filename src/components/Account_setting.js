@@ -188,6 +188,12 @@ function AccountSetting() {
               {user?.email}
             </div>
           </div>
+          <button
+            className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
+            onClick={() => auth.signOut()}
+          >
+            Log Out
+          </button>
         </div>
       </div>
     </div>
