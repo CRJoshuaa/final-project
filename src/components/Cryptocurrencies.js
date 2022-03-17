@@ -62,8 +62,8 @@ const Cryptocurrencies = ({ simplified }) => {
       )}
       <div className="leaderboard">
         {top3 &&
-          top3.map((currency) => (
-            <div className="crypto-lead" key={currency.id}>
+          top3.map((currency, i) => (
+            <div className="crypto-lead" key={currency.uuid}>
               {" "}
               <Link to={`/crypto/${currency.uuid}`}>
                 <div className="crypto-deets">
@@ -84,12 +84,12 @@ const Cryptocurrencies = ({ simplified }) => {
       </div>
       <div className="crypto-card-container">
         {filteredCryptos &&
-          theRest?.map((currency) => (
+          theRest?.map((currency, i) => (
             <div
               className={`crypto-card ${
                 darkMode ? "crypto-card-dark" : "crypto-card-light"
               }`}
-              key={currency.id}
+              key={currency.uuid}
             >
               <div className="crypto-rank">
                 <h2>{`${currency.rank}`}</h2>
