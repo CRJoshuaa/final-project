@@ -92,6 +92,7 @@
   width: 200px !important;
   margin-top: 20px !important;
   margin-left: 2%;
+  color: black;
 }
 
 .stats-container {
@@ -392,9 +393,6 @@
 
 /* dark mode end */
 
-@media screen and (max-width: 1000px) {
-}
-
 /* Mobile Screens */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .coin-header-stats-cont {
@@ -407,6 +405,7 @@
 
   .coin-detail-container {
     margin: 0;
+    height: 88%;
   }
 
   .coin-stats,

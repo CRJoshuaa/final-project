@@ -47,8 +47,8 @@
 
 aside.emoji-picker-react {
   width: 95% !important;
-  height: 350px !important;
-  margin-bottom: 155px !important;
+  /* height: 350px !important; */
+  margin-bottom: 300px !important;
   position: sticky !important;
 }
 
@@ -65,14 +65,14 @@ aside.emoji-picker-react {
   }
 
   aside.emoji-picker-react {
-    margin-bottom: 0px !important;
+    margin-bottom: 10px !important;
   }
 }
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   aside.emoji-picker-react {
-    margin-bottom: 0px !important;
+    margin-bottom: 10px !important;
   }
 }
 

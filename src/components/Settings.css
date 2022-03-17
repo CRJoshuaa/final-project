@@ -166,6 +166,17 @@
   transition-duration: 0.5s;
 }
 
+.log-out-btn {
+  background-color: var(--red-1);
+  color: white;
+}
+
+.general-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Gen Info Styling end */
 
 button {
@@ -181,16 +192,12 @@ button {
 .btn-light {
   background-color: var(--dark-2);
   color: white;
-  font-size: 15px;
-  cursor: pointer;
   transition-duration: 0.5s;
 }
 
 .btn-dark {
   background-color: white;
   color: black;
-  font-size: 15px;
-  cursor: pointer;
   transition-duration: 0.5s;
 }
 

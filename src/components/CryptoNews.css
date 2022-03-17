@@ -141,9 +141,9 @@
 /*Mobile screens*/
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .header {
+  /* .header {
     display: none;
-  }
+  } */
 
   .news-header {
     font-size: 14px;
@@ -151,7 +151,7 @@
 
   .crypto-news {
     margin-top: 0px;
-    height: 88%;
+    height: 88.5%;
   }
 
   .crypto-news-card {

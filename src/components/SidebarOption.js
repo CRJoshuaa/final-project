@@ -102,7 +102,7 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 
   if (addChannelOption) {
     return (
-      <div className="channel-header">
+      <div className="channel-header" title="Add channel">
         <h3>Channels</h3>
         <IconButton
           onClick={() => {
