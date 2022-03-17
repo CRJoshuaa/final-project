@@ -5,7 +5,7 @@
   background-color: var(--main-color);
   border-top: 1px solid var(--dark-1);
   border-right: 1px solid var(--dark-1);
-  min-width: 200px;
+  min-width: 240px;
 }
 
 .sidebar-channel {
