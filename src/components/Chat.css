@@ -76,6 +76,7 @@
   background-color: transparent;
   display: flex;
   flex-direction: column;
+  max-width: 1600px;
 }
 
 .chat-sidebar {
@@ -117,9 +118,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
   position: sticky;
+  margin: 10px;
 }
+
 /* gen styling end */
 
 /* light mode styling*/
