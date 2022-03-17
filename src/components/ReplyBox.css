@@ -1,8 +1,15 @@
 .reply-box {
   display: flex;
-  flex-direction: column;
-  padding: 5px;
-  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  width: 90%;
   background-color: white;
   border-radius: 10px;
+}
+
+.reply-box-body {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 }

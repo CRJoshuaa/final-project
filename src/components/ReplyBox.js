@@ -12,8 +12,11 @@ function ReplyBox({ replyDocId, setReplyDocId, roomId }) {
 
   return (
     <div className="reply-box">
-      <h5>{messageDetails?.data().user}</h5>
-      <p>{messageDetails?.data().message}</p>
+      <div className="reply-box-body">
+        <h5>{messageDetails?.data().user}</h5>
+        <p>{messageDetails?.data().message}</p>
+      </div>
+
       <CloseIcon
         onClick={() => {
           setReplyDocId(null);
