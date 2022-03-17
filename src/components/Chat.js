@@ -205,48 +205,49 @@ function Chat() {
                   </div>
                 </>
               )}
-            </div>
-            <div className="chat-sidebar">
-              <div className="icons">
-                <IconButton>
-                  <InfoOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <PushPinOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <PermMediaOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <InsertDriveFileOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <LinkOutlinedIcon />
-                </IconButton>
+              <div className="chat-sidebar">
+                <div className="icons">
+                  <IconButton>
+                    <InfoOutlinedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <PushPinOutlinedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <PermMediaOutlinedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <InsertDriveFileOutlinedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <LinkOutlinedIcon />
+                  </IconButton>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            className="chat-footer"
-            // {`chat-footer ${
-            //   darkMode ? "chat-footer-dark" : "chat-footer-light"
-            // }`}
-          >
-            <div className="chat-input-cont" ref={chatRef}>
-              {replyDocId && (
-                <Replybox
+
+            <div
+              className="chat-footer"
+              // {`chat-footer ${
+              //   darkMode ? "chat-footer-dark" : "chat-footer-light"
+              // }`}
+            >
+              <div className="chat-input-cont" ref={chatRef}>
+                {replyDocId && (
+                  <Replybox
+                    replyDocId={replyDocId}
+                    setReplyDocId={setReplyDocId}
+                    roomId={roomId}
+                  />
+                )}
+                <ChatInput
+                  chatRef={chatRef}
+                  channelName={roomDetails?.data().name}
+                  channelId={roomId}
                   replyDocId={replyDocId}
                   setReplyDocId={setReplyDocId}
-                  roomId={roomId}
                 />
-              )}
-              <ChatInput
-                chatRef={chatRef}
-                channelName={roomDetails?.data().name}
-                channelId={roomId}
-                replyDocId={replyDocId}
-                setReplyDocId={setReplyDocId}
-              />
+              </div>
             </div>
           </div>
         </>
