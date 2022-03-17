@@ -15,7 +15,7 @@
   color: white;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -158,8 +158,8 @@
 .other-stats-info {
   border-radius: 15px;
   padding: 20px;
-  min-width: 315px;
-  margin: 10px;
+  width: 315px;
+  margin: auto;
 }
 
 .other-stats-info:hover {
@@ -362,11 +362,7 @@
 .other-stats-info-dark {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border-radius: 15px;
-  padding: 20px;
   background-color: var(--dark-2);
-  min-width: 315px;
-  margin: 10px;
 }
 
 .other-stats-info-dark:hover {
@@ -376,7 +372,7 @@
 .coin-link-dark {
   border-bottom: 1px solid var(--light-2);
   background: linear-gradient(to right, var(--accent-2) 49.9%, transparent 50%);
-  background-size: 200% 100%;
+  background-size: 201% 100%;
   background-position: right;
   transition: all 0.35s ease-out;
 }
@@ -420,11 +416,25 @@
   .stats-container {
     flex-direction: column;
   }
+
   .coin-desc-link {
     flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+    padding-top: 0;
   }
+
   .stats-container h2 {
     margin-top: 0px;
+  }
+
+  .other-stats-info {
+    width: fit-content;
+    /* margin: 10px auto; */
+  }
+
+  .coin-header {
+    flex-direction: column;
   }
 }
 
@@ -450,5 +460,9 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .coin-header-stats-cont {
     flex-direction: column;
+  }
+
+  .other-stats-info {
+    margin: 10px;
   }
 }
