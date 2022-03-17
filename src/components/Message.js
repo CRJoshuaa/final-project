@@ -54,7 +54,11 @@ function Message({
           }`
         }`}
       >
-        <img className="message-avatar" src={userImage} alt="" />
+        <img
+          className="message-avatar"
+          src={userImage ? userImage : "../images/defaultProfilePic.jpg"}
+          alt=""
+        />
         <div
           className={`message-details ${
             darkMode ? "message-details-dark" : "message-details-light"
