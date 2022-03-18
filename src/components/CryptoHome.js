@@ -51,7 +51,7 @@ const CryptoHome = () => {
           darkMode ? "crypto-stats-dark" : "crypto-stats-light"
         }`}
       >
-        <h2>Cryptocurrency Statistics</h2>
+        <h2 className="crypto-home-titles">Cryptocurrency Statistics</h2>
         <div className="total-table">
           <div className="top-row-box">
             <div className="total-box cards">
@@ -79,29 +79,42 @@ const CryptoHome = () => {
           </div>
         </div>
       </div>
-      <div className="top-ten-container">
-        <Cryptocurrencies simplified />
 
-        <h4
-          className={`show-more-icon ${
-            darkMode ? "show-more-dark" : "show-more-light"
+      <div className="top-ten-container">
+        <h2
+          className={`crypto-home-titles ${
+            darkMode ? "crypto-stats-dark" : "crypto-stats-light"
           }`}
         >
-          <ReadMoreIcon onClick={() => history.push("cryptocurrencies")} />
-        </h4>
+          Top 3 Cryptos
+        </h2>
+        <Cryptocurrencies simplified />
       </div>
+      <h4
+        className={`show-more-icon ${
+          darkMode ? "show-more-dark" : "show-more-light"
+        }`}
+      >
+        <ReadMoreIcon onClick={() => history.push("cryptocurrencies")} />
+      </h4>
 
       <div className="crypto-news-cont">
-        <CryptoNews simplified />
-
-        <h4
-          className={`show-more-icon ${
-            darkMode ? "show-more-dark" : "show-more-light"
+        <h2
+          className={`crypto-home-titles ${
+            darkMode ? "crypto-stats-dark" : "crypto-stats-light"
           }`}
         >
-          <ReadMoreIcon onClick={() => history.push("crypto-news")} />
-        </h4>
+          Highlights of the Day
+        </h2>
+        <CryptoNews simplified />
       </div>
+      <h4
+        className={`show-more-icon ${
+          darkMode ? "show-more-dark" : "show-more-light"
+        }`}
+      >
+        <ReadMoreIcon onClick={() => history.push("crypto-news")} />
+      </h4>
     </div>
   );
 };
