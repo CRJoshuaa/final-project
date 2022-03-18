@@ -3,13 +3,38 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  width: 90%;
+  width: 75%;
   background-color: white;
   border-radius: 10px;
+  bottom: 85px;
+  position: fixed;
+  word-break: break-word;
 }
 
 .reply-box-body {
   display: flex;
   flex-direction: column;
   margin: 5px;
+}
+
+/*Mobile screens*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .reply-box {
+    width: 75%;
+    bottom: 180px;
+  }
+}
+
+/* IPad and Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .reply-box {
+    width: 50%;
+  }
+}
+
+/* Laptop screens */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .reply-box {
+    width: 60%;
+  }
 }

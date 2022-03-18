@@ -2,12 +2,13 @@
   display: flex;
   margin: 10px;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .message {
   display: flex;
   flex-direction: row;
-  max-width: 70%;
+  max-width: 65%;
 }
 
 .message-avatar {
