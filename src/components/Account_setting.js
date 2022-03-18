@@ -36,8 +36,13 @@ function AccountSetting() {
 
   async function uploadPhotoToFirebase() {
     //Profile picture URL string check
+    let urlRegex = new RegExp(
+      /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gm
+    );
     if (!imageURL) {
       toast.error("New profile picture URL cannot be empty");
+    } else if (!urlRegex.test(imageURL)) {
+      toast.error("Invalid URL");
     } else {
       await updateProfile(user, {
         photoURL: imageURL,
