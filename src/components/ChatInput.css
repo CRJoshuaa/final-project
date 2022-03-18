@@ -1,5 +1,5 @@
 .chat-input {
-  width: 96%;
+  /* width: 90%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,10 +46,10 @@
 }
 
 aside.emoji-picker-react {
-  width: 95% !important;
-  /* height: 350px !important; */
-  margin-bottom: 300px !important;
-  position: sticky !important;
+  width: 75% !important;
+  height: 350px !important;
+  bottom: 85px !important;
+  position: fixed !important;
 }
 
 /* Mobile screens*/
@@ -57,6 +57,7 @@ aside.emoji-picker-react {
   .chat-bar {
     font-size: 15px;
     padding: 10px;
+    width: 90%;
   }
 
   .chat-bar > form > input {
@@ -65,14 +66,15 @@ aside.emoji-picker-react {
   }
 
   aside.emoji-picker-react {
-    margin-bottom: 10px !important;
+    bottom: 180px !important;
   }
 }
 
 /* IPad and Tablets */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   aside.emoji-picker-react {
-    margin-bottom: 10px !important;
+    bottom: 80px !important;
+    width: 55% !important;
   }
 }
 

@@ -2,12 +2,13 @@
   display: flex;
   margin: 10px;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .message {
   display: flex;
   flex-direction: row;
-  max-width: 70%;
+  max-width: 65%;
 }
 
 .message-avatar {
@@ -29,10 +30,9 @@
 .reply-message {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  margin: 5px;
+  padding: 15px;
   border-radius: 5px;
-  color: var(--light-2);
+  color: var(--main-color);
 }
 
 .current-message {
@@ -128,10 +128,10 @@
   color: white;
 }
 
-.reply-message-light {
+/* .reply-message-light {
   background-color: var(--light-1);
   color: black;
-}
+} */
 
 .current-user-light > .message-details {
   background-color: var(--dark-2);
@@ -143,7 +143,7 @@
 
 .current-user-light > .message-details-light > .reply-message-light {
   background-color: transparent;
-  color: white;
+  color: var(--off-white);
 }
 
 .current-user-light:hover > .message-details-light > .reply-message-light {
@@ -151,7 +151,7 @@
 }
 
 .message-details-light:hover > .reply-message {
-  background-color: var(--accent-1);
+  background-color: transparent;
   color: white;
   transition-duration: 0.3s;
 }
@@ -170,9 +170,13 @@
 }
 
 .message-details-dark:hover > .reply-message {
-  background-color: var(--light-3);
+  background-color: transparent;
   color: black;
   transition-duration: 0.3s;
+}
+
+.reply-message-dark {
+  color: var(--light-2);
 }
 
 .current-user-dark > .message-details {
@@ -184,6 +188,14 @@
 }
 
 .message-buttons-dark > .MuiSvgIcon-root:hover {
+  color: black;
+}
+
+.current-user-dark
+  > .message-details:hover
+  > .current-message
+  > .message-info
+  > h4 {
   color: black;
 }
 /* dark mode styling end */
