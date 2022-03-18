@@ -81,8 +81,6 @@ function ChatInput({
     // if(channelName){
     // if(timestam)
 
-    console.log(input);
-
     // if (!channelName) {
     //   setMessageToNotification();
     // }
