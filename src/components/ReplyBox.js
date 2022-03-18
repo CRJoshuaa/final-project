@@ -10,11 +10,15 @@ function ReplyBox({ replyDocId, setReplyDocId, roomId }) {
       db.collection("rooms").doc(roomId).collection("messages").doc(replyDocId)
   );
 
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
+
   return (
-    <div className="reply-box">
+    <div className="reply-box" title="reply">
       <div className="reply-box-body">
         <h5>{messageDetails?.data().user}</h5>
-        <p>{messageDetails?.data().message}</p>
+        <p>{truncate(`${messageDetails?.data().message}`, 150)}</p>
       </div>
 
       <CloseIcon

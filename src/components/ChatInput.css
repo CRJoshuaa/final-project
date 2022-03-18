@@ -1,5 +1,5 @@
 .chat-input {
-  width: 90%;
+  /* width: 90%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +57,7 @@ aside.emoji-picker-react {
   .chat-bar {
     font-size: 15px;
     padding: 10px;
+    width: 90%;
   }
 
   .chat-bar > form > input {
