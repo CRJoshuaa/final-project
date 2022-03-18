@@ -232,14 +232,14 @@ function Chat() {
               //   darkMode ? "chat-footer-dark" : "chat-footer-light"
               // }`}
             >
+              {replyDocId && (
+                <Replybox
+                  replyDocId={replyDocId}
+                  setReplyDocId={setReplyDocId}
+                  roomId={roomId}
+                />
+              )}
               <div className="chat-input-cont" ref={chatRef}>
-                {replyDocId && (
-                  <Replybox
-                    replyDocId={replyDocId}
-                    setReplyDocId={setReplyDocId}
-                    roomId={roomId}
-                  />
-                )}
                 <ChatInput
                   chatRef={chatRef}
                   channelName={roomDetails?.data().name}

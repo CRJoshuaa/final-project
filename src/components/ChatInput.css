@@ -57,6 +57,7 @@ aside.emoji-picker-react {
   .chat-bar {
     font-size: 15px;
     padding: 10px;
+    width: 90%;
   }
 
   .chat-bar > form > input {

@@ -57,7 +57,7 @@
   flex-direction: column;
   bottom: 0;
   overflow-y: scroll;
-  width: 95%;
+  width: 95.5%;
 }
 
 .chat-messages::-webkit-scrollbar {
@@ -110,8 +110,9 @@
   width: 95%;
   position: sticky;
   bottom: 0;
-  height: 10%;
+  min-height: 10%;
   background-color: transparent;
+  justify-content: center;
 }
 
 .chat-input-cont {
@@ -174,13 +175,14 @@
     display: none;
   }
 
-  .chat-messages {
+  /* .chat-messages {
     width: 100%;
-  }
+  } */
 
   .chat-footer {
     display: flex;
     flex-direction: column-reverse;
+    margin: auto;
   }
 }
 
@@ -194,6 +196,10 @@
   .chat-sidebar {
     display: none;
   }
+
+  .chat-footer {
+    margin: auto;
+  }
 }
 
 /* Laptop screens */
@@ -204,5 +210,9 @@
 
   .chat {
     width: 80.25%;
+  }
+
+  .chat-footer {
+    margin: auto;
   }
 }
