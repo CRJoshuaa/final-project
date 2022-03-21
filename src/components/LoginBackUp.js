@@ -7,6 +7,7 @@ import logo from "../images/appLogoSquare.png";
 import RedditIcon from "@mui/icons-material/Reddit";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 function LoginBackUp() {
   const signIn = (e) => {
@@ -30,6 +31,12 @@ function LoginBackUp() {
           className="social-icon"
         >
           <RedditIcon />
+        </a>
+        <a
+          href="https://github.com/CRJoshuaa/final-project"
+          className="social-icon"
+        >
+          <GitHubIcon />
         </a>
       </div>
       <div className="login-body">
